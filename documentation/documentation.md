@@ -6,7 +6,7 @@
   caption { padding 20px; }
   pre { border: 1px solid black;
 		padding: 10px;
-		background-color: rgba(65, 131, 196, 0.4);
+		background-color: rgba(200, 200, 200, 0.4);
       }
 </style>
 
@@ -907,6 +907,281 @@ Example:
 <pre>
 &gt;S X=$$SYMENC^MXMLUTL("This line isn't &amp;""&lt;XML&gt;"" safe as is.")
 </pre>
+
+#### $$MKTAG^MXMLBLD(NAME,ATTRS,TEXT,CLOSE)
+This extrinsic function creates an XML tag.
+
+<table>
+<caption>Table 16: $$MKTAG^MXMLBLD(NAME,ATTRS,TEXT,CLOSE)—Create an XML tag</caption>
+<tr>
+	<th>Parameter</th>
+	<th>Type</th>
+	<th>Required</th>
+	<th>Description</th>
+</tr>
+<tr>
+	<td>NAME</td>
+	<td>String</td>
+	<td>Yes</td>
+	<td>Name of the xml element to write; or /Name to create a closing tag</td>
+</tr>
+<tr>
+	<td>ATTRS</td>
+	<td>Array</td>
+	<td>No</td>
+	<td>Name Value pair of attributes. If not passed, no attributes are produced.</td>
+</tr>
+<tr>
+	<td>TEXT</td>
+	<td>String</td>
+	<td>No</td>
+	<td>Text to include in the node. If not passed, No text is produced.</td>
+</tr>
+<tr>
+	<td>CLOSE</td>
+	<td>Boolean (0 or 1)</td>
+	<td>No</td>
+	<td>Weather to close the XML tag. If not passed, the default behavior is to close the tag.</td>
+</tr>
+</table>
+
+Examples:
+<pre>
+&gt;N %1
+&gt;S %1("type")="japaense"
+&gt;S %1("origin")="japan"
+&gt;W $$MKTAG^MXMLBLD("name",.%1,"Toyoda",1)         ; &lt;name origin="japan" type="japaense"&gt;Toyoda&lt;/name&gt;
+&gt;W $$MKTAG^MXMLBLD("name",.%1,"Toyoda")           ; &lt;name origin="japan" type="japaense"&gt;Toyoda&lt;/name&gt;
+&gt;W $$MKTAG^MXMLBLD("name",,"Toyoda")              ; &lt;name&gt;Toyoda&lt;/name&gt;
+&gt;W $$MKTAG^MXMLBLD("name",.%1)                    ; &lt;name origin="japan" type="japaense" /&gt;
+&gt;W $$MKTAG^MXMLBLD("name",.%1,,0)                 ; &lt;name origin="japan" type="japaense"&gt;
+&gt;W $$MKTAG^MXMLBLD("/name");                      ; &lt;/name&gt;
+</pre>
+
+#### \[$$\]PUT^MXMLBLD(RETURN,STRING)
+PUT is a convenience procedure/extrinsic function that adds a line to an array passed by reference.
+
+<table>
+<caption>Table 17: [$$]PUT^MXMLBLD - Add a line to an array</caption>
+<tr>
+	<th>Parameter</th>
+	<th>Type</th>
+	<th>Required</th>
+	<th>Description</th>
+</tr>
+<tr>
+	<td>RETURN</td>
+	<td>Array passed by Reference</td>
+	<td>Yes</td>
+	<td>PUT adds an extra numeric subscript to the end of the array. The value of the subscripted entry is the string</td>
+</tr>
+<tr>
+	<td>STRING</td>
+	<td>String</td>
+	<td>Yes</td>
+	<td>The string that will be the value to add to an array</td>
+</tr>
+<tr>
+	<td>Return value</td>
+	<td>Integer</td>
+	<td>&nbsp;</td>
+	<td>If called with $$, PUT will return the number of new subscript</td>
+</tr>
+</table>
+
+Example:
+<pre>
+&gt;N RTN                                                                       
+&gt;D PUT^MXMLBLD(.RTN,$$XMLHDR^MXMLUTL())
+&gt;D PUT^MXMLBLD(.RTN,$$MKTAG^MXMLBLD("Book",,"Pride and Prejudice"))
+&gt;ZWRITE RTN
+&gt;RTN(1)="&lt;?xml version=""1.0"" encoding=""utf-8"" ?&gt;"
+&gt;RTN(2)="&lt;Book&gt;Pride and Prejudice&lt;/Book&gt;"
+</pre>
+
+### Build APIs
+This section includes the following calls which together provide a more complex
+API but complete API to build an XML document.
+
+<ul>
+<li>START^MXMLBLD(DOC,DOCTYPE,FLAG,NO1ST,ATT)</li>
+<li>END^MXMLBLD</li>
+<li>ITEM^MXMLBLD(INDENT,TAG,ATT,VALUE)</li>
+<li>MULTI^MXMLBLD(INDENT,TAG,ATT,DOITEM)</li>
+</ul>
+
+#### START^MXMLBLD(DOC,DOCTYPE,FLAG,NO1ST,ATT)
+This procedure creates the first element in the doucment and also by default
+writes out the XML header and DOCTYPE.
+
+<table>
+<caption>Table 18: START^MXMLBLD - Start an XML document</caption>
+<tr>
+	<th>Parameter</th>
+	<th>Type</th>
+	<th>Required</th>
+	<th>Description</th>
+</tr>
+<tr>
+	<td>DOC</td>
+	<td>String</td>
+	<td>Yes</td>
+	<td>Root element name</td>
+</tr>
+<tr>
+	<td>DOCTYPE</td>
+	<td>String</td>
+	<td>No</td>
+	<td>DOCTYPE reference for the XML document</td>
+</tr>
+<tr>
+	<td>FLAG</td>
+	<td>String</td>
+	<td>No</td>
+	<td>Only supported flag is "G". If not passed, the document builder will 
+	print the document as you write it to the current device. If passed, it
+	will put the document under ^TMP("MXMLBLD",$J). By default, it's printed
+	to the current device.</td>
+</tr>
+<tr>
+	<td>NO1ST</td>
+	<td>Boolean (0 or 1)</td>
+	<td>No</td>
+	<td>If 1 is passed, the &lt;?xml... XML header will not be included. By
+	default, it's included.</td>
+</tr>
+<tr>
+	<td>ATT</td>
+	<td>Array</td>
+	<td>No</td>
+	<td>Name value hash in the format ATT("name")="value". If not passed,
+	no attributes are added.</td>
+</tr>
+</table>
+
+#### END^MXMLBLD
+This procedure closes the Start Root XML element. It doesn't accept any
+parameters.
+
+#### ITEM^MXMLBLD(INDENT,TAG,ATT,VALUE)
+This procedure adds an xml element with no child elements, like &lt;Book&gt;
+History of Arabia&lt;Book&gt;.
+
+<table>
+<caption>Table 19: ITEM^MXMLBLD - Add an element without children</caption>
+<tr>
+	<th>Parameter</th>
+	<th>Type</th>
+	<th>Required</th>
+	<th>Description</th>
+</tr>
+<tr>
+	<td>INDENT</td>
+	<td>Integer</td>
+	<td>No</td>
+	<td>Number of spaces to indent the item. Can be omitted for no indents.</td>
+</tr>
+<tr>
+	<td>TAG</td>
+	<td>Tag name</td>
+	<td>Yes</td>
+	<td>Element Name</td>
+</tr>
+<tr>
+	<td>ATT</td>
+	<td>Array</td>
+	<td>No</td>
+	<td>Name value hash in the format ATT("name")="value". If not passed,
+	no attributes are added.</td>
+</tr>
+<tr>
+	<td>VALUE</td>
+	<td>String</td>
+	<td>No</td>
+	<td>Text to put in the node.</td>
+</tr>
+</table>
+
+#### MULTI^MXMLBLD(INDENT,TAG,ATT,DOITEM)
+This procedure is used to add an element with child elements.
+
+<table>
+<caption>Table 20: MULTI^MXMLBLD - Add an element with children</caption>
+<tr>
+	<th>Parameter</th>
+	<th>Type</th>
+	<th>Required</th>
+	<th>Description</th>
+</tr>
+<tr>
+	<td>INDENT</td>
+	<td>Integer</td>
+	<td>No</td>
+	<td>Number of spaces to indent the item. Can be omitted for no indents.</td>
+</tr>
+<tr>
+	<td>TAG</td>
+	<td>Tag name</td>
+	<td>Yes</td>
+	<td>Element Name</td>
+</tr>
+<tr>
+	<td>ATT</td>
+	<td>Array</td>
+	<td>No</td>
+	<td>Name value hash in the format ATT("name")="value". If not passed,
+	no attributes are added.</td>
+</tr>
+<tr>
+	<td>ITEM</td>
+	<td>Routine Tag</td>
+	<td>Yes</td>
+	<td>A entry point that calls ITEM or call MULTI^MXMLBLD recursively.</td>
+</tr>
+</table>
+
+#### Example
+<pre>
+TESTBLD1	; Test Wally's XML Builder
+	N %1 S %1("version")="2.5"
+	D START^MXMLBLD("Books",,"G",,.%1)
+	N %1 S %1("type")="date"
+	D ITEM^MXMLBLD(,"LastUpdated",.%1,"3-15-99")
+	D MULTI^MXMLBLD(,"Book",,"BOOKEAC1")
+	D MULTI^MXMLBLD(,"Book",,"BOOKEAC2")
+	D END^MXMLBLD
+	ZWRITE ^TMP("MXMLBLD",$J,*)
+	QUIT
+BOOKEAC1	; Book 1
+	D ITEM^MXMLBLD(,"Author",,"AUSTEN,JANE")
+	D ITEM^MXMLBLD(,"Title",,"PRIDE AND PREJUDICE")
+	D ITEM^MXMLBLD(,"Description",,"A romantic novel revealing how pride can cloud our better judgement.")
+	Q
+BOOKEAC2	; Book 2
+	D ITEM^MXMLBLD(,"Author",,"Johann Wolfgang von Goethe")
+	D ITEM^MXMLBLD(,"Title",,"Sorrows of Young Werther")
+	D ITEM^MXMLBLD(,"Description",,"A tale of unrequited love leading to the demise of the protagonist.")
+	Q
+</pre>
+
+Expected Output:
+<pre>
+^TMP("MXMLBLD",5609,1)="&lt;?xml version=""1.0"" encoding=""utf-8"" ?&gt;"
+^TMP("MXMLBLD",5609,2)="&lt;Books version=""2.5""&gt;"
+^TMP("MXMLBLD",5609,3)="&lt;LastUpdated type=""date""&gt;3-15-99&lt;/LastUpdated&gt;"
+^TMP("MXMLBLD",5609,4)="&lt;Book&gt;"
+^TMP("MXMLBLD",5609,5)="&lt;Author&gt;AUSTEN,JANE&lt;/Author&gt;"
+^TMP("MXMLBLD",5609,6)="&lt;Title&gt;PRIDE AND PREJUDICE&lt;/Title&gt;"
+^TMP("MXMLBLD",5609,7)="&lt;Description&gt;A romantic novel revealing how pride can cloud our better judgement.&lt;/Description&gt;"
+^TMP("MXMLBLD",5609,8)="&lt;/Book&gt;"
+^TMP("MXMLBLD",5609,9)="&lt;Book&gt;"
+^TMP("MXMLBLD",5609,10)="&lt;Author&gt;Johann Wolfgang von Goethe&lt;/Author&gt;"
+^TMP("MXMLBLD",5609,11)="&lt;Title&gt;Sorrows of Young Werther&lt;/Title&gt;"
+^TMP("MXMLBLD",5609,12)="&lt;Description&gt;A tale of unrequited love leading to the demise of the protagonist.&lt;/Description&gt;"
+^TMP("MXMLBLD",5609,13)="&lt;/Book&gt;"
+^TMP("MXMLBLD",5609,14)="&lt;/Books&gt;"
+</pre>
+
 
 ## Entity Catalog
 The entity catalog is used to store external entities and their associated public identifiers. When the XML
