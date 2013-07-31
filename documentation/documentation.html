@@ -1099,6 +1099,62 @@ BOOKEAC2	; Book 2
 ^TMP("MXMLBLD",5609,14)="&lt;/Books&gt;"
 </pre></p>
 
+<h2 id='xml_templating_functions'>XML Templating functions</h2>
+
+<p>The routine MXMLTMPL and associated routines are reponsible for providing XML templating functions. You can do the following things with it:</p>
+
+<ul>
+<li>Create templates</li>
+
+<li>Substitute placeholders in templates at runtime.</li>
+
+<li>Insert and remove template XML into other XML.</li>
+
+<li>Audit tools to make sure all placeholders have been substituted.</li>
+</ul>
+
+<p>The use case which this routine is best used for is creating XML documents that have repeating sections that come from VISTA data. For example, a medication XML template can be created by hand and then stored in Fileman. At runtime, each medication&#8217;s data can be extracted and then the placeholders substituted with the actual data; then this XML blob can be inserted into a larger XML document.</p>
+
+<p>Array Creation</p>
+
+<ul>
+<li>PUSH^MXMLTMP1(STK,VAL)</li>
+
+<li>POP^MXMLTMP1(STK,VAL)</li>
+
+<li>QUERY^MXMLTMPL(IARY,XPATH,OARY)</li>
+
+<li>CP^MXMLTMPL(CPSRC,CPDEST)</li>
+</ul>
+
+<p>Manipulation</p>
+
+<ul>
+<li>REPLACE(REXML,RENEW,REXPATH)</li>
+
+<li>INSERT(INSXML,INSNEW,INSXPATH)</li>
+
+<li>INSINNER(INNXML,INNNEW,INNXPATH)</li>
+</ul>
+
+<p>Mapping Placeholders</p>
+
+<ul>
+<li>MISSING(IXML,OARY)</li>
+
+<li>MAP(IXML,INARY,OXML)</li>
+</ul>
+
+<p>Printing - PARY(GLO,ZN)</p>
+
+<p>Advanced functionality</p>
+
+<ul>
+<li>QUEUE(BLST,ARRAY,FIRST,LAST)</li>
+
+<li>BUILD(BLIST,BDEST)</li>
+</ul>
+
 <h2 id='entity_catalog'>Entity Catalog</h2>
 
 <p>The entity catalog is used to store external entities and their associated public identifiers. When the XML parser encounters an external entity reference with a public identifier, it first looks for that public identifier in the entity catalog. If it finds the entity, it retrieves its value. Otherwise, it attempts to retrieve the entity value using the system identifier. The problem with using system identifiers is that they often identify resources that may have been relocated since the document was authored. (This is analogous to the problem with broken links in HTML documents.) Using public identifiers and an entity catalog allows one to build a collection of commonly used and readily accessible external entities (e.g., external document type definitions).</p>

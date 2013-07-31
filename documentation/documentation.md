@@ -1182,6 +1182,42 @@ Expected Output:
 ^TMP("MXMLBLD",5609,14)="&lt;/Books&gt;"
 </pre>
 
+## XML Templating functions
+The routine MXMLTMPL and associated routines are reponsible for providing
+XML templating functions. You can do the following things with it:
+ - Create templates
+ - Substitute placeholders in templates at runtime.
+ - Insert and remove template XML into other XML.
+ - Audit tools to make sure all placeholders have been substituted.
+
+The use case which this routine is best used for is creating XML documents
+that have repeating sections that come from VISTA data. For example, a 
+medication XML template can be created by hand and then stored in Fileman.
+At runtime, each medication's data can be extracted and then the placeholders
+substituted with the actual data; then this XML blob can be inserted into a
+larger XML document.
+ 
+ Array Creation
+ - PUSH^MXMLTMP1(STK,VAL)
+ - POP^MXMLTMP1(STK,VAL)
+ - QUERY^MXMLTMPL(IARY,XPATH,OARY)
+ - CP^MXMLTMPL(CPSRC,CPDEST)
+ 
+ Manipulation
+ - REPLACE^MXMLTMPL(REXML,RENEW,REXPATH)
+ - INSERT^MXMLTMPL(INSXML,INSNEW,INSXPATH)
+ - INSINNER^MXMLTMPL(INNXML,INNNEW,INNXPATH)
+
+ Mapping Placeholders
+ - MISSING^MXMLTMPL(IXML,OARY)
+ - MAP^MXMLTMPL(IXML,INARY,OXML)
+
+ Printing for debugging purposes
+ - PARY^MXMLTMPL(GLO,ZN)
+
+ Advanced functionality
+ - QUEUE^MXMLTMPL(BLST,ARRAY,FIRST,LAST)
+ - BUILD^MXMLTMPL(BLIST,BDEST)
 
 ## Entity Catalog
 The entity catalog is used to store external entities and their associated public identifiers. When the XML
