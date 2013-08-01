@@ -16,7 +16,7 @@
       }
 </style>
 <h1 id='xml_processing_utilities_20'>XML PROCESSING UTILITIES 2.0</h1>
-
+<div class='maruku_toc'><ul style='list-style: none;'><li><a href='#revision_history'>Revision History</a></li><li><a href='#introduction'>Introduction</a></li><li><a href='#xml_parsing'>XML Parsing</a><ul style='list-style: none;'><li><a href='#term_definitions_and_xml_parser_concept'>Term Definitions and XML Parser Concept</a></li><li><a href='#known_issues'>Known Issues</a></li><li><a href='#eventdriven_api'>Event-Driven API</a><ul style='list-style: none;'><li><a href='#enmxmlprsedoccbkopt'>EN^MXMLPRSE(DOC,CBK,OPT)</a></li><li><a href='#event_types_recognized_by_vista_xml_parser'>Event Types Recognized by Vista XML Parser</a></li></ul></li><li><a href='#inmemory_document_api'>In-Memory Document API</a><ul style='list-style: none;'><li><a href='#enmxmldomdocopt'>$$EN^MXMLDOM(DOC,OPT)</a></li><li><a href='#deletemxmldomhandle'>DELETE^MXMLDOM(HANDLE)</a></li><li><a href='#namemxmldomhandlenode'>$$NAME^MXMLDOM(HANDLE,NODE)</a></li><li><a href='#childmxmldomhandleparentchild'>$$CHILD^MXMLDOM(HANDLE,PARENT,CHILD)</a></li><li><a href='#siblingmxmldomhandlenode'>$$SIBLING^MXMLDOM(HANDLE,NODE)</a></li><li><a href='#parentmxmldomhandlenode'>$$PARENT^MXMLDOM(HANDLE,NODE)</a></li><li><a href='#textmxmldomhandlenodetext_or_textmxmldomhandlenodetext'>TEXT^MXMLDOM(HANDLE,NODE,TEXT) or $$TEXT^MXMLDOM(HANDLE,NODE,TEXT)</a></li><li><a href='#cmntmxmldomhandlenodetext_or_cmntmxmldomhandlenodetext'>CMNT^MXMLDOM(HANDLE,NODE,TEXT) or $$CMNT^MXMLDOM(HANDLE,NODE,TEXT)</a></li><li><a href='#attribmxmldomhandlenodeattrib'>$$ATTRIB^MXMLDOM(HANDLE,NODE,ATTRIB)</a></li><li><a href='#valuemxmldomhandlenodeattrib'>$$VALUE^MXMLDOM(HANDLE,NODE,ATTRIB)</a></li></ul></li><li><a href='#vista_xml_parser_usage_example'>VistA XML Parser Usage Example</a><ul style='list-style: none;'><li><a href='#create_an_xml_file'>Create an XML File</a></li></ul></li></ul></li><li><a href='#xml_document_creation_utility_apis'>XML Document Creation Utility APIs</a><ul style='list-style: none;'><li><a href='#simplesinglet_xml_building_apis'>Simple/Singlet XML Building APIs</a><ul style='list-style: none;'><li><a href='#xmlhdrmxmlutl'>$$XMLHDR^MXMLUTL()</a></li><li><a href='#symencmxmlutlstr'>$$SYMENC^MXMLUTL(STR)</a></li><li><a href='#mktagmxmlbldnameattrstextclose'>$$MKTAG^MXMLBLD(NAME,ATTRS,TEXT,CLOSE)</a></li><li><a href='#putmxmlbldreturnstring'>[$$]PUT^MXMLBLD(RETURN,STRING)</a></li></ul></li><li><a href='#build_apis'>Build APIs</a><ul style='list-style: none;'><li><a href='#startmxmlblddocdoctypeflagno1statt'>START^MXMLBLD(DOC,DOCTYPE,FLAG,NO1ST,ATT)</a></li><li><a href='#endmxmlbld'>END^MXMLBLD</a></li><li><a href='#itemmxmlbldindenttagattvalue'>ITEM^MXMLBLD(INDENT,TAG,ATT,VALUE)</a></li><li><a href='#multimxmlbldindenttagattdoitem'>MULTI^MXMLBLD(INDENT,TAG,ATT,DOITEM)</a></li><li><a href='#example'>Example</a></li></ul></li></ul></li><li><a href='#xml_templating_functions'>XML Templating functions</a><ul style='list-style: none;'><li><a href='#array_creation_apis'>Array Creation APIs</a><ul style='list-style: none;'><li><a href='#pushmxmltmp1stkval'>PUSH^MXMLTMP1(STK,VAL)</a></li><li><a href='#popmxmltmp1stkval'>POP^MXMLTMP1(STK,VAL)</a></li><li><a href='#querymxmltmpliaryxpathoary'>QUERY^MXMLTMPL(IARY,XPATH,OARY)</a></li><li><a href='#cpmxmltmplcpsrccpdest'>CP^MXMLTMPL(CPSRC,CPDEST)</a></li></ul></li><li><a href='#array_manipulation_apis'>Array Manipulation APIs</a><ul style='list-style: none;'><li><a href='#replacemxmltmplrexmlrenewrexpath'>REPLACE^MXMLTMPL(REXML,RENEW,REXPATH)</a></li><li><a href='#insertmxmltmplinsxmlinsnewinsxpath'>INSERT^MXMLTMPL(INSXML,INSNEW,INSXPATH)</a></li><li><a href='#insinnermxmltmplinnxmlinnnewinnxpath'>INSINNER^MXMLTMPL(INNXML,INNNEW,INNXPATH)</a></li></ul></li><li><a href='#mapping_placeholders'>Mapping Placeholders</a><ul style='list-style: none;'><li><a href='#missingmxmltmplixmloary'>MISSING^MXMLTMPL(IXML,OARY)</a></li><li><a href='#mapmxmltmplixmlinaryoxml'>MAP^MXMLTMPL(IXML,INARY,OXML)</a></li></ul></li><li><a href='#printing_for_debugging_purposes'>Printing for debugging purposes</a><ul style='list-style: none;'><li><a href='#parymxmltmplglozn'>PARY^MXMLTMPL(GLO,ZN)</a></li></ul></li><li><a href='#advanced_functionality_for_templating'>Advanced functionality for templating</a><ul style='list-style: none;'><li><a href='#queuemxmltmplblstarrayfirstlast_and_buildmxmltmplblistbdest'>QUEUE^MXMLTMPL(BLST,ARRAY,FIRST,LAST) and BUILD^MXMLTMPL(BLIST,BDEST)</a></li></ul></li><li><a href='#demo_program_for_templating'>Demo Program for Templating</a></li></ul></li><li><a href='#entity_catalog'>Entity Catalog</a></li><li><a href='#unit_tests'>Unit Tests</a></li></ul></div>
 <h2 id='revision_history'>Revision History</h2>
 
 <p>TODO: Include all history from older manual. Latest version updated by Sam Habiel in July 2013.</p>
@@ -782,6 +782,8 @@ VV(1)=Design Patterns
 
 <p>These Application Programmer Interfaces (API) have been developed to assist you in creating an XML document.</p>
 
+<h3 id='simplesinglet_xml_building_apis'>Simple/Singlet XML Building APIs</h3>
+
 <h4 id='xmlhdrmxmlutl'>$$XMLHDR^MXMLUTL()</h4>
 
 <p>This extrinsic function returns a standard extensible markup language (XML) header for encoding XML messages. This API is a Supported Reference. Format: <pre>
@@ -1115,6 +1117,8 @@ BOOKEAC2	; Book 2
 
 <p>The use case which this routine is best used for is creating XML documents that have repeating sections that come from VISTA data. For example, a medication XML template can be created by hand and then stored in Fileman. At runtime, each medication&#8217;s data can be extracted and then the placeholders substituted with the actual data; then this XML blob can be inserted into a larger XML document.</p>
 
+<p><em>Warning: Because all array names are passed by name, name collision is a strong possibility. Make sure that all array names you pass in are namespaced if you are using local variables!</em></p>
+
 <p>Array Creation</p>
 
 <ul>
@@ -1127,7 +1131,7 @@ BOOKEAC2	; Book 2
 <li>CP^MXMLTMPL(CPSRC,CPDEST)</li>
 </ul>
 
-<p>Manipulation</p>
+<p>Array Manipulation</p>
 
 <ul>
 <li>REPLACE^MXMLTMPL(REXML,RENEW,REXPATH)</li>
@@ -1154,6 +1158,396 @@ BOOKEAC2	; Book 2
 
 <li>BUILD^MXMLTMPL(BLIST,BDEST)</li>
 </ul>
+
+<p>In explanations of how this works, the following XML will be used as reference: <pre>
+1 &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+2 &lt;Books&gt;
+3 &lt;LastUpdated date="@@LASTUP@@" /&gt;
+4 &lt;Book&gt;
+5 &lt;Author&gt;@@AUTHOR@@&lt;/Author&gt;
+6 &lt;Title&gt;@@TITLE@@&lt;/Title&gt;
+7 &lt;Description&gt;@@DES@@&lt;/Description&gt;
+8 &lt;/Book&gt;
+9 &lt;/Books&gt;
+</pre></p>
+
+<h3 id='array_creation_apis'>Array Creation APIs</h3>
+
+<h4 id='pushmxmltmp1stkval'>PUSH^MXMLTMP1(STK,VAL)</h4>
+
+<p>Pushes a value VAL to a named array STK (for stack). See examples at the end of this section.</p>
+<table>
+<caption>Table 21: PUSH^MXMLTMP1 - Push a value into an array</caption>
+<tr>
+	<th>Parameter</th>
+	<th>Type</th>
+	<th>Required</th>
+	<th>Description</th>
+</tr>
+<tr>
+	<td>STK</td>
+	<td>Mumps Name</td>
+	<td>Yes</td>
+	<td>The array name in which the value will be stored.</td>
+</tr>
+<tr>
+	<td>VAL</td>
+	<td>String</td>
+	<td>Yes</td>
+	<td>Value to store (string)</td>
+</tr>
+</table>
+<h4 id='popmxmltmp1stkval'>POP^MXMLTMP1(STK,VAL)</h4>
+
+<p>Pops the last pushed item (at the bottom of STK) into VAL.</p>
+<table>
+<caption>Table 22: POP^MXMLTMP1 - Pop a value from STK to VAL</caption>
+<tr>
+	<th>Parameter</th>
+	<th>Type</th>
+	<th>Required</th>
+	<th>Description</th>
+</tr>
+<tr>
+	<td>STK</td>
+	<td>Mumps Name</td>
+	<td>Yes</td>
+	<td>The array name in which the value will be retrieved.</td>
+</tr>
+<tr>
+	<td>VAL</td>
+	<td>Reference</td>
+	<td>Yes</td>
+	<td>Variable in which the value will be restored.</td>
+</tr>
+</table>
+<p>Example of Pop: <pre>
+PUSHPOP2 ; Push and Pop
+	N KBAN
+	D PUSH^MXMLTMP1($NA(KBAN),"Test1")
+	D PUSH^MXMLTMP1($NA(KBAN),"Test2")
+	N KBANVAL
+	D POP^MXMLTMP1($NA(KBAN),.KBANVAL)
+	W KBANVAL,! ; Test2
+	QUIT
+</pre></p>
+
+<h4 id='querymxmltmpliaryxpathoary'>QUERY^MXMLTMPL(IARY,XPATH,OARY)</h4>
+
+<p>This will get you XML associated with an pseudo-XPATH expression from IARY (Name) into OARY (Name). For example, from the reference XML cited at the beginning of this section, a pseudo-XPATH of &#8220;//Books/Book&#8221; returns the following: <pre>
+&lt;Book&gt;
+&lt;Author&gt;@@AUTHOR@@&lt;/Author&gt;
+&lt;Title&gt;@@TITLE@@&lt;/Title&gt;
+&lt;Description&gt;@@DES@@&lt;/Description&gt;
+&lt;/Book&gt;
+</pre></p>
+
+<p><em>Warning: This is psuedo-XPATH syntax. It&#8217;s not real XPATH. See below for supported syntax</em></p>
+<table>
+<caption>Table 24: QUERY^MXMLTMP1 - Pop a value from STK to VAL</caption>
+<tr>
+	<th>Parameter</th>
+	<th>Type</th>
+	<th>Required</th>
+	<th>Description</th>
+</tr>
+<tr>
+	<td>IARY</td>
+	<td>Mumps Name</td>
+	<td>Yes</td>
+	<td>Input XML array by Name</td>
+</tr>
+<tr>
+	<td>XPATH</td>
+	<td>String</td>
+	<td>Yes</td>
+	<td>Pseudo-XPATH. Only //head-node/child1/child2 is supported.</td>
+</tr>
+<tr>
+	<td>OARY</td>
+	<td>Mumps Name</td>
+	<td>Yes</td>
+	<td>Output XML array by Name</td>
+</tr>
+</table>
+<h4 id='cpmxmltmplcpsrccpdest'>CP^MXMLTMPL(CPSRC,CPDEST)</h4>
+
+<p>This copies an array from CPSRC (Name) to CPDEST (Name). A programmer may use the merge command instead as it provides the same functionality.</p>
+<table>
+<caption>Table 25: CP^MXMLTMPL - Copy Arrays</caption>
+<tr>
+	<th>Parameter</th>
+	<th>Type</th>
+	<th>Required</th>
+	<th>Description</th>
+</tr>
+<tr>
+	<td>CPSRC</td>
+	<td>Mumps Name</td>
+	<td>Yes</td>
+	<td>Source Array Name</td>
+</tr>
+<tr>
+	<td>CPDEST</td>
+	<td>Mumps Name</td>
+	<td>Yes</td>
+	<td>Destination Array Name</td>
+</tr>
+</table>
+<h3 id='array_manipulation_apis'>Array Manipulation APIs</h3>
+
+<h4 id='replacemxmltmplrexmlrenewrexpath'>REPLACE^MXMLTMPL(REXML,RENEW,REXPATH)</h4>
+
+<p>Replaces the XML pointed to by REXPATH in REXML (name) by RENEW. The last tag in the REXPATH (e.g. c in //a/b/c) is where the replacement begins. For example, in the example below, a REXPATH of //Books/Book will replace lines 3 to 5.</p>
+<pre>
+1 &lt;?xml ...&gt;
+2 &lt;Books&gt;
+3 &lt;Book&gt;
+4 &lt;Author&gt;Lord Byron&lt;/Author&gt;
+5 &lt;/Book&gt;
+6 &lt;/Books&gt;
+</pre>
+<p>If RENEW is empty (&#8221;&#8221;), The INNER XML pointed to XPATH gets deleted. So in the example above, only line 4 will be deleted.</p>
+
+<p>Examples below in the DEMO program.</p>
+<table>
+<caption>Table 26: REPLACE^MXMLTMPL - Replace XML in documents</caption>
+<tr>
+	<th>Parameter</th>
+	<th>Type</th>
+	<th>Required</th>
+	<th>Description</th>
+</tr>
+<tr>
+	<td>REXML</td>
+	<td>Mumps Name</td>
+	<td>Yes</td>
+	<td>Original XML array whose contents will be replaced</td>
+</tr>
+<tr>
+	<td>RENEW</td>
+	<td>Mumps Name</td>
+	<td>Yes</td>
+	<td>New contents array to be used for the replacement</td>
+</tr>
+<tr>
+	<td>REXPATH</td>
+	<td>String</td>
+	<td>Yes</td>
+	<td>Psuedo-XPATH point at which to do the replacement. See QUERY above
+        for format.</td>
+</tr>
+</table>
+<h4 id='insertmxmltmplinsxmlinsnewinsxpath'>INSERT^MXMLTMPL(INSXML,INSNEW,INSXPATH)</h4>
+
+<p>Inserts XML in INSNEW in XML of INSXML at the Pseudo-XPATH point. If there are existing children at the INSXPATH point, the new content is appended after the existing children. For an example, see the DEMO program below.</p>
+<table>
+<caption>Table 27: INSERT^MXMLTMPL - Insert XML in document</caption>
+<tr>
+	<th>Parameter</th>
+	<th>Type</th>
+	<th>Required</th>
+	<th>Description</th>
+</tr>
+<tr>
+	<td>INSXML</td>
+	<td>Mumps Name</td>
+	<td>Yes</td>
+	<td>Original XML array in which new XML will be inserted</td>
+</tr>
+<tr>
+	<td>INSNEW</td>
+	<td>Mumps Name</td>
+	<td>Yes</td>
+	<td>XML to insert</td>
+</tr>
+<tr>
+	<td>INSXPATH</td>
+	<td>String</td>
+	<td>Yes</td>
+	<td>Psuedo-XPATH point at which to do the insertion. See QUERY above
+        for format.</td>
+</tr>
+</table>
+<h4 id='insinnermxmltmplinnxmlinnnewinnxpath'>INSINNER^MXMLTMPL(INNXML,INNNEW,INNXPATH)</h4>
+
+<p>Like INSERT^MXMLTMPL, except that only the content inside the main tag of the XML in INNNEW is inserted into INNXML. For example, if INNNEW has the following contents:</p>
+<pre>
+1 &lt;Book&gt;
+2 &lt;Author&gt;Lord Byron&lt;/Author&gt;
+3 &lt;/Book&gt;
+</pre>
+<p>Only line 2 gets inserted into the original document INNXML. The outer tags (lines 1 and 3) are discarded. See examples in the DEMO program below.</p>
+<table>
+<caption>Table 28: INSINNER^MXMLTMPL - Insert inner XML in document</caption>
+<tr>
+	<th>Parameter</th>
+	<th>Type</th>
+	<th>Required</th>
+	<th>Description</th>
+</tr>
+<tr>
+	<td>INNXML</td>
+	<td>Mumps Name</td>
+	<td>Yes</td>
+	<td>Original XML array in which new XML will be inserted</td>
+</tr>
+<tr>
+	<td>INNNEW</td>
+	<td>Mumps Name</td>
+	<td>Yes</td>
+	<td>XML to insert, from which only the inner XML will be inserted.</td>
+</tr>
+<tr>
+	<td>INNXPATH</td>
+	<td>String</td>
+	<td>Yes</td>
+	<td>Psuedo-XPATH point at which to do the insertion. See QUERY above
+        for format.</td>
+</tr>
+</table>
+<h3 id='mapping_placeholders'>Mapping Placeholders</h3>
+
+<p>Placeholders are one of the very powerful features of the templating code. Any item in the XML that is enclosed in @@ (like &#8220;@@AUTHOR@@&#8221;) is a placeholder.</p>
+
+<h4 id='missingmxmltmplixmloary'>MISSING^MXMLTMPL(IXML,OARY)</h4>
+
+<p>This queries IXML for any placeholders that have not been replaced yet (hence the &#8220;Missing&#8221;) and place the output in a numerically subscripted array OARY. See example below in DEMO program.</p>
+<table>
+<caption>Table 29: MISSING^MXMLTMPL - List unreplaced placeholders</caption>
+<tr>
+	<th>Parameter</th>
+	<th>Type</th>
+	<th>Required</th>
+	<th>Description</th>
+</tr>
+<tr>
+	<td>IXML</td>
+	<td>Mumps Name</td>
+	<td>Yes</td>
+	<td>Input XML</td>
+</tr>
+<tr>
+	<td>OARY</td>
+	<td>Mumps Name</td>
+	<td>Yes</td>
+	<td>Output in the format OARY(1)="ITEM1",OARY(2)="ITEM2" etc 
+    (@@ removed)</td>
+</tr>
+</table>
+<h4 id='mapmxmltmplixmlinaryoxml'>MAP^MXMLTMPL(IXML,INARY,OXML)</h4>
+
+<p>MAP takes a Mumps Hash in INARY and replaces the hash keys in IXML that are also placeholders with their value, and puts the output in OXML.</p>
+
+<p>Here&#8217;s a very simple example: <pre>
+N KBANIXML,KBANINARY,KBANOXML
+S KBANIXML(1)="&lt;Author&gt;@@AUTHOR@@&lt;/Author&gt;"
+S KBANINARY("AUTHOR")="Lord Byron"
+D MAP^MXMLTMPL($NA(KBANIXML),$NA(KBANINARY),$NA(KBANOXML))
+W KBANOXML(1),! ; &lt;Author&gt;Lord Byron&lt;/Author&gt;
+</pre></p>
+<table>
+<caption>Table 30: MAP^MXMLTMPL - Map placeholders using passed Hash</caption>
+<tr>
+	<th>Parameter</th>
+	<th>Type</th>
+	<th>Required</th>
+	<th>Description</th>
+</tr>
+<tr>
+	<td>IXML</td>
+	<td>Mumps Name</td>
+	<td>Yes</td>
+	<td>Input XML containing the placeholders to be filled in</td>
+</tr>
+<tr>
+	<td>INARY</td>
+	<td>Mumps Name</td>
+	<td>Yes</td>
+	<td>Hash in the format of MUMPSNAME("KEY")="VALUE". The key corresponds
+        to the placeholder text in between the @@</td>
+</tr>
+<tr>
+	<td>OXML</td>
+	<td>Mumps Name</td>
+	<td>Yes</td>
+	<td>Output XML produced by this procedure</td>
+</tr>
+</table>
+<h3 id='printing_for_debugging_purposes'>Printing for debugging purposes</h3>
+
+<h4 id='parymxmltmplglozn'>PARY^MXMLTMPL(GLO,ZN)</h4>
+
+<p>Prints an array passed by name in GLO. If optional ZN is passed as -1, line numbers are suppressed. Otherwise, line numbers are printed. See numerous examples in the DEMO program. <table>
+<caption>Table 31: PARY^MXMLTMPL - Print Array</caption>
+<tr>
+	<th>Parameter</th>
+	<th>Type</th>
+	<th>Required</th>
+	<th>Description</th>
+</tr>
+<tr>
+	<td>GLO</td>
+	<td>Mumps Name</td>
+	<td>Yes</td>
+	<td>Array to be printed. Doesn't have to be an XML array.</td>
+</tr>
+<tr>
+	<td>ZN</td>
+	<td>-1</td>
+	<td>No</td>
+	<td>If -1 is passed, line numbers are not printed; otherwise, line 
+    numbers are printed</td>
+</tr>
+</table></p>
+
+<h3 id='advanced_functionality_for_templating'>Advanced functionality for templating</h3>
+
+<h4 id='queuemxmltmplblstarrayfirstlast_and_buildmxmltmplblistbdest'>QUEUE^MXMLTMPL(BLST,ARRAY,FIRST,LAST) and BUILD^MXMLTMPL(BLIST,BDEST)</h4>
+
+<p>QUEUE and BUILD are to be used together. QUEUE creates build instructions in BLST for items in ARRAY using FIRST and LAST as the instructions on what lines to copy. BUILD executes the instructions in BLIST to create an array in BDEST.</p>
+
+<p>Example (using the reference XML at the beginning of the chapter in array MXMLTEMPLATE):</p>
+
+<p>Starting Array:</p>
+<pre>
+&gt;ZWRITE MXMLTEMPLATE
+MXMLTEMPLATE(0)=9
+MXMLTEMPLATE(1)="&lt;?xml version=""1.0"" encoding=""utf-8"" ?&gt;"
+MXMLTEMPLATE(2)="&lt;Books&gt;"
+MXMLTEMPLATE(3)="&lt;LastUpdated date=""@@LASTUP@@"" /&gt;"
+MXMLTEMPLATE(4)="&lt;Book&gt;"
+MXMLTEMPLATE(5)="&lt;Author&gt;@@AUTHOR@@&lt;/Author&gt;"
+MXMLTEMPLATE(6)="&lt;Title&gt;@@TITLE@@&lt;/Title&gt;"
+MXMLTEMPLATE(7)="&lt;Description&gt;@@DES@@&lt;/Description&gt;"
+MXMLTEMPLATE(8)="&lt;/Book&gt;"
+MXMLTEMPLATE(9)="&lt;/Books&gt;"
+</pre>
+<p>Code:</p>
+<pre>
+&gt;D QUEUE^MXMLTMPL($NA(MXMLBLIST),$NA(MXMLTEMPLATE),1,2)
+
+&gt;D QUEUE^MXMLTMPL($NA(MXMLBLIST),$NA(MXMLTEMPLATE),4,4)
+
+&gt;D QUEUE^MXMLTMPL($NA(MXMLBLIST),$NA(MXMLTEMPLATE),8,9)
+
+&gt;ZWRITE MXMLBLIST
+MXMLBLIST(0)=3
+MXMLBLIST(1)="MXMLTEMPLATE;1;2"
+MXMLBLIST(2)="MXMLTEMPLATE;4;4"
+MXMLBLIST(3)="MXMLTEMPLATE;8;9"
+
+&gt;D BUILD^MXMLTMPL($NA(MXMLBLIST),$NA(MXMLOUTPUT))
+
+&gt;ZWRITE MXMLOUTPUT
+MXMLOUTPUT(0)=5
+MXMLOUTPUT(1)="&lt;?xml version=""1.0"" encoding=""utf-8"" ?&gt;"
+MXMLOUTPUT(2)="&lt;Books&gt;"
+MXMLOUTPUT(3)="&lt;Book&gt;"
+MXMLOUTPUT(4)="&lt;/Book&gt;"
+MXMLOUTPUT(5)="&lt;/Books&gt;"
+</pre>
+<h3 id='demo_program_for_templating'>Demo Program for Templating</h3>
 <pre>
 DEMO	; Demo program.
 	;
@@ -1181,7 +1575,7 @@ PARY1 ; Print Array
 	; 6 &lt;Title&gt;@@TITLE@@&lt;/Title&gt;
 	; 7 &lt;Description&gt;@@DES@@&lt;/Description&gt;
 	; 8 &lt;/Book&gt;
-	; 9 &lt;/Books&gt;Printing unresolved placeholder elements
+	; 9 &lt;/Books&gt;
 	;
 MISS1 ; Print elements needing to be resolved
 	N MXMLMISS
@@ -1432,4 +1826,18 @@ QUIT QUIT
 	<td>Word Processing</td>
 	<td>The text associated with the entity.</td>
 </tr>
-</table></body></html>
+</table>
+<h2 id='unit_tests'>Unit Tests</h2>
+
+<p>Unit tests are provided in routines</p>
+
+<ul>
+<li>MXMLPATT (for XPATH processing)</li>
+
+<li>MXMLBLD (for XML building)</li>
+
+<li>MXMLTMPT (for XML templating)</li>
+</ul>
+
+<p>In addition, a manual test routine for the XML Parser is at MXMLTEST.</p>
+</body></html>

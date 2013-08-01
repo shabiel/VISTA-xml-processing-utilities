@@ -12,6 +12,9 @@
 
 # XML PROCESSING UTILITIES 2.0
 
+* Table of Conents
+{:toc}
+
 ## Revision History
 TODO: Include all history from older manual.
 Latest version updated by Sam Habiel in July 2013.
@@ -844,6 +847,8 @@ List All Sibling Nodes
 These Application Programmer Interfaces (API) have been developed to assist you in creating an XML
 document.
 
+### Simple/Singlet XML Building APIs
+
 #### $$XMLHDR^MXMLUTL()
 This extrinsic function returns a standard extensible markup language (XML) header for encoding XML
 messages. This API is a Supported Reference. Format:
@@ -1196,6 +1201,10 @@ medication XML template can be created by hand and then stored in Fileman.
 At runtime, each medication's data can be extracted and then the placeholders
 substituted with the actual data; then this XML blob can be inserted into a
 larger XML document.
+
+*Warning: Because all array names are passed by name, name collision is a 
+strong possibility. Make sure that all array names you pass in are namespaced
+if you are using local variables!*
  
  Array Creation
  - PUSH^MXMLTMP1(STK,VAL)
@@ -1203,7 +1212,7 @@ larger XML document.
  - QUERY^MXMLTMPL(IARY,XPATH,OARY)
  - CP^MXMLTMPL(CPSRC,CPDEST)
  
- Manipulation
+ Array Manipulation
  - REPLACE^MXMLTMPL(REXML,RENEW,REXPATH)
  - INSERT^MXMLTMPL(INSXML,INSNEW,INSXPATH)
  - INSINNER^MXMLTMPL(INNXML,INNNEW,INNXPATH)
@@ -1218,6 +1227,437 @@ larger XML document.
  Advanced functionality
  - QUEUE^MXMLTMPL(BLST,ARRAY,FIRST,LAST)
  - BUILD^MXMLTMPL(BLIST,BDEST)
+
+In explanations of how this works, the following XML will be used as reference:
+<pre>
+1 &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+2 &lt;Books&gt;
+3 &lt;LastUpdated date="@@LASTUP@@" /&gt;
+4 &lt;Book&gt;
+5 &lt;Author&gt;@@AUTHOR@@&lt;/Author&gt;
+6 &lt;Title&gt;@@TITLE@@&lt;/Title&gt;
+7 &lt;Description&gt;@@DES@@&lt;/Description&gt;
+8 &lt;/Book&gt;
+9 &lt;/Books&gt;
+</pre>
+
+### Array Creation APIs
+#### PUSH^MXMLTMP1(STK,VAL)
+Pushes a value VAL to a named array STK (for stack). See examples at the end
+of this section.
+
+<table>
+<caption>Table 21: PUSH^MXMLTMP1 - Push a value into an array</caption>
+<tr>
+	<th>Parameter</th>
+	<th>Type</th>
+	<th>Required</th>
+	<th>Description</th>
+</tr>
+<tr>
+	<td>STK</td>
+	<td>Mumps Name</td>
+	<td>Yes</td>
+	<td>The array name in which the value will be stored.</td>
+</tr>
+<tr>
+	<td>VAL</td>
+	<td>String</td>
+	<td>Yes</td>
+	<td>Value to store (string)</td>
+</tr>
+</table>
+
+#### POP^MXMLTMP1(STK,VAL)
+Pops the last pushed item (at the bottom of STK) into VAL.
+
+<table>
+<caption>Table 22: POP^MXMLTMP1 - Pop a value from STK to VAL</caption>
+<tr>
+	<th>Parameter</th>
+	<th>Type</th>
+	<th>Required</th>
+	<th>Description</th>
+</tr>
+<tr>
+	<td>STK</td>
+	<td>Mumps Name</td>
+	<td>Yes</td>
+	<td>The array name in which the value will be retrieved.</td>
+</tr>
+<tr>
+	<td>VAL</td>
+	<td>Reference</td>
+	<td>Yes</td>
+	<td>Variable in which the value will be restored.</td>
+</tr>
+</table>
+
+Example of Pop:
+<pre>
+PUSHPOP2 ; Push and Pop
+	N KBAN
+	D PUSH^MXMLTMP1($NA(KBAN),"Test1")
+	D PUSH^MXMLTMP1($NA(KBAN),"Test2")
+	N KBANVAL
+	D POP^MXMLTMP1($NA(KBAN),.KBANVAL)
+	W KBANVAL,! ; Test2
+	QUIT
+</pre>
+
+#### QUERY^MXMLTMPL(IARY,XPATH,OARY)
+This will get you XML associated with an pseudo-XPATH expression from IARY
+(Name) into OARY (Name). For example, from the reference XML cited at the
+beginning of this section, a pseudo-XPATH of "//Books/Book" returns the
+following:
+<pre>
+&lt;Book&gt;
+&lt;Author&gt;@@AUTHOR@@&lt;/Author&gt;
+&lt;Title&gt;@@TITLE@@&lt;/Title&gt;
+&lt;Description&gt;@@DES@@&lt;/Description&gt;
+&lt;/Book&gt;
+</pre>
+
+*Warning: This is psuedo-XPATH syntax. It's not real XPATH. See below for
+supported syntax*
+
+<table>
+<caption>Table 24: QUERY^MXMLTMP1 - Pop a value from STK to VAL</caption>
+<tr>
+	<th>Parameter</th>
+	<th>Type</th>
+	<th>Required</th>
+	<th>Description</th>
+</tr>
+<tr>
+	<td>IARY</td>
+	<td>Mumps Name</td>
+	<td>Yes</td>
+	<td>Input XML array by Name</td>
+</tr>
+<tr>
+	<td>XPATH</td>
+	<td>String</td>
+	<td>Yes</td>
+	<td>Pseudo-XPATH. Only //head-node/child1/child2 is supported.</td>
+</tr>
+<tr>
+	<td>OARY</td>
+	<td>Mumps Name</td>
+	<td>Yes</td>
+	<td>Output XML array by Name</td>
+</tr>
+</table>
+
+#### CP^MXMLTMPL(CPSRC,CPDEST)
+This copies an array from CPSRC (Name) to CPDEST (Name). A programmer may use
+the merge command instead as it provides the same functionality.
+
+<table>
+<caption>Table 25: CP^MXMLTMPL - Copy Arrays</caption>
+<tr>
+	<th>Parameter</th>
+	<th>Type</th>
+	<th>Required</th>
+	<th>Description</th>
+</tr>
+<tr>
+	<td>CPSRC</td>
+	<td>Mumps Name</td>
+	<td>Yes</td>
+	<td>Source Array Name</td>
+</tr>
+<tr>
+	<td>CPDEST</td>
+	<td>Mumps Name</td>
+	<td>Yes</td>
+	<td>Destination Array Name</td>
+</tr>
+</table>
+
+### Array Manipulation APIs
+#### REPLACE^MXMLTMPL(REXML,RENEW,REXPATH)
+Replaces the XML pointed to by REXPATH in REXML (name) by RENEW.
+The last tag in the REXPATH (e.g. c in //a/b/c) is where the replacement
+begins. For example, in the example below, a REXPATH of //Books/Book will
+replace lines 3 to 5. 
+
+<pre>
+1 &lt;?xml ...&gt;
+2 &lt;Books&gt;
+3 &lt;Book&gt;
+4 &lt;Author&gt;Lord Byron&lt;/Author&gt;
+5 &lt;/Book&gt;
+6 &lt;/Books&gt;
+</pre>
+
+If RENEW is empty (""), The INNER XML pointed to XPATH gets deleted. So in the
+example above, only line 4 will be deleted.
+
+Examples below in the DEMO program.
+
+<table>
+<caption>Table 26: REPLACE^MXMLTMPL - Replace XML in documents</caption>
+<tr>
+	<th>Parameter</th>
+	<th>Type</th>
+	<th>Required</th>
+	<th>Description</th>
+</tr>
+<tr>
+	<td>REXML</td>
+	<td>Mumps Name</td>
+	<td>Yes</td>
+	<td>Original XML array whose contents will be replaced</td>
+</tr>
+<tr>
+	<td>RENEW</td>
+	<td>Mumps Name</td>
+	<td>Yes</td>
+	<td>New contents array to be used for the replacement</td>
+</tr>
+<tr>
+	<td>REXPATH</td>
+	<td>String</td>
+	<td>Yes</td>
+	<td>Psuedo-XPATH point at which to do the replacement. See QUERY above
+        for format.</td>
+</tr>
+</table>
+
+#### INSERT^MXMLTMPL(INSXML,INSNEW,INSXPATH)
+Inserts XML in INSNEW in XML of INSXML at the Pseudo-XPATH point. If there are
+existing children at the INSXPATH point, the new content is appended after 
+the existing children. For an example, see the DEMO program below.
+
+<table>
+<caption>Table 27: INSERT^MXMLTMPL - Insert XML in document</caption>
+<tr>
+	<th>Parameter</th>
+	<th>Type</th>
+	<th>Required</th>
+	<th>Description</th>
+</tr>
+<tr>
+	<td>INSXML</td>
+	<td>Mumps Name</td>
+	<td>Yes</td>
+	<td>Original XML array in which new XML will be inserted</td>
+</tr>
+<tr>
+	<td>INSNEW</td>
+	<td>Mumps Name</td>
+	<td>Yes</td>
+	<td>XML to insert</td>
+</tr>
+<tr>
+	<td>INSXPATH</td>
+	<td>String</td>
+	<td>Yes</td>
+	<td>Psuedo-XPATH point at which to do the insertion. See QUERY above
+        for format.</td>
+</tr>
+</table>
+
+#### INSINNER^MXMLTMPL(INNXML,INNNEW,INNXPATH)
+Like INSERT^MXMLTMPL, except that only the content inside the main tag of the
+XML in INNNEW is inserted into INNXML. For example, if INNNEW has the following
+contents:
+
+<pre>
+1 &lt;Book&gt;
+2 &lt;Author&gt;Lord Byron&lt;/Author&gt;
+3 &lt;/Book&gt;
+</pre>
+
+Only line 2 gets inserted into the original document INNXML. The outer tags
+(lines 1 and 3) are discarded. See examples in the DEMO program below.
+
+<table>
+<caption>Table 28: INSINNER^MXMLTMPL - Insert inner XML in document</caption>
+<tr>
+	<th>Parameter</th>
+	<th>Type</th>
+	<th>Required</th>
+	<th>Description</th>
+</tr>
+<tr>
+	<td>INNXML</td>
+	<td>Mumps Name</td>
+	<td>Yes</td>
+	<td>Original XML array in which new XML will be inserted</td>
+</tr>
+<tr>
+	<td>INNNEW</td>
+	<td>Mumps Name</td>
+	<td>Yes</td>
+	<td>XML to insert, from which only the inner XML will be inserted.</td>
+</tr>
+<tr>
+	<td>INNXPATH</td>
+	<td>String</td>
+	<td>Yes</td>
+	<td>Psuedo-XPATH point at which to do the insertion. See QUERY above
+        for format.</td>
+</tr>
+</table>
+
+### Mapping Placeholders
+Placeholders are one of the very powerful features of the templating code.
+Any item in the XML that is enclosed in @@ (like "@@AUTHOR@@") is a
+placeholder.
+
+#### MISSING^MXMLTMPL(IXML,OARY)
+This queries IXML for any placeholders that have not been replaced yet (hence
+the "Missing") and place the output in a numerically subscripted array OARY. 
+See example below in DEMO program.
+
+<table>
+<caption>Table 29: MISSING^MXMLTMPL - List unreplaced placeholders</caption>
+<tr>
+	<th>Parameter</th>
+	<th>Type</th>
+	<th>Required</th>
+	<th>Description</th>
+</tr>
+<tr>
+	<td>IXML</td>
+	<td>Mumps Name</td>
+	<td>Yes</td>
+	<td>Input XML</td>
+</tr>
+<tr>
+	<td>OARY</td>
+	<td>Mumps Name</td>
+	<td>Yes</td>
+	<td>Output in the format OARY(1)="ITEM1",OARY(2)="ITEM2" etc 
+    (@@ removed)</td>
+</tr>
+</table>
+
+#### MAP^MXMLTMPL(IXML,INARY,OXML)
+MAP takes a Mumps Hash in INARY and replaces the hash keys in IXML that
+are also placeholders with their value, and puts the output in OXML.
+
+Here's a very simple example:
+<pre>
+N KBANIXML,KBANINARY,KBANOXML
+S KBANIXML(1)="&lt;Author&gt;@@AUTHOR@@&lt;/Author&gt;"
+S KBANINARY("AUTHOR")="Lord Byron"
+D MAP^MXMLTMPL($NA(KBANIXML),$NA(KBANINARY),$NA(KBANOXML))
+W KBANOXML(1),! ; &lt;Author&gt;Lord Byron&lt;/Author&gt;
+</pre>
+
+<table>
+<caption>Table 30: MAP^MXMLTMPL - Map placeholders using passed Hash</caption>
+<tr>
+	<th>Parameter</th>
+	<th>Type</th>
+	<th>Required</th>
+	<th>Description</th>
+</tr>
+<tr>
+	<td>IXML</td>
+	<td>Mumps Name</td>
+	<td>Yes</td>
+	<td>Input XML containing the placeholders to be filled in</td>
+</tr>
+<tr>
+	<td>INARY</td>
+	<td>Mumps Name</td>
+	<td>Yes</td>
+	<td>Hash in the format of MUMPSNAME("KEY")="VALUE". The key corresponds
+        to the placeholder text in between the @@</td>
+</tr>
+<tr>
+	<td>OXML</td>
+	<td>Mumps Name</td>
+	<td>Yes</td>
+	<td>Output XML produced by this procedure</td>
+</tr>
+</table>
+
+### Printing for debugging purposes
+#### PARY^MXMLTMPL(GLO,ZN)
+Prints an array passed by name in GLO. If optional ZN is passed as -1,
+line numbers are suppressed. Otherwise, line numbers are printed. See
+numerous examples in the DEMO program.
+<table>
+<caption>Table 31: PARY^MXMLTMPL - Print Array</caption>
+<tr>
+	<th>Parameter</th>
+	<th>Type</th>
+	<th>Required</th>
+	<th>Description</th>
+</tr>
+<tr>
+	<td>GLO</td>
+	<td>Mumps Name</td>
+	<td>Yes</td>
+	<td>Array to be printed. Doesn't have to be an XML array.</td>
+</tr>
+<tr>
+	<td>ZN</td>
+	<td>-1</td>
+	<td>No</td>
+	<td>If -1 is passed, line numbers are not printed; otherwise, line 
+    numbers are printed</td>
+</tr>
+</table>
+
+### Advanced functionality for templating
+#### QUEUE^MXMLTMPL(BLST,ARRAY,FIRST,LAST) and BUILD^MXMLTMPL(BLIST,BDEST)
+QUEUE and BUILD are to be used together. QUEUE creates build instructions in
+BLST for items in ARRAY using FIRST and LAST as the instructions on what
+lines to copy. BUILD executes the instructions in BLIST to create an array
+in BDEST.
+
+Example (using the reference XML at the beginning of the chapter in array 
+MXMLTEMPLATE):
+
+Starting Array:
+
+<pre>
+&gt;ZWRITE MXMLTEMPLATE
+MXMLTEMPLATE(0)=9
+MXMLTEMPLATE(1)="&lt;?xml version=""1.0"" encoding=""utf-8"" ?&gt;"
+MXMLTEMPLATE(2)="&lt;Books&gt;"
+MXMLTEMPLATE(3)="&lt;LastUpdated date=""@@LASTUP@@"" /&gt;"
+MXMLTEMPLATE(4)="&lt;Book&gt;"
+MXMLTEMPLATE(5)="&lt;Author&gt;@@AUTHOR@@&lt;/Author&gt;"
+MXMLTEMPLATE(6)="&lt;Title&gt;@@TITLE@@&lt;/Title&gt;"
+MXMLTEMPLATE(7)="&lt;Description&gt;@@DES@@&lt;/Description&gt;"
+MXMLTEMPLATE(8)="&lt;/Book&gt;"
+MXMLTEMPLATE(9)="&lt;/Books&gt;"
+</pre>
+
+Code:
+
+<pre>
+&gt;D QUEUE^MXMLTMPL($NA(MXMLBLIST),$NA(MXMLTEMPLATE),1,2)
+
+&gt;D QUEUE^MXMLTMPL($NA(MXMLBLIST),$NA(MXMLTEMPLATE),4,4)
+
+&gt;D QUEUE^MXMLTMPL($NA(MXMLBLIST),$NA(MXMLTEMPLATE),8,9)
+
+&gt;ZWRITE MXMLBLIST
+MXMLBLIST(0)=3
+MXMLBLIST(1)="MXMLTEMPLATE;1;2"
+MXMLBLIST(2)="MXMLTEMPLATE;4;4"
+MXMLBLIST(3)="MXMLTEMPLATE;8;9"
+
+&gt;D BUILD^MXMLTMPL($NA(MXMLBLIST),$NA(MXMLOUTPUT))
+
+&gt;ZWRITE MXMLOUTPUT
+MXMLOUTPUT(0)=5
+MXMLOUTPUT(1)="&lt;?xml version=""1.0"" encoding=""utf-8"" ?&gt;"
+MXMLOUTPUT(2)="&lt;Books&gt;"
+MXMLOUTPUT(3)="&lt;Book&gt;"
+MXMLOUTPUT(4)="&lt;/Book&gt;"
+MXMLOUTPUT(5)="&lt;/Books&gt;"
+</pre>
+
+### Demo Program for Templating
 
 <pre>
 DEMO	; Demo program.
@@ -1246,7 +1686,7 @@ PARY1 ; Print Array
 	; 6 &lt;Title&gt;@@TITLE@@&lt;/Title&gt;
 	; 7 &lt;Description&gt;@@DES@@&lt;/Description&gt;
 	; 8 &lt;/Book&gt;
-	; 9 &lt;/Books&gt;Printing unresolved placeholder elements
+	; 9 &lt;/Books&gt;
 	;
 MISS1 ; Print elements needing to be resolved
 	N MXMLMISS
@@ -1507,3 +1947,11 @@ The entity catalog is a VA FileMan-compatible file that is very simple in struct
 	<td>The text associated with the entity.</td>
 </tr>
 </table>
+
+## Unit Tests
+Unit tests are provided in routines 
+ - MXMLPATT (for XPATH processing)
+ - MXMLBLD (for XML building)
+ - MXMLTMPT (for XML templating)
+
+In addition, a manual test routine for the XML Parser is at MXMLTEST.
