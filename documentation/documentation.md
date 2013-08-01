@@ -1219,6 +1219,260 @@ larger XML document.
  - QUEUE^MXMLTMPL(BLST,ARRAY,FIRST,LAST)
  - BUILD^MXMLTMPL(BLIST,BDEST)
 
+<pre>
+DEMO	; Demo program.
+	;
+CREATE ; Create Template
+	N MXMLTEMPLATE
+	D PUSH^MXMLTMP1($NA(MXMLTEMPLATE),$$XMLHDR^MXMLUTL())
+	D PUSH^MXMLTMP1($NA(MXMLTEMPLATE),"&lt;Books&gt;")
+	D PUSH^MXMLTMP1($NA(MXMLTEMPLATE),"&lt;LastUpdated date=""@@LASTUP@@"" /&gt;")
+	D PUSH^MXMLTMP1($NA(MXMLTEMPLATE),"&lt;Book&gt;")
+	D PUSH^MXMLTMP1($NA(MXMLTEMPLATE),"&lt;Author&gt;@@AUTHOR@@&lt;/Author&gt;")
+	D PUSH^MXMLTMP1($NA(MXMLTEMPLATE),"&lt;Title&gt;@@TITLE@@&lt;/Title&gt;")
+	D PUSH^MXMLTMP1($NA(MXMLTEMPLATE),"&lt;Description&gt;@@DES@@&lt;/Description&gt;")
+	D PUSH^MXMLTMP1($NA(MXMLTEMPLATE),"&lt;/Book&gt;")
+	D PUSH^MXMLTMP1($NA(MXMLTEMPLATE),"&lt;/Books&gt;")
+	;
+PARY1 ; Print Array
+	W "Printing pushed template",!
+	D PARY^MXMLTMPL($NA(MXMLTEMPLATE))
+	;
+	; 1 &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+	; 2 &lt;Books&gt;
+	; 3 &lt;LastUpdated date="@@LASTUP@@" /&gt;
+	; 4 &lt;Book&gt;
+	; 5 &lt;Author&gt;@@AUTHOR@@&lt;/Author&gt;
+	; 6 &lt;Title&gt;@@TITLE@@&lt;/Title&gt;
+	; 7 &lt;Description&gt;@@DES@@&lt;/Description&gt;
+	; 8 &lt;/Book&gt;
+	; 9 &lt;/Books&gt;Printing unresolved placeholder elements
+	;
+MISS1 ; Print elements needing to be resolved
+	N MXMLMISS
+	D MISSING^MXMLTMPL($NA(MXMLTEMPLATE),$NA(MXMLMISS))
+	;
+PARY11 ; Print Array
+	W "Printing unresolved placeholder elements",!
+	D PARY^MXMLTMPL($NA(MXMLMISS))
+	K MXMLMISS
+	;
+	; 1 LASTUP
+	; 2 AUTHOR
+	; 3 TITLE
+	; 4 DES
+	;
+MAP1 ; Map the Date
+	N DATE S DATE=$$FMTE^XLFDT($$NOW^XLFDT())
+	N MXMLHASH S MXMLHASH("LASTUP")=DATE
+	K DATE
+	;
+	N MXMLOUTPUT
+	D MAP^MXMLTMPL($NA(MXMLTEMPLATE),$NA(MXMLHASH),$NA(MXMLOUTPUT))
+	K MXMLHASH
+	;
+PARY2 ; Print Array
+	W !
+	W "Printing template with mapped date",!
+	D PARY^MXMLTMPL($NA(MXMLOUTPUT))
+	;
+	; 1 &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+	; 2 &lt;Books&gt;
+	; 3 &lt;LastUpdated date="Aug 01, 2013@10:43:36" /&gt;
+	; 4 &lt;Book&gt;
+	; 5 &lt;Author&gt;@@AUTHOR@@&lt;/Author&gt;
+	; 6 &lt;Title&gt;@@TITLE@@&lt;/Title&gt;
+	; 7 &lt;Description&gt;@@DES@@&lt;/Description&gt;
+	; 8 &lt;/Book&gt;
+	; 9 &lt;/Books&gt;
+	;
+	W !
+	W "Original: ",!
+	D PARY^MXMLTMPL($NA(MXMLTEMPLATE))
+	;
+	; 1 &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+	; 2 &lt;Books&gt;
+	; 3 &lt;LastUpdated date="@@LASTUP@@" /&gt;
+	; 4 &lt;Book&gt;
+	; 5 &lt;Author&gt;@@AUTHOR@@&lt;/Author&gt;
+	; 6 &lt;Title&gt;@@TITLE@@&lt;/Title&gt;
+	; 7 &lt;Description&gt;@@DES@@&lt;/Description&gt;
+	; 8 &lt;/Book&gt;
+	; 9 &lt;/Books&gt;
+	;
+SWAP ; Swap the output into the original
+	K MXMLTEMPLATE
+	M MXMLTEMPLATE=MXMLOUTPUT
+	K MXMLOUTPUT
+	;
+QUERY1 ; Grab the books parts to use as a repeating segment
+	N MXMLBOOKSXML
+	D QUERY^MXMLTMPL($NA(MXMLTEMPLATE),"//Books/Book",$NA(MXMLBOOKSXML))
+	;
+PARY3 ; Print Array
+	W !,"Printing the Books XML segement",!
+	D PARY^MXMLTMPL($NA(MXMLBOOKSXML))
+	;
+	; 1 &lt;Book&gt;
+	; 2 &lt;Author&gt;@@AUTHOR@@&lt;/Author&gt;
+	; 3 &lt;Title&gt;@@TITLE@@&lt;/Title&gt;
+	; 4 &lt;Description&gt;@@DES@@&lt;/Description&gt;
+	; 5 &lt;/Book&gt;
+	;
+MAP3 ; Make second map
+	N MXMLHASH
+	S MXMLHASH("AUTHOR")="Lord Byron"
+	S MXMLHASH("TITLE")="Don Juan"
+	S MXMLHASH("DES")="A swipe at the traditional Don Juan story, the hero goes clueless into various adventures and many romantic conquests"
+	N MXMLOUTPUTLB
+	D MAP^MXMLTMPL($NA(MXMLBOOKSXML),$NA(MXMLHASH),$NA(MXMLOUTPUTLB))
+	K MXMLHASH
+	;
+PARY4 ; Print Array
+	W !,"Printing Mapped Book segment",!
+	D PARY^MXMLTMPL($NA(MXMLOUTPUTLB))
+	;
+	; 1 &lt;Book&gt;
+	; 2 &lt;Author&gt;Lord Byron&lt;/Author&gt;
+	; 3 &lt;Title&gt;Don Juan&lt;/Title&gt;
+	; 4 &lt;Description&gt;A swipe at the traditional Don Juan story, the hero goes clueless into various adventures and many romantic conquests&lt;/
+	; Description&gt;
+	; 5 &lt;/Book&gt;
+	;
+REPLACE1 ; Replace the original Books segment with the new segment
+	D REPLACE^MXMLTMPL($NA(MXMLTEMPLATE),$NA(MXMLOUTPUTLB),"//Books/Book")
+	K MXMLOUTPUT
+	;
+PARY5 ; Print Array
+	W !,"Printing original template after mapped segment is inserted",!
+	D PARY^MXMLTMPL($NA(MXMLTEMPLATE))
+	;
+	; 1 &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+	; 2 &lt;Books&gt;
+	; 3 &lt;LastUpdated date="Aug 01, 2013@10:43:36" /&gt;
+	; 4 &lt;Book&gt;
+	; 5 &lt;Author&gt;Lord Byron&lt;/Author&gt;
+	; 6 &lt;Title&gt;Don Juan&lt;/Title&gt;
+	; 7 &lt;Description&gt;A swipe at the traditional Don Juan story, the hero goes clueless into various adventures and many romantic conquests&lt;/
+	; Description&gt;
+	; 8 &lt;/Book&gt;
+	; 9 &lt;/Books&gt;
+	;
+MAP4 ; Make another book map
+	N MXMLHASH
+	S MXMLHASH("AUTHOR")="Samuel Butler"
+	S MXMLHASH("TITLE")="The way of all Flesh"
+	S MXMLHASH("DES")="A semi-autobiographical novel which attacks Victorian-era hypocrisy."
+	N MXMLOUTPUTSB
+	D MAP^MXMLTMPL($NA(MXMLBOOKSXML),$NA(MXMLHASH),$NA(MXMLOUTPUTSB))
+	K MXMLHASH
+	;
+PARY6 ; Print Array
+	W !,"Printing Mapped Book segment",!
+	D PARY^MXMLTMPL($NA(MXMLOUTPUTSB))
+	;
+	; 1 &lt;Book&gt;
+	; 2 &lt;Author&gt;Samuel Butler&lt;/Author&gt;
+	; 3 &lt;Title&gt;The way of all Flesh&lt;/Title&gt;
+	; 4 &lt;Description&gt;A semi-autobiographical novel which attacks Victorian-era hypocrisy.&lt;/Description&gt;
+	; 5 &lt;/Book&gt;
+	;
+INSINN1 ; Insert inner portion of Books XML before the end of the Books section
+	D INSINNER^MXMLTMPL($NA(MXMLTEMPLATE),$NA(MXMLOUTPUTSB),"//Books/Book")
+	;
+PARY7 ; Print Array
+	W !,"Printing original template after second mapped section is inserted",!
+	D PARY^MXMLTMPL($NA(MXMLTEMPLATE))
+	W !,"Incorrect XML produced",!
+	;
+	; 1 &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+	; 2 &lt;Books&gt;
+	; 3 &lt;LastUpdated date="Aug 01, 2013@10:43:36" /&gt;
+	; 4 &lt;Book&gt;
+	; 5 &lt;Author&gt;Lord Byron&lt;/Author&gt;
+	; 6 &lt;Title&gt;Don Juan&lt;/Title&gt;
+	; 7 &lt;Description&gt;A swipe at the traditional Don Juan story, the hero goes clueless into various adventures and many romantic conquests&lt;/
+	; Description&gt;
+	; 8 &lt;Author&gt;Samuel Butler&lt;/Author&gt;
+	; 9 &lt;Title&gt;The way of all Flesh&lt;/Title&gt;
+	; 10 &lt;Description&gt;A semi-autobiographical novel which attacks Victorian-era hypocrisy.&lt;/Description&gt;
+	; 11 &lt;/Book&gt;
+	; 12 &lt;/Books&gt;
+	; Incorrect XML produced
+	;
+DEL1 ; Delete Books section
+	D REPLACE^MXMLTMPL($NA(MXMLTEMPLATE),"","//Books/Book")
+	;
+PARY8 ; Print Array
+	W !,"Printing a template without the books section which just got deleted."
+	D PARY^MXMLTMPL($NA(MXMLTEMPLATE))
+	;
+	; 1 &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+	; 2 &lt;Books&gt;
+	; 3 &lt;LastUpdated date="Aug 01, 2013@10:43:36" /&gt;
+	; 4 &lt;Book&gt;
+	; 5 &lt;/Book&gt;
+	; 6 &lt;/Books&gt;
+	;
+	W !,"Printing both mapped arrays",!
+	D PARY^MXMLTMPL($NA(MXMLOUTPUTLB))
+	D PARY^MXMLTMPL($NA(MXMLOUTPUTSB))
+	;
+	; 1 &lt;Book&gt;
+	; 2 &lt;Author&gt;Lord Byron&lt;/Author&gt;
+	; 3 &lt;Title&gt;Don Juan&lt;/Title&gt;
+	; 4 &lt;Description&gt;A swipe at the traditional Don Juan story, the hero goes clueless into various adventures and many romantic conquests&lt;/
+	; Description&gt;
+	; 5 &lt;/Book&gt;
+	; 1 &lt;Book&gt;
+	; 2 &lt;Author&gt;Samuel Butler&lt;/Author&gt;
+	; 3 &lt;Title&gt;The way of all Flesh&lt;/Title&gt;
+	; 4 &lt;Description&gt;A semi-autobiographical novel which attacks Victorian-era hypocrisy.&lt;/Description&gt;
+	; 5 &lt;/Book&gt;
+	;
+INSINN2 ; Insert inner portion of Books XML again of Byron's Don Juan
+	D INSINNER^MXMLTMPL($NA(MXMLTEMPLATE),$NA(MXMLOUTPUTLB),"//Books/Book")
+	;
+PARY9 ; Print Array
+	W !!,"Printing template with Don Juan"
+	D PARY^MXMLTMPL($NA(MXMLTEMPLATE))
+	;
+	; 1 &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+	; 2 &lt;Books&gt;
+	; 3 &lt;LastUpdated date="Aug 01, 2013@10:43:36" /&gt;
+	; 4 &lt;Book&gt;
+	; 5 &lt;Author&gt;Lord Byron&lt;/Author&gt;
+	; 6 &lt;Title&gt;Don Juan&lt;/Title&gt;
+	; 7 &lt;Description&gt;A swipe at the traditional Don Juan story, the hero goes clueless into various adventures and many romantic conquests&lt;/
+	; Description&gt;
+	; 8 &lt;/Book&gt;
+	; 9 &lt;/Books&gt;
+	;
+INSERT1 ; Insert all of the Butler's Way of all Flesh into template under Books
+	D INSERT^MXMLTMPL($NA(MXMLTEMPLATE),$NA(MXMLOUTPUTSB),"//Books")
+	;
+PARY0 ; Print Array
+	W !!,"Printing template with both books in it"
+	D PARY^MXMLTMPL($NA(MXMLTEMPLATE))
+	;
+	; 1 &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+	; 2 &lt;Books&gt;
+	; 3 &lt;LastUpdated date="Aug 01, 2013@10:43:36" /&gt;
+	; 4 &lt;Book&gt;
+	; 5 &lt;Author&gt;Lord Byron&lt;/Author&gt;
+	; 6 &lt;Title&gt;Don Juan&lt;/Title&gt;
+	; 7 &lt;Description&gt;A swipe at the traditional Don Juan story, the hero goes clueless into various adventures and many romantic conquests&lt;/
+	; Description&gt;
+	; 8 &lt;/Book&gt;
+	; 9 &lt;Book&gt;
+	; 10 &lt;Author&gt;Samuel Butler&lt;/Author&gt;
+	; 11 &lt;Title&gt;The way of all Flesh&lt;/Title&gt;
+	; 12 &lt;Description&gt;A semi-autobiographical novel which attacks Victorian-era hypocrisy.&lt;/Description&gt;
+	; 13 &lt;/Book&gt;
+	; 14 &lt;/Books&gt;
+QUIT QUIT
+</pre>
+
 ## Entity Catalog
 The entity catalog is used to store external entities and their associated public identifiers. When the XML
 parser encounters an external entity reference with a public identifier, it first looks for that public
