@@ -12,12 +12,49 @@
 
 # XML PROCESSING UTILITIES 2.0
 
+## Revision History
+<table>
+<tr>
+	<th>Date</th>
+	<th>Revision</th>
+	<th>Description</th>
+	<th>Author</th>
+</tr>
+<tr>
+	<td>18 May 2000</td>
+	<td>Version 1.1</td>
+	<td>Initial documentation written for this product by Science Applications
+		International Corporation (SAIC).</td>
+	<td>Science Applications International Corporation of San Diego, CA</td>
+</tr>
+<tr>
+	<td>07 Feb 2002</td>
+	<td>Patch XT*7.3*58</td>
+	<td>Reviewed and edited documentation for VistA standards and format. Added 
+	new chapter named "XML Parser Use Example."</td>
+	<td>Wally Fort, Susan Strack<br />
+	Office of Information, Oakland, CA</td>
+</tr>
+<tr>
+	<td>25 Jul 2003</td>
+	<td>Patch XT*7.3*67</td>
+	<td>Two new XML Document Creation Utility APIs introduced with Patch 
+	XT*7.3*67.</td>
+	<td>Wally Fort, Susan Strack, Thom Blom<br />
+	Office of Information, Oakland, CA</td>
+</tr>
+<tr>
+	<td>05 Aug 2013</td>
+	<td>XML PROCESSING UTILITIES 2.0</td>
+	<td>Expanded section on XML creation tools; new sections XML Templating
+	and XML Querying using XPATH. Converted manual into markdown format.</td>
+	<td>Sam Habiel, Kathy Ice<br />
+	VISTA Expertise Network, Seattle, WA</td>
+</tr>
+</table>
+
 * Table of Conents
 {:toc}
-
-## Revision History
-TODO: Include all history from older manual.
-Latest version updated by Sam Habiel in July 2013.
 
 ## Introduction
 VISTA XML Processing Utilities cover 4 different domains:
