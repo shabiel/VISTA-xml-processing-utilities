@@ -16,7 +16,7 @@
       }
 </style>
 <h1 id='xml_processing_utilities_20'>XML PROCESSING UTILITIES 2.0</h1>
-<div class='maruku_toc'><ul style='list-style: none;'><li><a href='#revision_history'>Revision History</a></li><li><a href='#introduction'>Introduction</a></li><li><a href='#xml_parsing'>XML Parsing</a><ul style='list-style: none;'><li><a href='#term_definitions_and_xml_parser_concept'>Term Definitions and XML Parser Concept</a></li><li><a href='#known_issues'>Known Issues</a></li><li><a href='#eventdriven_api'>Event-Driven API</a><ul style='list-style: none;'><li><a href='#enmxmlprsedoccbkopt'>EN^MXMLPRSE(DOC,CBK,OPT)</a></li><li><a href='#event_types_recognized_by_vista_xml_parser'>Event Types Recognized by Vista XML Parser</a></li></ul></li><li><a href='#inmemory_document_api'>In-Memory Document API</a><ul style='list-style: none;'><li><a href='#enmxmldomdocopt'>$$EN^MXMLDOM(DOC,OPT)</a></li><li><a href='#deletemxmldomhandle'>DELETE^MXMLDOM(HANDLE)</a></li><li><a href='#namemxmldomhandlenode'>$$NAME^MXMLDOM(HANDLE,NODE)</a></li><li><a href='#childmxmldomhandleparentchild'>$$CHILD^MXMLDOM(HANDLE,PARENT,CHILD)</a></li><li><a href='#siblingmxmldomhandlenode'>$$SIBLING^MXMLDOM(HANDLE,NODE)</a></li><li><a href='#parentmxmldomhandlenode'>$$PARENT^MXMLDOM(HANDLE,NODE)</a></li><li><a href='#textmxmldomhandlenodetext_or_textmxmldomhandlenodetext'>TEXT^MXMLDOM(HANDLE,NODE,TEXT) or $$TEXT^MXMLDOM(HANDLE,NODE,TEXT)</a></li><li><a href='#cmntmxmldomhandlenodetext_or_cmntmxmldomhandlenodetext'>CMNT^MXMLDOM(HANDLE,NODE,TEXT) or $$CMNT^MXMLDOM(HANDLE,NODE,TEXT)</a></li><li><a href='#attribmxmldomhandlenodeattrib'>$$ATTRIB^MXMLDOM(HANDLE,NODE,ATTRIB)</a></li><li><a href='#valuemxmldomhandlenodeattrib'>$$VALUE^MXMLDOM(HANDLE,NODE,ATTRIB)</a></li></ul></li><li><a href='#vista_xml_parser_usage_example'>VistA XML Parser Usage Example</a><ul style='list-style: none;'><li><a href='#create_an_xml_file'>Create an XML File</a></li></ul></li></ul></li><li><a href='#xml_document_creation_utility_apis'>XML Document Creation Utility APIs</a><ul style='list-style: none;'><li><a href='#simplesinglet_xml_building_apis'>Simple/Singlet XML Building APIs</a><ul style='list-style: none;'><li><a href='#xmlhdrmxmlutl'>$$XMLHDR^MXMLUTL()</a></li><li><a href='#symencmxmlutlstr'>$$SYMENC^MXMLUTL(STR)</a></li><li><a href='#mktagmxmlbldnameattrstextclose'>$$MKTAG^MXMLBLD(NAME,ATTRS,TEXT,CLOSE)</a></li><li><a href='#putmxmlbldreturnstring'>[$$]PUT^MXMLBLD(RETURN,STRING)</a></li></ul></li><li><a href='#build_apis'>Build APIs</a><ul style='list-style: none;'><li><a href='#startmxmlblddocdoctypeflagno1statt'>START^MXMLBLD(DOC,DOCTYPE,FLAG,NO1ST,ATT)</a></li><li><a href='#endmxmlbld'>END^MXMLBLD</a></li><li><a href='#itemmxmlbldindenttagattvalue'>ITEM^MXMLBLD(INDENT,TAG,ATT,VALUE)</a></li><li><a href='#multimxmlbldindenttagattdoitem'>MULTI^MXMLBLD(INDENT,TAG,ATT,DOITEM)</a></li><li><a href='#example'>Example</a></li></ul></li></ul></li><li><a href='#xml_templating_functions'>XML Templating functions</a><ul style='list-style: none;'><li><a href='#array_creation_apis'>Array Creation APIs</a><ul style='list-style: none;'><li><a href='#pushmxmltmp1stkval'>PUSH^MXMLTMP1(STK,VAL)</a></li><li><a href='#popmxmltmp1stkval'>POP^MXMLTMP1(STK,VAL)</a></li><li><a href='#querymxmltmpliaryxpathoary'>QUERY^MXMLTMPL(IARY,XPATH,OARY)</a></li><li><a href='#cpmxmltmplcpsrccpdest'>CP^MXMLTMPL(CPSRC,CPDEST)</a></li></ul></li><li><a href='#array_manipulation_apis'>Array Manipulation APIs</a><ul style='list-style: none;'><li><a href='#replacemxmltmplrexmlrenewrexpath'>REPLACE^MXMLTMPL(REXML,RENEW,REXPATH)</a></li><li><a href='#insertmxmltmplinsxmlinsnewinsxpath'>INSERT^MXMLTMPL(INSXML,INSNEW,INSXPATH)</a></li><li><a href='#insinnermxmltmplinnxmlinnnewinnxpath'>INSINNER^MXMLTMPL(INNXML,INNNEW,INNXPATH)</a></li></ul></li><li><a href='#mapping_placeholders'>Mapping Placeholders</a><ul style='list-style: none;'><li><a href='#missingmxmltmplixmloary'>MISSING^MXMLTMPL(IXML,OARY)</a></li><li><a href='#mapmxmltmplixmlinaryoxml'>MAP^MXMLTMPL(IXML,INARY,OXML)</a></li></ul></li><li><a href='#printing_for_debugging_purposes'>Printing for debugging purposes</a><ul style='list-style: none;'><li><a href='#parymxmltmplglozn'>PARY^MXMLTMPL(GLO,ZN)</a></li></ul></li><li><a href='#advanced_functionality_for_templating'>Advanced functionality for templating</a><ul style='list-style: none;'><li><a href='#queuemxmltmplblstarrayfirstlast_and_buildmxmltmplblistbdest'>QUEUE^MXMLTMPL(BLST,ARRAY,FIRST,LAST) and BUILD^MXMLTMPL(BLIST,BDEST)</a></li></ul></li><li><a href='#demo_program_for_templating'>Demo Program for Templating</a></li></ul></li><li><a href='#entity_catalog'>Entity Catalog</a></li><li><a href='#unit_tests'>Unit Tests</a></li></ul></div>
+<div class='maruku_toc'><ul style='list-style: none;'><li><a href='#revision_history'>Revision History</a></li><li><a href='#introduction'>Introduction</a></li><li><a href='#xml_parsing'>XML Parsing</a><ul style='list-style: none;'><li><a href='#term_definitions_and_xml_parser_concept'>Term Definitions and XML Parser Concept</a></li><li><a href='#known_issues'>Known Issues</a></li><li><a href='#eventdriven_api'>Event-Driven API</a><ul style='list-style: none;'><li><a href='#enmxmlprsedoccbkopt'>EN^MXMLPRSE(DOC,CBK,OPT)</a></li><li><a href='#event_types_recognized_by_vista_xml_parser'>Event Types Recognized by Vista XML Parser</a></li></ul></li><li><a href='#inmemory_document_api'>In-Memory Document API</a><ul style='list-style: none;'><li><a href='#enmxmldomdocopt'>$$EN^MXMLDOM(DOC,OPT)</a></li><li><a href='#deletemxmldomhandle'>DELETE^MXMLDOM(HANDLE)</a></li><li><a href='#namemxmldomhandlenode'>$$NAME^MXMLDOM(HANDLE,NODE)</a></li><li><a href='#childmxmldomhandleparentchild'>$$CHILD^MXMLDOM(HANDLE,PARENT,CHILD)</a></li><li><a href='#siblingmxmldomhandlenode'>$$SIBLING^MXMLDOM(HANDLE,NODE)</a></li><li><a href='#parentmxmldomhandlenode'>$$PARENT^MXMLDOM(HANDLE,NODE)</a></li><li><a href='#textmxmldomhandlenodetext_or_textmxmldomhandlenodetext'>TEXT^MXMLDOM(HANDLE,NODE,TEXT) or $$TEXT^MXMLDOM(HANDLE,NODE,TEXT)</a></li><li><a href='#cmntmxmldomhandlenodetext_or_cmntmxmldomhandlenodetext'>CMNT^MXMLDOM(HANDLE,NODE,TEXT) or $$CMNT^MXMLDOM(HANDLE,NODE,TEXT)</a></li><li><a href='#attribmxmldomhandlenodeattrib'>$$ATTRIB^MXMLDOM(HANDLE,NODE,ATTRIB)</a></li><li><a href='#valuemxmldomhandlenodeattrib'>$$VALUE^MXMLDOM(HANDLE,NODE,ATTRIB)</a></li></ul></li><li><a href='#vista_xml_parser_usage_example'>VistA XML Parser Usage Example</a><ul style='list-style: none;'><li><a href='#create_an_xml_file'>Create an XML File</a></li></ul></li></ul></li><li><a href='#xml_querying_using_xpath'>XML Querying using XPATH</a><ul style='list-style: none;'><li><a href='#api'>API</a><ul style='list-style: none;'><li><a href='#xpathmxmlpathreturndochandxpath'>[$$]XPATH^MXMLPATH(RETURN,DOCHAND,XPATH)</a></li></ul></li><li><a href='#examples'>Examples</a></li></ul></li><li><a href='#xml_document_creation_utility_apis'>XML Document Creation Utility APIs</a><ul style='list-style: none;'><li><a href='#simplesinglet_xml_building_apis'>Simple/Singlet XML Building APIs</a><ul style='list-style: none;'><li><a href='#xmlhdrmxmlutl'>$$XMLHDR^MXMLUTL()</a></li><li><a href='#symencmxmlutlstr'>$$SYMENC^MXMLUTL(STR)</a></li><li><a href='#mktagmxmlbldnameattrstextclose'>$$MKTAG^MXMLBLD(NAME,ATTRS,TEXT,CLOSE)</a></li><li><a href='#putmxmlbldreturnstring'>[$$]PUT^MXMLBLD(RETURN,STRING)</a></li></ul></li><li><a href='#build_apis'>Build APIs</a><ul style='list-style: none;'><li><a href='#startmxmlblddocdoctypeflagno1statt'>START^MXMLBLD(DOC,DOCTYPE,FLAG,NO1ST,ATT)</a></li><li><a href='#endmxmlbld'>END^MXMLBLD</a></li><li><a href='#itemmxmlbldindenttagattvalue'>ITEM^MXMLBLD(INDENT,TAG,ATT,VALUE)</a></li><li><a href='#multimxmlbldindenttagattdoitem'>MULTI^MXMLBLD(INDENT,TAG,ATT,DOITEM)</a></li><li><a href='#example'>Example</a></li></ul></li></ul></li><li><a href='#xml_templating_functions'>XML Templating functions</a><ul style='list-style: none;'><li><a href='#array_creation_apis'>Array Creation APIs</a><ul style='list-style: none;'><li><a href='#pushmxmltmp1stkval'>PUSH^MXMLTMP1(STK,VAL)</a></li><li><a href='#popmxmltmp1stkval'>POP^MXMLTMP1(STK,VAL)</a></li><li><a href='#querymxmltmpliaryxpathoary'>QUERY^MXMLTMPL(IARY,XPATH,OARY)</a></li><li><a href='#cpmxmltmplcpsrccpdest'>CP^MXMLTMPL(CPSRC,CPDEST)</a></li></ul></li><li><a href='#array_manipulation_apis'>Array Manipulation APIs</a><ul style='list-style: none;'><li><a href='#replacemxmltmplrexmlrenewrexpath'>REPLACE^MXMLTMPL(REXML,RENEW,REXPATH)</a></li><li><a href='#insertmxmltmplinsxmlinsnewinsxpath'>INSERT^MXMLTMPL(INSXML,INSNEW,INSXPATH)</a></li><li><a href='#insinnermxmltmplinnxmlinnnewinnxpath'>INSINNER^MXMLTMPL(INNXML,INNNEW,INNXPATH)</a></li></ul></li><li><a href='#mapping_placeholders'>Mapping Placeholders</a><ul style='list-style: none;'><li><a href='#missingmxmltmplixmloary'>MISSING^MXMLTMPL(IXML,OARY)</a></li><li><a href='#mapmxmltmplixmlinaryoxml'>MAP^MXMLTMPL(IXML,INARY,OXML)</a></li></ul></li><li><a href='#printing_for_debugging_purposes'>Printing for debugging purposes</a><ul style='list-style: none;'><li><a href='#parymxmltmplglozn'>PARY^MXMLTMPL(GLO,ZN)</a></li></ul></li><li><a href='#advanced_functionality_for_templating'>Advanced functionality for templating</a><ul style='list-style: none;'><li><a href='#queuemxmltmplblstarrayfirstlast_and_buildmxmltmplblistbdest'>QUEUE^MXMLTMPL(BLST,ARRAY,FIRST,LAST) and BUILD^MXMLTMPL(BLIST,BDEST)</a></li></ul></li><li><a href='#demo_program_for_templating'>Demo Program for Templating</a></li></ul></li><li><a href='#entity_catalog'>Entity Catalog</a></li><li><a href='#unit_tests'>Unit Tests</a></li></ul></div>
 <h2 id='revision_history'>Revision History</h2>
 
 <p>TODO: Include all history from older manual. Latest version updated by Sam Habiel in July 2013.</p>
@@ -778,6 +778,131 @@ VV(1)=Design Patterns
 &gt;
 </pre></p>
 
+<h2 id='xml_querying_using_xpath'>XML Querying using XPATH</h2>
+
+<p>XPATH^MXMLPATH allows you to query an already parsed MXML DOM using an XPATH expression. Most commonly used XPATH expressions are supported. The parser is stateful; so navigating to one node means that your current location is that node. When you resume searching, you start from that node (except if use / or // which automatically start from the top).</p>
+
+<p>See <a href='http://www.w3.org/TR/xpath/'>http://www.w3.org/TR/xpath/</a> for the XPATH standard.</p>
+
+<p>Only abbreviated syntax is supported. The following are supported and can be combined:</p>
+<pre>
+ * element name
+ * @attribute name
+ * /root/element2
+ * /root/element1[n]/element2[n]
+ * //element1/element2
+ * element[n]
+ * element[last()]
+ * element[@attribute="value"]
+ * element[@attribute]
+ * element[childnode="value"]
+</pre>
+<p>The following syntax is not supported:</p>
+
+<ul>
+<li>Unabbreviated syntax</li>
+
+<li>Most node tests (only last() is supported)</li>
+
+<li>XPATH expressions</li>
+
+<li>Asterisk (*) expressions</li>
+
+<li>Search anywhere after (//) in element (a//b).</li>
+
+<li>. and ..</li>
+</ul>
+
+<h3 id='api'>API</h3>
+
+<h4 id='xpathmxmlpathreturndochandxpath'>[$$]XPATH^MXMLPATH(RETURN,DOCHAND,XPATH)</h4>
+
+<p>XPATH query a parsed XML document represented by document handle DOCHAND and return the result in RETURN. If called as an extrsinsic function, the first node is returned. If attributes are requested, their values are returned as the values in the RETURN array. If the extrinsic function is called on attributes, the first attribute value is returned as the value of the extrinsic.</p>
+<table>
+<caption>Table 12: [$$]XPATH^MXMLPATH&mdash;XPATH handler</caption>
+<tr>
+	<th>Parameter</th>
+	<th>Type</th>
+	<th>Required</th>
+	<th>Description</th>
+</tr>
+<tr>
+	<td>RETURN</td>
+	<td>Pass by Reference. Contents killed first.</td>
+	<td>No</td>
+	<td>This is where data found in the query is returned. If no attribute
+	is requested, the matched nodes will be returned as subscripts of RETURN,
+	like the following
+	<pre>
+	RETURN(30)=""
+	RETURN(31)=""
+	RETURN(32)=""
+	RETURN(33)=""
+	RETURN(34)=""
+    </pre>
+	If an attribute is requested in the XPATH expression, its value will be
+	included in the return array like this: 
+	<code>RETURN(nodenumber,attname)=attvalue</code>
+
+	An example:
+	<pre>
+	RETURN(2,"vuid")=400001
+	RETURN(3,"vuid")=400002
+	</pre>
+	</td>
+</tr>
+<tr>
+	<td>DOCHAND</td>
+	<td>Integer</td>
+	<td>Yes</td>
+	<td>The XML DOM Handle returned by <code>$$EN^MXMLDOM</code></td>
+</tr>
+<tr>
+	<td>XPATH</td>
+	<td>String</td>
+	<td>Yes</td>
+	<td>The XPATH expression</td>
+</tr>
+<tr>
+	<td>Return Value</td>
+	<td>node number or string</td>
+	<td>Will be returned if called as an extrinsic function</td>
+	<td>If no attribute is requested, the first matched node is returned. If
+	an attribute is requested, the attribute value of the first matched node is
+	returned.</td>
+</tr>
+</table>
+<h3 id='examples'>Examples</h3>
+
+<p>Example 1:</p>
+<pre>
+NEW XPATH SET XPATH="/PEPSResponse/Body/drugCheck/drugDrugChecks/drugDrugCheck/professionalMonograph/references/reference"
+NEW RTN
+DO XPATH^MXMLPATH(.RTN,DOCHAND,XPATH)
+ZWRITE RTN
+
+RTN(30)=""
+RTN(31)=""
+RTN(32)=""
+RTN(33)=""
+RTN(34)=""
+
+N % S %=$$XPATH^MXMLPATH(,DOCHAND,XPATH)
+W %,!
+
+30
+</pre>
+<p>Example 2:</p>
+<pre>
+D XPATH^MXMLPATH(.RTN,DOCHAND,"//drug/@vuid")
+ZWRITE RTN
+
+RTN(15,"vuid")=778899
+
+N % S %=$$XPATH^MXMLPATH(,DOCHAND,XPATH)
+W %,!
+778899
+</pre>
 <h2 id='xml_document_creation_utility_apis'>XML Document Creation Utility APIs</h2>
 
 <p>These Application Programmer Interfaces (API) have been developed to assist you in creating an XML document.</p>

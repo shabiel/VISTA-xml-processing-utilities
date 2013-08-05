@@ -843,6 +843,137 @@ List All Sibling Nodes
 &gt;
 </pre>
 
+## XML Querying using XPATH
+XPATH^MXMLPATH allows you to query an already parsed MXML DOM using an XPATH
+expression. Most commonly used XPATH expressions are supported. The parser
+is stateful; so navigating to one node means that your current location
+is that node. When you resume searching, you start from that node (except if
+use / or // which automatically start from the top).
+
+See <http://www.w3.org/TR/xpath/> for the XPATH standard.
+
+Only abbreviated syntax is supported. The following are supported and can be 
+combined:
+
+<pre>
+ * element name
+ * @attribute name
+ * /root/element2
+ * /root/element1[n]/element2[n]
+ * //element1/element2
+ * element[n]
+ * element[last()]
+ * element[@attribute="value"]
+ * element[@attribute]
+ * element[childnode="value"]
+</pre>
+
+The following syntax is not supported:
+ 
+ * Unabbreviated syntax
+ * Most node tests (only last() is supported)
+ * XPATH expressions
+ * Asterisk (\*) expressions
+ * Search anywhere after (//) in element (a//b).
+ * . and ..
+
+### API
+#### \[$$\]XPATH^MXMLPATH(RETURN,DOCHAND,XPATH)
+XPATH query a parsed XML document represented by document handle DOCHAND and
+return the result in RETURN. If called as an extrsinsic function, the first
+node is returned. If attributes are requested, their values are returned as the 
+values in the RETURN array. If the extrinsic function is called on attributes, 
+the first attribute value is returned as the value of the extrinsic.
+
+<table>
+<caption>Table 12: [$$]XPATH^MXMLPATH&mdash;XPATH handler</caption>
+<tr>
+	<th>Parameter</th>
+	<th>Type</th>
+	<th>Required</th>
+	<th>Description</th>
+</tr>
+<tr>
+	<td>RETURN</td>
+	<td>Pass by Reference. Contents killed first.</td>
+	<td>No</td>
+	<td>This is where data found in the query is returned. If no attribute
+	is requested, the matched nodes will be returned as subscripts of RETURN,
+	like the following
+	<pre>
+	RETURN(30)=""
+	RETURN(31)=""
+	RETURN(32)=""
+	RETURN(33)=""
+	RETURN(34)=""
+    </pre>
+	If an attribute is requested in the XPATH expression, its value will be
+	included in the return array like this: 
+	<code>RETURN(nodenumber,attname)=attvalue</code>
+
+	An example:
+	<pre>
+	RETURN(2,"vuid")=400001
+	RETURN(3,"vuid")=400002
+	</pre>
+	</td>
+</tr>
+<tr>
+	<td>DOCHAND</td>
+	<td>Integer</td>
+	<td>Yes</td>
+	<td>The XML DOM Handle returned by <code>$$EN^MXMLDOM</code></td>
+</tr>
+<tr>
+	<td>XPATH</td>
+	<td>String</td>
+	<td>Yes</td>
+	<td>The XPATH expression</td>
+</tr>
+<tr>
+	<td>Return Value</td>
+	<td>node number or string</td>
+	<td>Will be returned if called as an extrinsic function</td>
+	<td>If no attribute is requested, the first matched node is returned. If
+	an attribute is requested, the attribute value of the first matched node is
+	returned.</td>
+</tr>
+</table>
+
+### Examples
+Example 1:
+
+<pre>
+NEW XPATH SET XPATH="/PEPSResponse/Body/drugCheck/drugDrugChecks/drugDrugCheck/professionalMonograph/references/reference"
+NEW RTN
+DO XPATH^MXMLPATH(.RTN,DOCHAND,XPATH)
+ZWRITE RTN
+
+RTN(30)=""
+RTN(31)=""
+RTN(32)=""
+RTN(33)=""
+RTN(34)=""
+
+N % S %=$$XPATH^MXMLPATH(,DOCHAND,XPATH)
+W %,!
+
+30
+</pre>
+
+Example 2:
+
+<pre>
+D XPATH^MXMLPATH(.RTN,DOCHAND,"//drug/@vuid")
+ZWRITE RTN
+
+RTN(15,"vuid")=778899
+
+N % S %=$$XPATH^MXMLPATH(,DOCHAND,XPATH)
+W %,!
+778899
+</pre>
+
 ## XML Document Creation Utility APIs
 These Application Programmer Interfaces (API) have been developed to assist you in creating an XML
 document.
