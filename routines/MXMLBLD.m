@@ -1,5 +1,5 @@
-MXMLBLD	; RWF/RWF - Recursive XML Writer ;2013-07-29  11:27 AM
-	;;2.0T1;XML PROCESSING UTILITIES;;Jul 29, 2013
+MXMLBLD	; RWF/RWF - Recursive XML Writer ;2013-07-30  3:37 PM
+	;;2.0T2;XML PROCESSING UTILITIES;;Aug 06, 2013
 	QUIT
 	;
 	; Sam sez: Wally Fort wrote this!
@@ -235,13 +235,23 @@ TESTBLD	; @TEST - Test Wally's XML Builder
 	; ZWRITE ^TMP("MXMLBLD",$J,*)
 	QUIT
 	;
+TESTBLD1	; Test Wally's XML Builder
+	N %1 S %1("version")="2.5"
+	D START^MXMLBLD("Books",,"G",,.%1)
+	N %1 S %1("type")="date"
+	D ITEM^MXMLBLD(,"LastUpdated",.%1,"3-15-99")
+	D MULTI^MXMLBLD(,"Book",,"BOOKEAC1")
+	D MULTI^MXMLBLD(,"Book",,"BOOKEAC2")
+	D END^MXMLBLD
+	ZWRITE ^TMP("MXMLBLD",$J,*)
+	QUIT
 BOOKEAC1	; Book 1
-	D ITEM(,"Author",,"AUSTEN,JANE")
-	D ITEM(,"Title",,"PRIDE AND PREJUDICE")
-	D ITEM(,"Description",,"A romantic novel revealing how pride can cloud our better judgement.")
+	D ITEM^MXMLBLD(,"Author",,"AUSTEN,JANE")
+	D ITEM^MXMLBLD(,"Title",,"PRIDE AND PREJUDICE")
+	D ITEM^MXMLBLD(,"Description",,"A romantic novel revealing how pride can cloud our better judgement.")
 	Q
 BOOKEAC2	; Book 2
-	D ITEM(,"Author",,"Johann Wolfgang von Goethe")
-	D ITEM(,"Title",,"Sorrows of Young Werther")
-	D ITEM(,"Description",,"A tale of unrequited love leading to the demise of the protagonist.")
+	D ITEM^MXMLBLD(,"Author",,"Johann Wolfgang von Goethe")
+	D ITEM^MXMLBLD(,"Title",,"Sorrows of Young Werther")
+	D ITEM^MXMLBLD(,"Description",,"A tale of unrequited love leading to the demise of the protagonist.")
 	Q

@@ -1,13 +1,13 @@
-KIDS Distribution saved on Jul 29, 2013@12:44:19
-MXML Test package Alpha 1
-**KIDS**:XML PROCESSING UTILITIES 2.0T1^
+KIDS Distribution saved on Aug 06, 2013@10:45:18
+MXML Test package Alpha 2
+**KIDS**:XML PROCESSING UTILITIES 2.0T2^
 
 **INSTALL NAME**
-XML PROCESSING UTILITIES 2.0T1
+XML PROCESSING UTILITIES 2.0T2
 "BLD",9265,0)
-XML PROCESSING UTILITIES 2.0T1^XML PROCESSING UTILITIES^0^3130729^y
+XML PROCESSING UTILITIES 2.0T2^XML PROCESSING UTILITIES^0^3130806^y
 "BLD",9265,1,0)
-^^13^13^3130729^
+^^13^13^3130806^
 "BLD",9265,1,1,0)
 Created by Sam Habiel of the VISTA Expertise Network.
 "BLD",9265,1,2,0)
@@ -23,7 +23,7 @@ NB: Moved into it's own package file entry.
 "BLD",9265,1,7,0)
  
 "BLD",9265,1,8,0)
-TODO: Add documentation.
+See accompanying documentation.
 "BLD",9265,1,9,0)
  
 "BLD",9265,1,10,0)
@@ -43,7 +43,7 @@ y^y^f^^^^n
 "BLD",9265,4,"B",950,950)
 
 "BLD",9265,6.3)
-4
+6
 "BLD",9265,"ABPKG")
 n
 "BLD",9265,"KRN",0)
@@ -281,17 +281,17 @@ MXMLTEST^^0^B8594598
 "BLD",9265,"KRN",9.8,"NM",5,0)
 MXMLDOM^^0^B8352721
 "BLD",9265,"KRN",9.8,"NM",6,0)
-MXMLBLD^^0^B63897881
+MXMLBLD^^0^B69820515
 "BLD",9265,"KRN",9.8,"NM",7,0)
 MXMLPATH^^0^B97531332
 "BLD",9265,"KRN",9.8,"NM",8,0)
-MXMLPATT^^0^B211589591
+MXMLPATT^^0^B212307526
 "BLD",9265,"KRN",9.8,"NM",9,0)
 MXMLTMP1^^0^B46402102
 "BLD",9265,"KRN",9.8,"NM",10,0)
 MXMLTMPL^^0^B113793891
 "BLD",9265,"KRN",9.8,"NM",11,0)
-MXMLTMPT^^0^B76766692
+MXMLTMPT^^0^B175507834
 "BLD",9265,"KRN",9.8,"NM",12,0)
 MXMLUTL^^0^B1706569
 "BLD",9265,"KRN",9.8,"NM","B","MXMLBLD",6)
@@ -407,7 +407,7 @@ y^y^f^^^^n
 "FIA",950,0,"RLRO")
 
 "FIA",950,0,"VR")
-2.0T1^XML PROCESSING UTILITIES
+2.0T2^XML PROCESSING UTILITIES
 "FIA",950,950)
 0
 "FIA",950,950.01)
@@ -819,9 +819,9 @@ XML PROCESSING UTILITIES^MXML^Utilities to handle XML processing in VISTA.
 "PKG",221,22,0)
 ^9.49I^1^1
 "PKG",221,22,1,0)
-2.0T1^3130729
+2.0T2^3130806
 "PKG",221,22,1,1,0)
-^^13^13^3130729
+^^13^13^3130806
 "PKG",221,22,1,1,1,0)
 Created by Sam Habiel of the VISTA Expertise Network.
 "PKG",221,22,1,1,2,0)
@@ -837,7 +837,7 @@ NB: Moved into it's own package file entry.
 "PKG",221,22,1,1,7,0)
  
 "PKG",221,22,1,1,8,0)
-TODO: Add documentation.
+See accompanying documentation.
 "PKG",221,22,1,1,9,0)
  
 "PKG",221,22,1,1,10,0)
@@ -849,7 +849,7 @@ architects. Developer documentation can be found on the VistA
 "PKG",221,22,1,1,13,0)
 Documentation Library under Infrastructure in the Kernel ToolKit session.
 "PKG",221,"VERSION")
-2.0T1
+2.0T2
 "QUES","XPF1",0)
 Y
 "QUES","XPF1","??")
@@ -923,11 +923,11 @@ D XPZ2^XPDIQ
 "RTN")
 12
 "RTN","MXMLBLD")
-0^6^B63897881
+0^6^B69820515
 "RTN","MXMLBLD",1,0)
-MXMLBLD ; RWF/RWF - Recursive XML Writer ;2013-07-29  11:27 AM
+MXMLBLD ; RWF/RWF - Recursive XML Writer ;2013-07-30  3:37 PM
 "RTN","MXMLBLD",2,0)
- ;;2.0T1;XML PROCESSING UTILITIES;;Jul 29, 2013;Build 4
+ ;;2.0T2;XML PROCESSING UTILITIES;;Aug 06, 2013;Build 6
 "RTN","MXMLBLD",3,0)
  QUIT
 "RTN","MXMLBLD",4,0)
@@ -1399,31 +1399,51 @@ TESTBLD ; @TEST - Test Wally's XML Builder
 "RTN","MXMLBLD",237,0)
  ;
 "RTN","MXMLBLD",238,0)
-BOOKEAC1 ; Book 1
+TESTBLD1 ; Test Wally's XML Builder
 "RTN","MXMLBLD",239,0)
- D ITEM(,"Author",,"AUSTEN,JANE")
+ N %1 S %1("version")="2.5"
 "RTN","MXMLBLD",240,0)
- D ITEM(,"Title",,"PRIDE AND PREJUDICE")
+ D START^MXMLBLD("Books",,"G",,.%1)
 "RTN","MXMLBLD",241,0)
- D ITEM(,"Description",,"A romantic novel revealing how pride can cloud our better judgement.")
+ N %1 S %1("type")="date"
 "RTN","MXMLBLD",242,0)
- Q
+ D ITEM^MXMLBLD(,"LastUpdated",.%1,"3-15-99")
 "RTN","MXMLBLD",243,0)
-BOOKEAC2 ; Book 2
+ D MULTI^MXMLBLD(,"Book",,"BOOKEAC1")
 "RTN","MXMLBLD",244,0)
- D ITEM(,"Author",,"Johann Wolfgang von Goethe")
+ D MULTI^MXMLBLD(,"Book",,"BOOKEAC2")
 "RTN","MXMLBLD",245,0)
- D ITEM(,"Title",,"Sorrows of Young Werther")
+ D END^MXMLBLD
 "RTN","MXMLBLD",246,0)
- D ITEM(,"Description",,"A tale of unrequited love leading to the demise of the protagonist.")
+ ZWRITE ^TMP("MXMLBLD",$J,*)
 "RTN","MXMLBLD",247,0)
+ QUIT
+"RTN","MXMLBLD",248,0)
+BOOKEAC1 ; Book 1
+"RTN","MXMLBLD",249,0)
+ D ITEM^MXMLBLD(,"Author",,"AUSTEN,JANE")
+"RTN","MXMLBLD",250,0)
+ D ITEM^MXMLBLD(,"Title",,"PRIDE AND PREJUDICE")
+"RTN","MXMLBLD",251,0)
+ D ITEM^MXMLBLD(,"Description",,"A romantic novel revealing how pride can cloud our better judgement.")
+"RTN","MXMLBLD",252,0)
+ Q
+"RTN","MXMLBLD",253,0)
+BOOKEAC2 ; Book 2
+"RTN","MXMLBLD",254,0)
+ D ITEM^MXMLBLD(,"Author",,"Johann Wolfgang von Goethe")
+"RTN","MXMLBLD",255,0)
+ D ITEM^MXMLBLD(,"Title",,"Sorrows of Young Werther")
+"RTN","MXMLBLD",256,0)
+ D ITEM^MXMLBLD(,"Description",,"A tale of unrequited love leading to the demise of the protagonist.")
+"RTN","MXMLBLD",257,0)
  Q
 "RTN","MXMLDOM")
 0^5^B8352721
 "RTN","MXMLDOM",1,0)
 MXMLDOM ;SAIC/DKM - XML Parser - DOM model ;02/27/2002  13:24
 "RTN","MXMLDOM",2,0)
- ;;2.0T1;XML PROCESSING UTILITIES;;Jul 29, 2013;Build 4
+ ;;2.0T2;XML PROCESSING UTILITIES;;Aug 06, 2013;Build 6
 "RTN","MXMLDOM",3,0)
  ;=================================================================
 "RTN","MXMLDOM",4,0)
@@ -1635,7 +1655,7 @@ VALUE(HANDLE,NODE,ATTR) ;
 "RTN","MXMLPATH",1,0)
 MXMLPATH ; VEN/SMH - XPATH Extensions to MXML Package ;2013-07-26  8:22 PM
 "RTN","MXMLPATH",2,0)
- ;;2.0T1;XML PROCESSING UTILITIES;;Jul 29, 2013;Build 4
+ ;;2.0T2;XML PROCESSING UTILITIES;;Aug 06, 2013;Build 6
 "RTN","MXMLPATH",3,0)
  ;
 "RTN","MXMLPATH",4,0)
@@ -2179,11 +2199,11 @@ DEBUG(NODES,DOCHAND) ; Debug print; Just used internally for debugging.
 "RTN","MXMLPATH",273,0)
  QUIT
 "RTN","MXMLPATT")
-0^8^B211589591
+0^8^B212307526
 "RTN","MXMLPATT",1,0)
-MXMLPATT ; VEN/SMH - MXML XPath Processor Unit Tests;2013-07-26  6:44 PM
+MXMLPATT ; VEN/SMH - MXML XPath Processor Unit Tests;2013-08-06  10:35 AM
 "RTN","MXMLPATT",2,0)
- ;;2.0T1;XML PROCESSING UTILITIES;;Jul 29, 2013;Build 4
+ ;;2.0T2;XML PROCESSING UTILITIES;;Aug 06, 2013;Build 6
 "RTN","MXMLPATT",3,0)
 TEST ; M-Unit Entry point for Unit Testing
 "RTN","MXMLPATT",4,0)
@@ -2297,511 +2317,513 @@ TESTS3 ; @TEST - Test a multiple /PEPSResponse/.../reference [extant]
 "RTN","MXMLPATT",58,0)
  ;
 "RTN","MXMLPATT",59,0)
- ; Count returned nodes
+ ;
 "RTN","MXMLPATT",60,0)
- NEW C SET C=0
+ ; Count returned nodes
 "RTN","MXMLPATT",61,0)
- NEW N SET N=0 FOR  SET N=$ORDER(RTN(N)) QUIT:'N  SET C=C+1
+ NEW C SET C=0
 "RTN","MXMLPATT",62,0)
- ;
+ NEW N SET N=0 FOR  SET N=$ORDER(RTN(N)) QUIT:'N  SET C=C+1
 "RTN","MXMLPATT",63,0)
- DO CHKEQ^XTMUNIT(C,5,"5 reference tags should exist")
+ ;
 "RTN","MXMLPATT",64,0)
- QUIT
-"RTN","MXMLPATT",65,0)
- ;
-"RTN","MXMLPATT",66,0)
-TESTSS1 ; @TEST - Test //reference [extant]
-"RTN","MXMLPATT",67,0)
- NEW XPATH SET XPATH="//reference"
-"RTN","MXMLPATT",68,0)
- ;
-"RTN","MXMLPATT",69,0)
- ; ZEXCEPT: DOCHAND
-"RTN","MXMLPATT",70,0)
- NEW RTN
-"RTN","MXMLPATT",71,0)
- DO XPATH^MXMLPATH(.RTN,DOCHAND,XPATH)
-"RTN","MXMLPATT",72,0)
- ;
-"RTN","MXMLPATT",73,0)
- ; Count returned nodes
-"RTN","MXMLPATT",74,0)
- NEW C SET C=0
-"RTN","MXMLPATT",75,0)
- NEW N SET N=0 FOR  SET N=$ORDER(RTN(N)) QUIT:'N  SET C=C+1
-"RTN","MXMLPATT",76,0)
- ;
-"RTN","MXMLPATT",77,0)
  DO CHKEQ^XTMUNIT(C,5,"5 reference tags should exist")
+"RTN","MXMLPATT",65,0)
+ QUIT
+"RTN","MXMLPATT",66,0)
+ ;
+"RTN","MXMLPATT",67,0)
+TESTSS1 ; @TEST - Test //reference [extant]
+"RTN","MXMLPATT",68,0)
+ NEW XPATH SET XPATH="//reference"
+"RTN","MXMLPATT",69,0)
+ ;
+"RTN","MXMLPATT",70,0)
+ ; ZEXCEPT: DOCHAND
+"RTN","MXMLPATT",71,0)
+ NEW RTN
+"RTN","MXMLPATT",72,0)
+ DO XPATH^MXMLPATH(.RTN,DOCHAND,XPATH)
+"RTN","MXMLPATT",73,0)
+ ;
+"RTN","MXMLPATT",74,0)
+ ; Count returned nodes
+"RTN","MXMLPATT",75,0)
+ NEW C SET C=0
+"RTN","MXMLPATT",76,0)
+ NEW N SET N=0 FOR  SET N=$ORDER(RTN(N)) QUIT:'N  SET C=C+1
+"RTN","MXMLPATT",77,0)
+ ;
 "RTN","MXMLPATT",78,0)
- QUIT
+ DO CHKEQ^XTMUNIT(C,5,"5 reference tags should exist")
 "RTN","MXMLPATT",79,0)
- ;
+ QUIT
 "RTN","MXMLPATT",80,0)
-TESTSS2 ; @TEST - Test //referenceblah [n/a]
+ ;
 "RTN","MXMLPATT",81,0)
- NEW XPATH SET XPATH="//referenceblah"
+TESTSS2 ; @TEST - Test //referenceblah [n/a]
 "RTN","MXMLPATT",82,0)
- ;
+ NEW XPATH SET XPATH="//referenceblah"
 "RTN","MXMLPATT",83,0)
- ; ZEXCEPT: DOCHAND
+ ;
 "RTN","MXMLPATT",84,0)
- NEW RTN
-"RTN","MXMLPATT",85,0)
- DO XPATH^MXMLPATH(.RTN,DOCHAND,XPATH)
-"RTN","MXMLPATT",86,0)
- ;
-"RTN","MXMLPATT",87,0)
- ; Count returned nodes
-"RTN","MXMLPATT",88,0)
- NEW C SET C=0
-"RTN","MXMLPATT",89,0)
- NEW N SET N=0 FOR  SET N=$ORDER(RTN(N)) QUIT:'N  SET C=C+1
-"RTN","MXMLPATT",90,0)
- ;
-"RTN","MXMLPATT",91,0)
- DO CHKEQ^XTMUNIT(C,0,"0 referenceblah tags should exist")
-"RTN","MXMLPATT",92,0)
- QUIT
-"RTN","MXMLPATT",93,0)
- ;
-"RTN","MXMLPATT",94,0)
-TESTSS3 ; @TEST - Test //interactedDrugList/drug [extant]
-"RTN","MXMLPATT",95,0)
- NEW XPATH SET XPATH="//interactedDrugList/drug"
-"RTN","MXMLPATT",96,0)
- ;
-"RTN","MXMLPATT",97,0)
  ; ZEXCEPT: DOCHAND
-"RTN","MXMLPATT",98,0)
+"RTN","MXMLPATT",85,0)
  NEW RTN
-"RTN","MXMLPATT",99,0)
+"RTN","MXMLPATT",86,0)
  DO XPATH^MXMLPATH(.RTN,DOCHAND,XPATH)
-"RTN","MXMLPATT",100,0)
+"RTN","MXMLPATT",87,0)
  ;
-"RTN","MXMLPATT",101,0)
+"RTN","MXMLPATT",88,0)
  ; Count returned nodes
-"RTN","MXMLPATT",102,0)
+"RTN","MXMLPATT",89,0)
  NEW C SET C=0
-"RTN","MXMLPATT",103,0)
+"RTN","MXMLPATT",90,0)
  NEW N SET N=0 FOR  SET N=$ORDER(RTN(N)) QUIT:'N  SET C=C+1
-"RTN","MXMLPATT",104,0)
+"RTN","MXMLPATT",91,0)
  ;
-"RTN","MXMLPATT",105,0)
- DO CHKEQ^XTMUNIT(C,2,"2 "_XPATH_" tags should exist")
-"RTN","MXMLPATT",106,0)
+"RTN","MXMLPATT",92,0)
+ DO CHKEQ^XTMUNIT(C,0,"0 referenceblah tags should exist")
+"RTN","MXMLPATT",93,0)
  QUIT
+"RTN","MXMLPATT",94,0)
+ ;
+"RTN","MXMLPATT",95,0)
+TESTSS3 ; @TEST - Test //interactedDrugList/drug [extant]
+"RTN","MXMLPATT",96,0)
+ NEW XPATH SET XPATH="//interactedDrugList/drug"
+"RTN","MXMLPATT",97,0)
+ ;
+"RTN","MXMLPATT",98,0)
+ ; ZEXCEPT: DOCHAND
+"RTN","MXMLPATT",99,0)
+ NEW RTN
+"RTN","MXMLPATT",100,0)
+ DO XPATH^MXMLPATH(.RTN,DOCHAND,XPATH)
+"RTN","MXMLPATT",101,0)
+ ;
+"RTN","MXMLPATT",102,0)
+ ; Count returned nodes
+"RTN","MXMLPATT",103,0)
+ NEW C SET C=0
+"RTN","MXMLPATT",104,0)
+ NEW N SET N=0 FOR  SET N=$ORDER(RTN(N)) QUIT:'N  SET C=C+1
+"RTN","MXMLPATT",105,0)
+ ;
+"RTN","MXMLPATT",106,0)
+ DO CHKEQ^XTMUNIT(C,2,"2 "_XPATH_" tags should exist")
 "RTN","MXMLPATT",107,0)
- ;
+ QUIT
 "RTN","MXMLPATT",108,0)
-TESTSS4 ; @TEST - Test //interactedDrugList/drum [n/a]
-"RTN","MXMLPATT",109,0)
- NEW XPATH SET XPATH="//interactedDrugList/drum"
-"RTN","MXMLPATT",110,0)
  ;
+"RTN","MXMLPATT",109,0)
+TESTSS4 ; @TEST - Test //interactedDrugList/drum [n/a]
+"RTN","MXMLPATT",110,0)
+ NEW XPATH SET XPATH="//interactedDrugList/drum"
 "RTN","MXMLPATT",111,0)
  ;
 "RTN","MXMLPATT",112,0)
- ; ZEXCEPT: DOCHAND
+ ;
 "RTN","MXMLPATT",113,0)
- NEW RTN
+ ; ZEXCEPT: DOCHAND
 "RTN","MXMLPATT",114,0)
- DO XPATH^MXMLPATH(.RTN,DOCHAND,XPATH)
+ NEW RTN
 "RTN","MXMLPATT",115,0)
- ;
+ DO XPATH^MXMLPATH(.RTN,DOCHAND,XPATH)
 "RTN","MXMLPATT",116,0)
- ; Count returned nodes
+ ;
 "RTN","MXMLPATT",117,0)
- NEW C SET C=0
+ ; Count returned nodes
 "RTN","MXMLPATT",118,0)
- NEW N SET N=0 FOR  SET N=$ORDER(RTN(N)) QUIT:'N  SET C=C+1
+ NEW C SET C=0
 "RTN","MXMLPATT",119,0)
- ;
+ NEW N SET N=0 FOR  SET N=$ORDER(RTN(N)) QUIT:'N  SET C=C+1
 "RTN","MXMLPATT",120,0)
- DO CHKEQ^XTMUNIT(C,0,"0 "_XPATH_" tags should exist")
+ ;
 "RTN","MXMLPATT",121,0)
- QUIT
+ DO CHKEQ^XTMUNIT(C,0,"0 "_XPATH_" tags should exist")
 "RTN","MXMLPATT",122,0)
- ;
+ QUIT
 "RTN","MXMLPATT",123,0)
-TESTREL1 ; @TEST - Test Relative paths (//Header, then MUser) [extant]
+ ;
 "RTN","MXMLPATT",124,0)
- ; ZEXCEPT: DOCHAND
+TESTREL1 ; @TEST - Test Relative paths (//Header, then MUser) [extant]
 "RTN","MXMLPATT",125,0)
- NEW RTN
+ ; ZEXCEPT: DOCHAND
 "RTN","MXMLPATT",126,0)
- DO XPATH^MXMLPATH(.RTN,DOCHAND,"//Header")
+ NEW RTN
 "RTN","MXMLPATT",127,0)
- NEW % SET %=$$XPATH^MXMLPATH(.RTN,DOCHAND,"MUser")
-"RTN","MXMLPATT",128,0)
- DO CHKEQ^XTMUNIT($$VALUE^MXMLDOM(DOCHAND,%,"duz"),88660079,"Wrong tag retrieved")
-"RTN","MXMLPATT",129,0)
- QUIT
-"RTN","MXMLPATT",130,0)
- ;
-"RTN","MXMLPATT",131,0)
-TESTREL2 ; @TEST - Test Relative paths (//Header, then interactedDrugList/drug) [n/a]
-"RTN","MXMLPATT",132,0)
- ; ZEXCEPT: DOCHAND
-"RTN","MXMLPATT",133,0)
- NEW RTN
-"RTN","MXMLPATT",134,0)
  DO XPATH^MXMLPATH(.RTN,DOCHAND,"//Header")
-"RTN","MXMLPATT",135,0)
- NEW % SET %=$$XPATH^MXMLPATH(.RTN,DOCHAND,"interactedDrugList/drug")
-"RTN","MXMLPATT",136,0)
- DO CHKEQ^XTMUNIT($ORDER(RTN("")),"","No results should be found.")
-"RTN","MXMLPATT",137,0)
+"RTN","MXMLPATT",128,0)
+ NEW % SET %=$$XPATH^MXMLPATH(.RTN,DOCHAND,"MUser")
+"RTN","MXMLPATT",129,0)
+ DO CHKEQ^XTMUNIT($$VALUE^MXMLDOM(DOCHAND,%,"duz"),88660079,"Wrong tag retrieved")
+"RTN","MXMLPATT",130,0)
  QUIT
-"RTN","MXMLPATT",138,0)
+"RTN","MXMLPATT",131,0)
  ;
-"RTN","MXMLPATT",139,0)
-TESTATT1 ; @TEST - Test Attribute //@orderNumber [extant]
-"RTN","MXMLPATT",140,0)
+"RTN","MXMLPATT",132,0)
+TESTREL2 ; @TEST - Test Relative paths (//Header, then interactedDrugList/drug) [n/a]
+"RTN","MXMLPATT",133,0)
  ; ZEXCEPT: DOCHAND
-"RTN","MXMLPATT",141,0)
+"RTN","MXMLPATT",134,0)
  NEW RTN
+"RTN","MXMLPATT",135,0)
+ DO XPATH^MXMLPATH(.RTN,DOCHAND,"//Header")
+"RTN","MXMLPATT",136,0)
+ NEW % SET %=$$XPATH^MXMLPATH(.RTN,DOCHAND,"interactedDrugList/drug")
+"RTN","MXMLPATT",137,0)
+ DO CHKEQ^XTMUNIT($ORDER(RTN("")),"","No results should be found.")
+"RTN","MXMLPATT",138,0)
+ QUIT
+"RTN","MXMLPATT",139,0)
+ ;
+"RTN","MXMLPATT",140,0)
+TESTATT1 ; @TEST - Test Attribute //@orderNumber [extant]
+"RTN","MXMLPATT",141,0)
+ ; ZEXCEPT: DOCHAND
 "RTN","MXMLPATT",142,0)
- DO XPATH^MXMLPATH(.RTN,DOCHAND,"//@orderNumber")
+ NEW RTN
 "RTN","MXMLPATT",143,0)
- NEW X,Y,Z SET X=$ORDER(RTN("")),Y=$ORDER(RTN(X,"")),Z=RTN(X,Y)
+ DO XPATH^MXMLPATH(.RTN,DOCHAND,"//@orderNumber")
 "RTN","MXMLPATT",144,0)
- DO CHKEQ^XTMUNIT(Z,"Z;2;Prospect","Attribute not retrieved properly")
+ NEW X,Y,Z SET X=$ORDER(RTN("")),Y=$ORDER(RTN(X,"")),Z=RTN(X,Y)
 "RTN","MXMLPATT",145,0)
- QUIT
+ DO CHKEQ^XTMUNIT(Z,"Z;2;Prospect","Attribute not retrieved properly")
 "RTN","MXMLPATT",146,0)
- ;
+ QUIT
 "RTN","MXMLPATT",147,0)
-TESTATT2 ; @TEST - Test Attribute //drug/@vuid [extant]
+ ;
 "RTN","MXMLPATT",148,0)
- ; ZEXCEPT: DOCHAND
+TESTATT2 ; @TEST - Test Attribute //drug/@vuid [extant]
 "RTN","MXMLPATT",149,0)
- DO CHKEQ^XTMUNIT($$XPATH^MXMLPATH(,DOCHAND,"//drug/@vuid"),778899,"Attribute not retrieved properly")
+ ; ZEXCEPT: DOCHAND
 "RTN","MXMLPATT",150,0)
- QUIT
+ DO CHKEQ^XTMUNIT($$XPATH^MXMLPATH(,DOCHAND,"//drug/@vuid"),778899,"Attribute not retrieved properly")
 "RTN","MXMLPATT",151,0)
- ;
+ QUIT
 "RTN","MXMLPATT",152,0)
-TESTATT3 ; @TEST - Test Attribute //drug/dada [n/a]
+ ;
 "RTN","MXMLPATT",153,0)
- ; ZEXCEPT: DOCHAND
+TESTATT3 ; @TEST - Test Attribute //drug/dada [n/a]
 "RTN","MXMLPATT",154,0)
- DO CHKEQ^XTMUNIT($$XPATH^MXMLPATH(,DOCHAND,"//drug/@dada"),"","non-existent Attribute")
+ ; ZEXCEPT: DOCHAND
 "RTN","MXMLPATT",155,0)
- QUIT
+ DO CHKEQ^XTMUNIT($$XPATH^MXMLPATH(,DOCHAND,"//drug/@dada"),"","non-existent Attribute")
 "RTN","MXMLPATT",156,0)
- ;
+ QUIT
 "RTN","MXMLPATT",157,0)
-TESTATT4 ; @TEST - Test relative attribute //Header, MServer, @stationNumber [extant]
+ ;
 "RTN","MXMLPATT",158,0)
- ; ZEXCEPT: DOCHAND
+TESTATT4 ; @TEST - Test relative attribute //Header, MServer, @stationNumber [extant]
 "RTN","MXMLPATT",159,0)
- NEW %1 SET %1=$$XPATH^MXMLPATH(,DOCHAND,"//Header")
+ ; ZEXCEPT: DOCHAND
 "RTN","MXMLPATT",160,0)
- NEW %2 SET %2=$$XPATH^MXMLPATH(,DOCHAND,"MServer")
+ NEW %1 SET %1=$$XPATH^MXMLPATH(,DOCHAND,"//Header")
 "RTN","MXMLPATT",161,0)
- NEW %3 SET %3=$$XPATH^MXMLPATH(,DOCHAND,"@stationNumber")
+ NEW %2 SET %2=$$XPATH^MXMLPATH(,DOCHAND,"MServer")
 "RTN","MXMLPATT",162,0)
- DO CHKEQ^XTMUNIT(%3,45,"Attribute not retrieved properly")
+ NEW %3 SET %3=$$XPATH^MXMLPATH(,DOCHAND,"@stationNumber")
 "RTN","MXMLPATT",163,0)
- QUIT
+ DO CHKEQ^XTMUNIT(%3,45,"Attribute not retrieved properly")
 "RTN","MXMLPATT",164,0)
- ;
+ QUIT
 "RTN","MXMLPATT",165,0)
-TESTFIL1 ; @TEST - Test ordinal filter expressions //references/reference[3] [extant]
+ ;
 "RTN","MXMLPATT",166,0)
- ; ZEXCEPT: DOCHAND
+TESTFIL1 ; @TEST - Test ordinal filter expressions //references/reference[3] [extant]
 "RTN","MXMLPATT",167,0)
- NEW XPATH SET XPATH="//references/reference[3]"
+ ; ZEXCEPT: DOCHAND
 "RTN","MXMLPATT",168,0)
- NEW RTN DO XPATH^MXMLPATH(.RTN,DOCHAND,XPATH)
+ NEW XPATH SET XPATH="//references/reference[3]"
 "RTN","MXMLPATT",169,0)
- NEW TXT SET TXT=^TMP("MXMLDOM",$JOB,DOCHAND,$ORDER(RTN("")),"T",1)
-"RTN","MXMLPATT",170,0)
- DO CHKTF^XTMUNIT(TXT["nelfinavir","Incorrect node retrieved")
-"RTN","MXMLPATT",171,0)
- QUIT
-"RTN","MXMLPATT",172,0)
- ;
-"RTN","MXMLPATT",173,0)
-TESTFIL2 ; @TEST - Test ordinal filter expressions //references/reference[11] [n/a]
-"RTN","MXMLPATT",174,0)
- ; ZEXCEPT: DOCHAND
-"RTN","MXMLPATT",175,0)
- NEW XPATH SET XPATH="//references/reference[11]"
-"RTN","MXMLPATT",176,0)
- NEW % SET %=$$XPATH^MXMLPATH(,DOCHAND,XPATH)
-"RTN","MXMLPATT",177,0)
- DO CHKEQ^XTMUNIT(%,"","reference[11] shouldn't exist")
-"RTN","MXMLPATT",178,0)
- QUIT
-"RTN","MXMLPATT",179,0)
- ;
-"RTN","MXMLPATT",180,0)
-TESTFIL3 ; @TEST - Test ordinal filter expression //reference[position(3)] [extant]
-"RTN","MXMLPATT",181,0)
- ; ZEXCEPT: DOCHAND
-"RTN","MXMLPATT",182,0)
- NEW XPATH SET XPATH="//references/reference[position(3)]"
-"RTN","MXMLPATT",183,0)
  NEW RTN DO XPATH^MXMLPATH(.RTN,DOCHAND,XPATH)
-"RTN","MXMLPATT",184,0)
+"RTN","MXMLPATT",170,0)
  NEW TXT SET TXT=^TMP("MXMLDOM",$JOB,DOCHAND,$ORDER(RTN("")),"T",1)
-"RTN","MXMLPATT",185,0)
+"RTN","MXMLPATT",171,0)
  DO CHKTF^XTMUNIT(TXT["nelfinavir","Incorrect node retrieved")
+"RTN","MXMLPATT",172,0)
+ QUIT
+"RTN","MXMLPATT",173,0)
+ ;
+"RTN","MXMLPATT",174,0)
+TESTFIL2 ; @TEST - Test ordinal filter expressions //references/reference[11] [n/a]
+"RTN","MXMLPATT",175,0)
+ ; ZEXCEPT: DOCHAND
+"RTN","MXMLPATT",176,0)
+ NEW XPATH SET XPATH="//references/reference[11]"
+"RTN","MXMLPATT",177,0)
+ NEW % SET %=$$XPATH^MXMLPATH(,DOCHAND,XPATH)
+"RTN","MXMLPATT",178,0)
+ DO CHKEQ^XTMUNIT(%,"","reference[11] shouldn't exist")
+"RTN","MXMLPATT",179,0)
+ QUIT
+"RTN","MXMLPATT",180,0)
+ ;
+"RTN","MXMLPATT",181,0)
+TESTFIL3 ; @TEST - Test ordinal filter expression //reference[position(3)] [extant]
+"RTN","MXMLPATT",182,0)
+ ; ZEXCEPT: DOCHAND
+"RTN","MXMLPATT",183,0)
+ NEW XPATH SET XPATH="//references/reference[position(3)]"
+"RTN","MXMLPATT",184,0)
+ NEW RTN DO XPATH^MXMLPATH(.RTN,DOCHAND,XPATH)
+"RTN","MXMLPATT",185,0)
+ NEW TXT SET TXT=^TMP("MXMLDOM",$JOB,DOCHAND,$ORDER(RTN("")),"T",1)
 "RTN","MXMLPATT",186,0)
- QUIT
+ DO CHKTF^XTMUNIT(TXT["nelfinavir","Incorrect node retrieved")
 "RTN","MXMLPATT",187,0)
- ;
+ QUIT
 "RTN","MXMLPATT",188,0)
-TESTFIL4 ; @TEST - Test last() filter expression //reference[last()] [extant]
+ ;
 "RTN","MXMLPATT",189,0)
- ; ZEXCEPT: DOCHAND
+TESTFIL4 ; @TEST - Test last() filter expression //reference[last()] [extant]
 "RTN","MXMLPATT",190,0)
- NEW XPATH SET XPATH="//reference[last()]"
+ ; ZEXCEPT: DOCHAND
 "RTN","MXMLPATT",191,0)
- NEW % SET %=$$XPATH^MXMLPATH(,DOCHAND,XPATH)
+ NEW XPATH SET XPATH="//reference[last()]"
 "RTN","MXMLPATT",192,0)
- NEW TXT SET TXT=^TMP("MXMLDOM",$JOB,DOCHAND,%,"T",1)
+ NEW % SET %=$$XPATH^MXMLPATH(,DOCHAND,XPATH)
 "RTN","MXMLPATT",193,0)
- DO CHKTF^XTMUNIT(TXT["tipranavir","Incorrect node retrieved")
+ NEW TXT SET TXT=^TMP("MXMLDOM",$JOB,DOCHAND,%,"T",1)
 "RTN","MXMLPATT",194,0)
- QUIT
+ DO CHKTF^XTMUNIT(TXT["tipranavir","Incorrect node retrieved")
 "RTN","MXMLPATT",195,0)
- ;
+ QUIT
 "RTN","MXMLPATT",196,0)
-TESTFIL5 ; @TEST - Test @attribute as //drug[@vuid] [extant]
+ ;
 "RTN","MXMLPATT",197,0)
- ; ZEXCEPT: DOCHAND
+TESTFIL5 ; @TEST - Test @attribute as //drug[@vuid] [extant]
 "RTN","MXMLPATT",198,0)
- NEW XPATH SET XPATH="//drug[@vuid]"
+ ; ZEXCEPT: DOCHAND
 "RTN","MXMLPATT",199,0)
- NEW % SET %=$$XPATH^MXMLPATH(,DOCHAND,XPATH)
+ NEW XPATH SET XPATH="//drug[@vuid]"
 "RTN","MXMLPATT",200,0)
- DO CHKEQ^XTMUNIT($$VALUE^MXMLDOM(DOCHAND,%,"ien"),113,"Incorrect node retrieved")
+ NEW % SET %=$$XPATH^MXMLPATH(,DOCHAND,XPATH)
 "RTN","MXMLPATT",201,0)
- QUIT
+ DO CHKEQ^XTMUNIT($$VALUE^MXMLDOM(DOCHAND,%,"ien"),113,"Incorrect node retrieved")
 "RTN","MXMLPATT",202,0)
- ;
+ QUIT
 "RTN","MXMLPATT",203,0)
-TESTFIL6 ; @TEST - Test @attribute as //drug[@vuib] [n/a]
+ ;
 "RTN","MXMLPATT",204,0)
- ; ZEXCEPT: DOCHAND
+TESTFIL6 ; @TEST - Test @attribute as //drug[@vuib] [n/a]
 "RTN","MXMLPATT",205,0)
- NEW XPATH SET XPATH="//drug[@vuib]"
+ ; ZEXCEPT: DOCHAND
 "RTN","MXMLPATT",206,0)
- NEW % SET %=$$XPATH^MXMLPATH(,DOCHAND,XPATH)
+ NEW XPATH SET XPATH="//drug[@vuib]"
 "RTN","MXMLPATT",207,0)
- DO CHKEQ^XTMUNIT(%,"","Incorrect node retrieved")
+ NEW % SET %=$$XPATH^MXMLPATH(,DOCHAND,XPATH)
 "RTN","MXMLPATT",208,0)
- QUIT
+ DO CHKEQ^XTMUNIT(%,"","Incorrect node retrieved")
 "RTN","MXMLPATT",209,0)
- ;
+ QUIT
 "RTN","MXMLPATT",210,0)
-TESTFIL7 ; @TEST - Test node as //professionalMonograph[monographTitle] [extant]
+ ;
 "RTN","MXMLPATT",211,0)
- ; ZEXCEPT: DOCHAND
+TESTFIL7 ; @TEST - Test node as //professionalMonograph[monographTitle] [extant]
 "RTN","MXMLPATT",212,0)
- NEW XPATH SET XPATH="//professionalMonograph[monographTitle]"
+ ; ZEXCEPT: DOCHAND
 "RTN","MXMLPATT",213,0)
- NEW % SET %=$$XPATH^MXMLPATH(,DOCHAND,XPATH)
+ NEW XPATH SET XPATH="//professionalMonograph[monographTitle]"
 "RTN","MXMLPATT",214,0)
- DO CHKEQ^XTMUNIT(^TMP("MXMLDOM",$JOB,DOCHAND,%),"professionalMonograph","Incorrect node retrieved")
+ NEW % SET %=$$XPATH^MXMLPATH(,DOCHAND,XPATH)
 "RTN","MXMLPATT",215,0)
- QUIT
+ DO CHKEQ^XTMUNIT(^TMP("MXMLDOM",$JOB,DOCHAND,%),"professionalMonograph","Incorrect node retrieved")
 "RTN","MXMLPATT",216,0)
- ;
+ QUIT
 "RTN","MXMLPATT",217,0)
-TESTFIL8 ; @TEST - Test node as //professionalMonograph[monographTible] [n/a]
+ ;
 "RTN","MXMLPATT",218,0)
- ; ZEXCEPT: DOCHAND
+TESTFIL8 ; @TEST - Test node as //professionalMonograph[monographTible] [n/a]
 "RTN","MXMLPATT",219,0)
- NEW XPATH SET XPATH="//professionalMonograph[monographTible]"
+ ; ZEXCEPT: DOCHAND
 "RTN","MXMLPATT",220,0)
- NEW % SET %=$$XPATH^MXMLPATH(,DOCHAND,XPATH)
+ NEW XPATH SET XPATH="//professionalMonograph[monographTible]"
 "RTN","MXMLPATT",221,0)
- DO CHKEQ^XTMUNIT(%,"","monographTible does not exist")
+ NEW % SET %=$$XPATH^MXMLPATH(,DOCHAND,XPATH)
 "RTN","MXMLPATT",222,0)
- QUIT
+ DO CHKEQ^XTMUNIT(%,"","monographTible does not exist")
 "RTN","MXMLPATT",223,0)
- ;
+ QUIT
 "RTN","MXMLPATT",224,0)
-TESTFIL9 ; @TEST - Test attribute="value" as //drug[@ien="113"] [extant]
+ ;
 "RTN","MXMLPATT",225,0)
- ; ZEXCEPT: DOCHAND
+TESTFIL9 ; @TEST - Test attribute="value" as //drug[@ien="113"] [extant]
 "RTN","MXMLPATT",226,0)
- NEW XPATH SET XPATH="//drug[@ien=""113""]"
+ ; ZEXCEPT: DOCHAND
 "RTN","MXMLPATT",227,0)
- NEW % SET %=$$XPATH^MXMLPATH(,DOCHAND,XPATH)
+ NEW XPATH SET XPATH="//drug[@ien=""113""]"
 "RTN","MXMLPATT",228,0)
- DO CHKEQ^XTMUNIT($$VALUE^MXMLDOM(DOCHAND,%,"gcnSeqNo"),266,"Incorrect node retrieved")
+ NEW % SET %=$$XPATH^MXMLPATH(,DOCHAND,XPATH)
 "RTN","MXMLPATT",229,0)
- QUIT
+ DO CHKEQ^XTMUNIT($$VALUE^MXMLDOM(DOCHAND,%,"gcnSeqNo"),266,"Incorrect node retrieved")
 "RTN","MXMLPATT",230,0)
- ;
+ QUIT
 "RTN","MXMLPATT",231,0)
-TESTFI10 ; @TEST - Test attribute="value" as //drug[@ien="999"] [n/a]
+ ;
 "RTN","MXMLPATT",232,0)
- ; ZEXCEPT: DOCHAND
+TESTFI10 ; @TEST - Test attribute="value" as //drug[@ien="999"] [n/a]
 "RTN","MXMLPATT",233,0)
- NEW XPATH SET XPATH="//drug[@ien=""999""]"
+ ; ZEXCEPT: DOCHAND
 "RTN","MXMLPATT",234,0)
- NEW % SET %=$$XPATH^MXMLPATH(,DOCHAND,XPATH)
+ NEW XPATH SET XPATH="//drug[@ien=""999""]"
 "RTN","MXMLPATT",235,0)
- DO CHKEQ^XTMUNIT(%,"","drug of IEN 999 doesn't exist")
+ NEW % SET %=$$XPATH^MXMLPATH(,DOCHAND,XPATH)
 "RTN","MXMLPATT",236,0)
- QUIT
+ DO CHKEQ^XTMUNIT(%,"","drug of IEN 999 doesn't exist")
 "RTN","MXMLPATT",237,0)
- ;
+ QUIT
 "RTN","MXMLPATT",238,0)
-TESTFI11 ; @TEST - Test node="value" as //drugDrugCheck[id="283"] [extant]
+ ;
 "RTN","MXMLPATT",239,0)
- ; ZEXCEPT: DOCHAND
+TESTFI11 ; @TEST - Test node="value" as //drugDrugCheck[id="283"] [extant]
 "RTN","MXMLPATT",240,0)
- NEW XPATH SET XPATH="//drugDrugCheck[id=""283""]"
-"RTN","MXMLPATT",241,0)
- NEW % SET %=$$XPATH^MXMLPATH(,DOCHAND,XPATH)
-"RTN","MXMLPATT",242,0)
- DO CHKEQ^XTMUNIT(^TMP("MXMLDOM",$JOB,DOCHAND,%),"drugDrugCheck","Incorrect node retrieved")
-"RTN","MXMLPATT",243,0)
- QUIT
-"RTN","MXMLPATT",244,0)
- ;
-"RTN","MXMLPATT",245,0)
-TESTFI12 ; @TEST - Test node="value" as //drugDrugCheck[id="999"] [n/a]
-"RTN","MXMLPATT",246,0)
  ; ZEXCEPT: DOCHAND
-"RTN","MXMLPATT",247,0)
- NEW XPATH SET XPATH="//drugDrugCheck[id=""999""]"
-"RTN","MXMLPATT",248,0)
+"RTN","MXMLPATT",241,0)
+ NEW XPATH SET XPATH="//drugDrugCheck[id=""283""]"
+"RTN","MXMLPATT",242,0)
  NEW % SET %=$$XPATH^MXMLPATH(,DOCHAND,XPATH)
-"RTN","MXMLPATT",249,0)
- DO CHKEQ^XTMUNIT(%,"","drugDrugCheck of id 999 doesn't exist")
-"RTN","MXMLPATT",250,0)
+"RTN","MXMLPATT",243,0)
+ DO CHKEQ^XTMUNIT(^TMP("MXMLDOM",$JOB,DOCHAND,%),"drugDrugCheck","Incorrect node retrieved")
+"RTN","MXMLPATT",244,0)
  QUIT
-"RTN","MXMLPATT",251,0)
+"RTN","MXMLPATT",245,0)
  ;
+"RTN","MXMLPATT",246,0)
+TESTFI12 ; @TEST - Test node="value" as //drugDrugCheck[id="999"] [n/a]
+"RTN","MXMLPATT",247,0)
+ ; ZEXCEPT: DOCHAND
+"RTN","MXMLPATT",248,0)
+ NEW XPATH SET XPATH="//drugDrugCheck[id=""999""]"
+"RTN","MXMLPATT",249,0)
+ NEW % SET %=$$XPATH^MXMLPATH(,DOCHAND,XPATH)
+"RTN","MXMLPATT",250,0)
+ DO CHKEQ^XTMUNIT(%,"","drugDrugCheck of id 999 doesn't exist")
+"RTN","MXMLPATT",251,0)
+ QUIT
 "RTN","MXMLPATT",252,0)
-TESTDATA ; from https://github.com/OSEHRA-Sandbox/MOCHA/tree/master/etc/xml/test/messages
+ ;
 "RTN","MXMLPATT",253,0)
- ;;<?xml version="1.0" encoding="UTF-8"?>
+TESTDATA ; from https://github.com/OSEHRA-Sandbox/MOCHA/tree/master/etc/xml/test/messages
 "RTN","MXMLPATT",254,0)
- ;;<PEPSResponse
+ ;;<?xml version="1.0" encoding="UTF-8"?>
 "RTN","MXMLPATT",255,0)
- ;;    xsi:schemaLocation="gov/va/med/pharmacy/peps/external/common/preencapsulation/vo/drug/check/response drugCheckSchemaOutput.xsd"
+ ;;<PEPSResponse
 "RTN","MXMLPATT",256,0)
- ;;    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="gov/va/med/pharmacy/peps/external/common/preencapsulation/vo/drug/check/response">
+ ;;    xsi:schemaLocation="gov/va/med/pharmacy/peps/external/common/preencapsulation/vo/drug/check/response drugCheckSchemaOutput.xsd"
 "RTN","MXMLPATT",257,0)
- ;;    <Header>
+ ;;    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="gov/va/med/pharmacy/peps/external/common/preencapsulation/vo/drug/check/response">
 "RTN","MXMLPATT",258,0)
- ;;        <Time value="0845"/>
+ ;;    <Header>
 "RTN","MXMLPATT",259,0)
- ;;        <MServer namespace="VISTA" uci="text" ip="127.0.000.1"
+ ;;        <Time value="0845"/>
 "RTN","MXMLPATT",260,0)
- ;;            serverName="Server Name" stationNumber="45"/>
+ ;;        <MServer namespace="VISTA" uci="text" ip="127.0.000.1"
 "RTN","MXMLPATT",261,0)
- ;;        <MUser userName="user" duz="88660079" jobNumber="1001"/>
+ ;;            serverName="Server Name" stationNumber="45"/>
 "RTN","MXMLPATT",262,0)
- ;;        <PEPSVersion difIssueDate="20091002" difBuildVersion="6" difDbVersion="3.2"/>
+ ;;        <MUser userName="user" duz="88660079" jobNumber="1001"/>
 "RTN","MXMLPATT",263,0)
- ;;    </Header>
+ ;;        <PEPSVersion difIssueDate="20091002" difBuildVersion="6" difDbVersion="3.2"/>
 "RTN","MXMLPATT",264,0)
- ;;    <Body>
+ ;;    </Header>
 "RTN","MXMLPATT",265,0)
- ;;        <drugCheck>
+ ;;    <Body>
 "RTN","MXMLPATT",266,0)
- ;;            <drugDrugChecks>
+ ;;        <drugCheck>
 "RTN","MXMLPATT",267,0)
- ;;                <drugDrugCheck>
+ ;;            <drugDrugChecks>
 "RTN","MXMLPATT",268,0)
- ;;                    <id>283</id>
+ ;;                <drugDrugCheck>
 "RTN","MXMLPATT",269,0)
- ;;                    <source>FDB</source>
+ ;;                    <id>283</id>
 "RTN","MXMLPATT",270,0)
- ;;                    <interactedDrugList>
+ ;;                    <source>FDB</source>
 "RTN","MXMLPATT",271,0)
- ;;                        <drug orderNumber="Z;2;Prospect" ien="455" gcnSeqNo="25485"/>
+ ;;                    <interactedDrugList>
 "RTN","MXMLPATT",272,0)
- ;;                        <drug orderNumber="Z;1;Prospect" ien="113"
+ ;;                        <drug orderNumber="Z;2;Prospect" ien="455" gcnSeqNo="25485"/>
 "RTN","MXMLPATT",273,0)
- ;;                            vuid="778899" gcnSeqNo="266"/>
+ ;;                        <drug orderNumber="Z;1;Prospect" ien="113"
 "RTN","MXMLPATT",274,0)
- ;;                    </interactedDrugList>
+ ;;                            vuid="778899" gcnSeqNo="266"/>
 "RTN","MXMLPATT",275,0)
- ;;                    <severity>Contraindicated Drug Combination</severity>
+ ;;                    </interactedDrugList>
 "RTN","MXMLPATT",276,0)
- ;;                    <interaction>SELECTED PROTEASE INHIBITORS/AMIODARONE</interaction>
+ ;;                    <severity>Contraindicated Drug Combination</severity>
 "RTN","MXMLPATT",277,0)
- ;;                    <shortText>INDINAVIR SULFATE ORAL CAPSULE 400 MG and AMIODARONE HCL ORAL TABLET 200 MG may interact based on the potential interaction between SELECTED PROTEASE INHIBITORS and AMIODARONE.</shortText>
+ ;;                    <interaction>SELECTED PROTEASE INHIBITORS/AMIODARONE</interaction>
 "RTN","MXMLPATT",278,0)
- ;;                    <professionalMonograph>
+ ;;                    <shortText>INDINAVIR SULFATE ORAL CAPSULE 400 MG and AMIODARONE HCL ORAL TABLET 200 MG may interact based on the potential interaction between SELECTED PROTEASE INHIBITORS and AMIODARONE.</shortText>
 "RTN","MXMLPATT",279,0)
- ;;                        <monographSource>FDB</monographSource>
+ ;;                    <professionalMonograph>
 "RTN","MXMLPATT",280,0)
- ;;                        <disclaimer>This information is generalized and not intended as specific medical advice. Consult your healthcare professional before taking or discontinuing any drug or commencing any course of treatment.</disclaimer>
+ ;;                        <monographSource>FDB</monographSource>
 "RTN","MXMLPATT",281,0)
- ;;                        <monographTitle>MONOGRAPH TITLE:  Selected Protease Inhibitors/Amiodarone</monographTitle>
+ ;;                        <disclaimer>This information is generalized and not intended as specific medical advice. Consult your healthcare professional before taking or discontinuing any drug or commencing any course of treatment.</disclaimer>
 "RTN","MXMLPATT",282,0)
- ;;                        <severityLevel>SEVERITY LEVEL:  1-Contraindicated Drug Combination: This drug combination is contraindicated and generally should not be dispensed or administered to the same patient.</severityLevel>
+ ;;                        <monographTitle>MONOGRAPH TITLE:  Selected Protease Inhibitors/Amiodarone</monographTitle>
 "RTN","MXMLPATT",283,0)
- ;;                        <mechanismOfAction>MECHANISM OF ACTION:  Indinavir,(1) nelfinavir,(2) ritonavir,(3) and tipranavir coadministered with ritonavir(4) may inhibit the metabolism of amiodarone at CYP P-450-3A4.</mechanismOfAction>
+ ;;                        <severityLevel>SEVERITY LEVEL:  1-Contraindicated Drug Combination: This drug combination is contraindicated and generally should not be dispensed or administered to the same patient.</severityLevel>
 "RTN","MXMLPATT",284,0)
- ;;                        <clinicalEffects>CLINICAL EFFECTS:  The concurrent administration of amiodarone with indinavir,(1) nelfinavir,(2) ritonavir,(3) or tipranavir coadministered with ritonavir(4)
+ ;;                        <mechanismOfAction>MECHANISM OF ACTION:  Indinavir,(1) nelfinavir,(2) ritonavir,(3) and tipranavir coadministered with ritonavir(4) may inhibit the metabolism of amiodarone at CYP P-450-3A4.</mechanismOfAction>
 "RTN","MXMLPATT",285,0)
- ;;may result in increased levels, clinical effects, and toxicity of amiodarone.</clinicalEffects>
+ ;;                        <clinicalEffects>CLINICAL EFFECTS:  The concurrent administration of amiodarone with indinavir,(1) nelfinavir,(2) ritonavir,(3) or tipranavir coadministered with ritonavir(4)
 "RTN","MXMLPATT",286,0)
- ;;                        <predisposingFactors>PREDISPOSING FACTORS:  None determined.</predisposingFactors>
+ ;;may result in increased levels, clinical effects, and toxicity of amiodarone.</clinicalEffects>
 "RTN","MXMLPATT",287,0)
- ;;                        <patientManagement>PATIENT MANAGEMENT:  The concurrent administration of amiodarone with indinavir,(1) nelfinavir(2), ritonavir,(3) or tipranavir coadministered with ritonavir(4)
+ ;;                        <predisposingFactors>PREDISPOSING FACTORS:  None determined.</predisposingFactors>
 "RTN","MXMLPATT",288,0)
- ;;is contraindicated by the manufacturers of indinavir,(1) nelfinavir(2), ritonavir,(3) and tipranavir coadministered with ritonavir. (4)</patientManagement>
+ ;;                        <patientManagement>PATIENT MANAGEMENT:  The concurrent administration of amiodarone with indinavir,(1) nelfinavir(2), ritonavir,(3) or tipranavir coadministered with ritonavir(4)
 "RTN","MXMLPATT",289,0)
- ;;                        <discussion>DISCUSSION:  Indinavir has been shown to inhibit CYP P-450-3A4.  Therefore, the manufacturer of indinavir states that the concurrent administration of indinavir with amiodarone,
+ ;;is contraindicated by the manufacturers of indinavir,(1) nelfinavir(2), ritonavir,(3) and tipranavir coadministered with ritonavir. (4)</patientManagement>
 "RTN","MXMLPATT",290,0)
- ;;which is metabolized by CYP P-450-3A4, is contraindicated.(1)Nelfinavir has been shown to inhibit CYP P-450-3A4.
+ ;;                        <discussion>DISCUSSION:  Indinavir has been shown to inhibit CYP P-450-3A4.  Therefore, the manufacturer of indinavir states that the concurrent administration of indinavir with amiodarone,
 "RTN","MXMLPATT",291,0)
- ;;Therefore, the manufacturer of nelfinavir states that the concurrent administration of
+ ;;which is metabolized by CYP P-450-3A4, is contraindicated.(1)Nelfinavir has been shown to inhibit CYP P-450-3A4.
 "RTN","MXMLPATT",292,0)
- ;;nelfinavir with amiodarone, which is metabolized by CYP P-450-3A4, is contraindicated.(2)
+ ;;Therefore, the manufacturer of nelfinavir states that the concurrent administration of
 "RTN","MXMLPATT",293,0)
- ;;Ritonavir has also been shown to inhibit CYP P-450-3A4. Therefore, the manufacturer of ritonavir state that the concurrent administration of ritonavir with amiodarone is contraindicated.(3)</discussion>
+ ;;nelfinavir with amiodarone, which is metabolized by CYP P-450-3A4, is contraindicated.(2)
 "RTN","MXMLPATT",294,0)
- ;;                        <references>
+ ;;Ritonavir has also been shown to inhibit CYP P-450-3A4. Therefore, the manufacturer of ritonavir state that the concurrent administration of ritonavir with amiodarone is contraindicated.(3)</discussion>
 "RTN","MXMLPATT",295,0)
- ;;                            <reference><![CDATA[REFERENCES:]]></reference>
+ ;;                        <references>
 "RTN","MXMLPATT",296,0)
- ;;                            <reference><![CDATA[1.Crixivan (indinavir sulfate) US prescribing information. Merck & Co., Inc. December, 2008.]]></reference>
+ ;;                            <reference><![CDATA[REFERENCES:]]></reference>
 "RTN","MXMLPATT",297,0)
- ;;                            <reference><![CDATA[2.Viracept (nelfinavir mesylate) US prescribing information. Agouron Pharmaceuticals, Inc. July, 2007.]]></reference>
+ ;;                            <reference><![CDATA[1.Crixivan (indinavir sulfate) US prescribing information. Merck & Co., Inc. December, 2008.]]></reference>
 "RTN","MXMLPATT",298,0)
- ;;                            <reference><![CDATA[3.Norvir (ritonavir) US prescribing information. Abbott Laboratories September 30, 2008.]]></reference>
+ ;;                            <reference><![CDATA[2.Viracept (nelfinavir mesylate) US prescribing information. Agouron Pharmaceuticals, Inc. July, 2007.]]></reference>
 "RTN","MXMLPATT",299,0)
- ;;                            <reference><![CDATA[4.Aptivus (tipranavir) US prescribing information. Boehringer Ingelheim Pharmaceuticals, Inc. June, 2009.]]></reference>
+ ;;                            <reference><![CDATA[3.Norvir (ritonavir) US prescribing information. Abbott Laboratories September 30, 2008.]]></reference>
 "RTN","MXMLPATT",300,0)
- ;;                        </references>
+ ;;                            <reference><![CDATA[4.Aptivus (tipranavir) US prescribing information. Boehringer Ingelheim Pharmaceuticals, Inc. June, 2009.]]></reference>
 "RTN","MXMLPATT",301,0)
- ;;                        <!-- THIS IS A COMMENT -->
+ ;;                        </references>
 "RTN","MXMLPATT",302,0)
- ;;                    </professionalMonograph>
+ ;;                        <!-- THIS IS A COMMENT -->
 "RTN","MXMLPATT",303,0)
- ;;                </drugDrugCheck>
+ ;;                    </professionalMonograph>
 "RTN","MXMLPATT",304,0)
- ;;            </drugDrugChecks>
+ ;;                </drugDrugCheck>
 "RTN","MXMLPATT",305,0)
- ;;        </drugCheck>
+ ;;            </drugDrugChecks>
 "RTN","MXMLPATT",306,0)
- ;;    </Body>
+ ;;        </drugCheck>
 "RTN","MXMLPATT",307,0)
- ;;</PEPSResponse>
+ ;;    </Body>
 "RTN","MXMLPATT",308,0)
+ ;;</PEPSResponse>
+"RTN","MXMLPATT",309,0)
  ;;<<END>>
 "RTN","MXMLPRS0")
 0^1^B72264453
 "RTN","MXMLPRS0",1,0)
 MXMLPRS0 ;SAIC/DKM - XML Parser ;03/09/2005  12:57
 "RTN","MXMLPRS0",2,0)
- ;;2.0T1;XML PROCESSING UTILITIES;;Jul 29, 2013;Build 4
+ ;;2.0T2;XML PROCESSING UTILITIES;;Aug 06, 2013;Build 6
 "RTN","MXMLPRS0",3,0)
  ;=================================================================
 "RTN","MXMLPRS0",4,0)
@@ -3417,7 +3439,7 @@ VALUE(X,Y) Q $$VALUE^MXMLPRSE(.X,.Y)
 "RTN","MXMLPRS1",1,0)
 MXMLPRS1 ;SAIC/DKM - XML Parser ;12/04/2002  15:55
 "RTN","MXMLPRS1",2,0)
- ;;2.0T1;XML PROCESSING UTILITIES;;Jul 29, 2013;Build 4
+ ;;2.0T2;XML PROCESSING UTILITIES;;Aug 06, 2013;Build 6
 "RTN","MXMLPRS1",3,0)
  ;=================================================================
 "RTN","MXMLPRS1",4,0)
@@ -3743,7 +3765,7 @@ REF ;;49;UNP
 "RTN","MXMLPRSE",1,0)
 MXMLPRSE ;SAIC/DKM - XML Parser ;09/08/08  11:50
 "RTN","MXMLPRSE",2,0)
- ;;2.0T1;XML PROCESSING UTILITIES;;Jul 29, 2013;Build 4
+ ;;2.0T2;XML PROCESSING UTILITIES;;Aug 06, 2013;Build 6
 "RTN","MXMLPRSE",3,0)
  ;=================================================================
 "RTN","MXMLPRSE",4,0)
@@ -4333,7 +4355,7 @@ NEXT(X,Y) Q $$NEXT^MXMLPRS0(.X,.Y)
 "RTN","MXMLTEST",1,0)
 MXMLTEST ;SAIC/DKM - Test XML SAX interface ;01/31/2002  17:11
 "RTN","MXMLTEST",2,0)
- ;;2.0T1;XML PROCESSING UTILITIES;;Jul 29, 2013;Build 4
+ ;;2.0T2;XML PROCESSING UTILITIES;;Aug 06, 2013;Build 6
 "RTN","MXMLTEST",3,0)
  ;=================================================================
 "RTN","MXMLTEST",4,0)
@@ -4539,9 +4561,9 @@ ERROR(ERR) ;
 "RTN","MXMLTMP1")
 0^9^B46402102
 "RTN","MXMLTMP1",1,0)
-MXMLTMP1 ; VEN/SMH - MXMLTMPL spill over;2013-07-26  6:32 PM
+MXMLTMP1 ; VEN/GPL - MXMLTMPL spill over;2013-07-29  2:30 PM
 "RTN","MXMLTMP1",2,0)
- ;;2.0T1;XML PROCESSING UTILITIES;;Jul 29, 2013;Build 4
+ ;;2.0T2;XML PROCESSING UTILITIES;;Aug 06, 2013;Build 6
 "RTN","MXMLTMP1",3,0)
  ;
 "RTN","MXMLTMP1",4,0)
@@ -4941,7 +4963,7 @@ PUSHA(ADEST,ASRC) ; PUSH ASRC ONTO ADEST, BOTH PASSED BY NAME
 "RTN","MXMLTMPL",1,0)
 MXMLTMPL   ; VEN/GPL - XML templating utilities;2013-07-26  6:22 PM
 "RTN","MXMLTMPL",2,0)
- ;;2.0T1;XML PROCESSING UTILITIES;;Jul 29, 2013;Build 4
+ ;;2.0T2;XML PROCESSING UTILITIES;;Aug 06, 2013;Build 6
 "RTN","MXMLTMPL",3,0)
  ;
 "RTN","MXMLTMPL",4,0)
@@ -5583,11 +5605,11 @@ TEST ; Run all the test cases
 "RTN","MXMLTMPL",322,0)
  D TEST^MXMLTMPT QUIT
 "RTN","MXMLTMPT")
-0^11^B76766692
+0^11^B175507834
 "RTN","MXMLTMPT",1,0)
-MXMLTMPT   ; VEN/GPL/SMH - XPATH TEST CASES ;2013-07-29  12:10 PM
+MXMLTMPT   ; VEN/GPL/SMH - XML Templater TEST CASES ;2013-08-01  4:01 PM
 "RTN","MXMLTMPT",2,0)
- ;;2.0T1;XML PROCESSING UTILITIES;;Jul 29, 2013;Build 4
+ ;;2.0T2;XML PROCESSING UTILITIES;;Aug 06, 2013;Build 6
 "RTN","MXMLTMPT",3,0)
 TEST ; M-Unit Entry point for Unit Testing
 "RTN","MXMLTMPT",4,0)
@@ -6204,12 +6226,288 @@ H2ARY ; @TEST - Convert a Hash to a return array (return(n)="key^value")
  ; ZEXCEPT: MXMLARR0,MXMLARR1,MXMLARR2
 "RTN","MXMLTMPT",310,0)
  QUIT
+"RTN","MXMLTMPT",311,0)
+ ;
+"RTN","MXMLTMPT",312,0)
+ ;
+"RTN","MXMLTMPT",313,0)
+ ;
+"RTN","MXMLTMPT",314,0)
+ ;
+"RTN","MXMLTMPT",315,0)
+ ;
+"RTN","MXMLTMPT",316,0)
+DEMO ; Demo program.
+"RTN","MXMLTMPT",317,0)
+ ;
+"RTN","MXMLTMPT",318,0)
+CREATE ; Create Template
+"RTN","MXMLTMPT",319,0)
+ ; N MXMLTEMPLATE
+"RTN","MXMLTMPT",320,0)
+ D PUSH^MXMLTMP1($NA(MXMLTEMPLATE),$$XMLHDR^MXMLUTL())
+"RTN","MXMLTMPT",321,0)
+ D PUSH^MXMLTMP1($NA(MXMLTEMPLATE),"<Books>")
+"RTN","MXMLTMPT",322,0)
+ D PUSH^MXMLTMP1($NA(MXMLTEMPLATE),"<LastUpdated date=""@@LASTUP@@"" />")
+"RTN","MXMLTMPT",323,0)
+ D PUSH^MXMLTMP1($NA(MXMLTEMPLATE),"<Book>")
+"RTN","MXMLTMPT",324,0)
+ D PUSH^MXMLTMP1($NA(MXMLTEMPLATE),"<Author>@@AUTHOR@@</Author>")
+"RTN","MXMLTMPT",325,0)
+ D PUSH^MXMLTMP1($NA(MXMLTEMPLATE),"<Title>@@TITLE@@</Title>")
+"RTN","MXMLTMPT",326,0)
+ D PUSH^MXMLTMP1($NA(MXMLTEMPLATE),"<Description>@@DES@@</Description>")
+"RTN","MXMLTMPT",327,0)
+ D PUSH^MXMLTMP1($NA(MXMLTEMPLATE),"</Book>")
+"RTN","MXMLTMPT",328,0)
+ D PUSH^MXMLTMP1($NA(MXMLTEMPLATE),"</Books>")
+"RTN","MXMLTMPT",329,0)
+ Q
+"RTN","MXMLTMPT",330,0)
+PARY1 ; Print Array
+"RTN","MXMLTMPT",331,0)
+ W "Printing pushed template",!
+"RTN","MXMLTMPT",332,0)
+ D PARY^MXMLTMPL($NA(MXMLTEMPLATE))
+"RTN","MXMLTMPT",333,0)
+ ;
+"RTN","MXMLTMPT",334,0)
+MISS1 ; Print elements needing to be resolved
+"RTN","MXMLTMPT",335,0)
+ N MXMLMISS
+"RTN","MXMLTMPT",336,0)
+ D MISSING^MXMLTMPL($NA(MXMLTEMPLATE),$NA(MXMLMISS))
+"RTN","MXMLTMPT",337,0)
+ ;
+"RTN","MXMLTMPT",338,0)
+PARY11 ; Print Array
+"RTN","MXMLTMPT",339,0)
+ W "Printing unresolved placeholder elements",!
+"RTN","MXMLTMPT",340,0)
+ D PARY^MXMLTMPL($NA(MXMLMISS))
+"RTN","MXMLTMPT",341,0)
+ K MXMLMISS
+"RTN","MXMLTMPT",342,0)
+ ;
+"RTN","MXMLTMPT",343,0)
+MAP1 ; Map the Date
+"RTN","MXMLTMPT",344,0)
+ N DATE S DATE=$$FMTE^XLFDT($$NOW^XLFDT())
+"RTN","MXMLTMPT",345,0)
+ N MXMLHASH S MXMLHASH("LASTUP")=DATE
+"RTN","MXMLTMPT",346,0)
+ K DATE
+"RTN","MXMLTMPT",347,0)
+ ;
+"RTN","MXMLTMPT",348,0)
+ N MXMLOUTPUT
+"RTN","MXMLTMPT",349,0)
+ D MAP^MXMLTMPL($NA(MXMLTEMPLATE),$NA(MXMLHASH),$NA(MXMLOUTPUT))
+"RTN","MXMLTMPT",350,0)
+ K MXMLHASH
+"RTN","MXMLTMPT",351,0)
+ ;
+"RTN","MXMLTMPT",352,0)
+PARY2 ; Print Array
+"RTN","MXMLTMPT",353,0)
+ W !
+"RTN","MXMLTMPT",354,0)
+ W "Printing template with mapped date",!
+"RTN","MXMLTMPT",355,0)
+ D PARY^MXMLTMPL($NA(MXMLOUTPUT))
+"RTN","MXMLTMPT",356,0)
+ W !
+"RTN","MXMLTMPT",357,0)
+ W "Original: ",!
+"RTN","MXMLTMPT",358,0)
+ D PARY^MXMLTMPL($NA(MXMLTEMPLATE))
+"RTN","MXMLTMPT",359,0)
+ ;
+"RTN","MXMLTMPT",360,0)
+SWAP ; Swap the output into the original
+"RTN","MXMLTMPT",361,0)
+ K MXMLTEMPLATE
+"RTN","MXMLTMPT",362,0)
+ M MXMLTEMPLATE=MXMLOUTPUT
+"RTN","MXMLTMPT",363,0)
+ K MXMLOUTPUT
+"RTN","MXMLTMPT",364,0)
+ ;
+"RTN","MXMLTMPT",365,0)
+QUERY1 ; Grab the books parts to use as a repeating segment
+"RTN","MXMLTMPT",366,0)
+ N MXMLBOOKSXML
+"RTN","MXMLTMPT",367,0)
+ D QUERY^MXMLTMPL($NA(MXMLTEMPLATE),"//Books/Book",$NA(MXMLBOOKSXML))
+"RTN","MXMLTMPT",368,0)
+ ;
+"RTN","MXMLTMPT",369,0)
+PARY3 ; Print Array
+"RTN","MXMLTMPT",370,0)
+ W !,"Printing the Books XML segement",!
+"RTN","MXMLTMPT",371,0)
+ D PARY^MXMLTMPL($NA(MXMLBOOKSXML))
+"RTN","MXMLTMPT",372,0)
+ ;
+"RTN","MXMLTMPT",373,0)
+MAP3 ; Make second map
+"RTN","MXMLTMPT",374,0)
+ N MXMLHASH
+"RTN","MXMLTMPT",375,0)
+ S MXMLHASH("AUTHOR")="Lord Byron"
+"RTN","MXMLTMPT",376,0)
+ S MXMLHASH("TITLE")="Don Juan"
+"RTN","MXMLTMPT",377,0)
+ S MXMLHASH("DES")="A swipe at the traditional Don Juan story, the hero goes clueless into various adventures and many romantic conquests"
+"RTN","MXMLTMPT",378,0)
+ N MXMLOUTPUTLB
+"RTN","MXMLTMPT",379,0)
+ D MAP^MXMLTMPL($NA(MXMLBOOKSXML),$NA(MXMLHASH),$NA(MXMLOUTPUTLB))
+"RTN","MXMLTMPT",380,0)
+ K MXMLHASH
+"RTN","MXMLTMPT",381,0)
+ ;
+"RTN","MXMLTMPT",382,0)
+PARY4 ; Print Array
+"RTN","MXMLTMPT",383,0)
+ W !,"Printing Mapped Book segment",!
+"RTN","MXMLTMPT",384,0)
+ D PARY^MXMLTMPL($NA(MXMLOUTPUTLB))
+"RTN","MXMLTMPT",385,0)
+ ;
+"RTN","MXMLTMPT",386,0)
+REPLACE1 ; Replace the original Books segment with the new segment
+"RTN","MXMLTMPT",387,0)
+ D REPLACE^MXMLTMPL($NA(MXMLTEMPLATE),$NA(MXMLOUTPUTLB),"//Books/Book")
+"RTN","MXMLTMPT",388,0)
+ K MXMLOUTPUT
+"RTN","MXMLTMPT",389,0)
+ ;
+"RTN","MXMLTMPT",390,0)
+PARY5 ; Print Array
+"RTN","MXMLTMPT",391,0)
+ W !,"Printing original template after mapped segment is inserted",!
+"RTN","MXMLTMPT",392,0)
+ D PARY^MXMLTMPL($NA(MXMLTEMPLATE))
+"RTN","MXMLTMPT",393,0)
+ ;
+"RTN","MXMLTMPT",394,0)
+MAP4 ; Make another book map
+"RTN","MXMLTMPT",395,0)
+ N MXMLHASH
+"RTN","MXMLTMPT",396,0)
+ S MXMLHASH("AUTHOR")="Samuel Butler"
+"RTN","MXMLTMPT",397,0)
+ S MXMLHASH("TITLE")="The way of all Flesh"
+"RTN","MXMLTMPT",398,0)
+ S MXMLHASH("DES")="A semi-autobiographical novel which attacks Victorian-era hypocrisy."
+"RTN","MXMLTMPT",399,0)
+ N MXMLOUTPUTSB
+"RTN","MXMLTMPT",400,0)
+ D MAP^MXMLTMPL($NA(MXMLBOOKSXML),$NA(MXMLHASH),$NA(MXMLOUTPUTSB))
+"RTN","MXMLTMPT",401,0)
+ K MXMLHASH
+"RTN","MXMLTMPT",402,0)
+ ;
+"RTN","MXMLTMPT",403,0)
+PARY6 ; Print Array
+"RTN","MXMLTMPT",404,0)
+ W !,"Printing Mapped Book segment",!
+"RTN","MXMLTMPT",405,0)
+ D PARY^MXMLTMPL($NA(MXMLOUTPUTSB))
+"RTN","MXMLTMPT",406,0)
+ ;
+"RTN","MXMLTMPT",407,0)
+INSINN1 ; Insert inner portion of Books XML before the end of the Books section
+"RTN","MXMLTMPT",408,0)
+ D INSINNER^MXMLTMPL($NA(MXMLTEMPLATE),$NA(MXMLOUTPUTSB),"//Books/Book")
+"RTN","MXMLTMPT",409,0)
+ ;
+"RTN","MXMLTMPT",410,0)
+PARY7 ; Print Array
+"RTN","MXMLTMPT",411,0)
+ W !,"Printing original template after second mapped section is inserted",!
+"RTN","MXMLTMPT",412,0)
+ D PARY^MXMLTMPL($NA(MXMLTEMPLATE))
+"RTN","MXMLTMPT",413,0)
+ W !,"Incorrect XML produced",!
+"RTN","MXMLTMPT",414,0)
+ ;
+"RTN","MXMLTMPT",415,0)
+DEL1 ; Delete Books section
+"RTN","MXMLTMPT",416,0)
+ D REPLACE^MXMLTMPL($NA(MXMLTEMPLATE),"","//Books/Book")
+"RTN","MXMLTMPT",417,0)
+ ;
+"RTN","MXMLTMPT",418,0)
+PARY8 ; Print Array
+"RTN","MXMLTMPT",419,0)
+ W !,"Printing a template without the books section which just got deleted."
+"RTN","MXMLTMPT",420,0)
+ D PARY^MXMLTMPL($NA(MXMLTEMPLATE))
+"RTN","MXMLTMPT",421,0)
+ W !,"Printing both mapped arrays",!
+"RTN","MXMLTMPT",422,0)
+ D PARY^MXMLTMPL($NA(MXMLOUTPUTLB))
+"RTN","MXMLTMPT",423,0)
+ D PARY^MXMLTMPL($NA(MXMLOUTPUTSB))
+"RTN","MXMLTMPT",424,0)
+ ;
+"RTN","MXMLTMPT",425,0)
+INSINN2 ; Insert inner portion of Books XML again of Byron's Don Juan
+"RTN","MXMLTMPT",426,0)
+ D INSINNER^MXMLTMPL($NA(MXMLTEMPLATE),$NA(MXMLOUTPUTLB),"//Books/Book")
+"RTN","MXMLTMPT",427,0)
+ ;
+"RTN","MXMLTMPT",428,0)
+PARY9 ; Print Array
+"RTN","MXMLTMPT",429,0)
+ W !!,"Printing template with Don Juan"
+"RTN","MXMLTMPT",430,0)
+ D PARY^MXMLTMPL($NA(MXMLTEMPLATE))
+"RTN","MXMLTMPT",431,0)
+ ;
+"RTN","MXMLTMPT",432,0)
+INSERT1 ; Insert all of the Butler's Way of all Flesh into template under Books
+"RTN","MXMLTMPT",433,0)
+ D INSERT^MXMLTMPL($NA(MXMLTEMPLATE),$NA(MXMLOUTPUTSB),"//Books")
+"RTN","MXMLTMPT",434,0)
+ ;
+"RTN","MXMLTMPT",435,0)
+PARY0 ; Print Array
+"RTN","MXMLTMPT",436,0)
+ W !!,"Printing template with both books in it"
+"RTN","MXMLTMPT",437,0)
+ D PARY^MXMLTMPL($NA(MXMLTEMPLATE))
+"RTN","MXMLTMPT",438,0)
+ ;
+"RTN","MXMLTMPT",439,0)
+QUIT QUIT
+"RTN","MXMLTMPT",440,0)
+ ;
+"RTN","MXMLTMPT",441,0)
+PUSHPOP2 ; Push and Pop
+"RTN","MXMLTMPT",442,0)
+ N KBAN
+"RTN","MXMLTMPT",443,0)
+ D PUSH^MXMLTMP1($NA(KBAN),"Test1")
+"RTN","MXMLTMPT",444,0)
+ D PUSH^MXMLTMP1($NA(KBAN),"Test2")
+"RTN","MXMLTMPT",445,0)
+ N KBANVAL
+"RTN","MXMLTMPT",446,0)
+ D POP^MXMLTMP1($NA(KBAN),.KBANVAL)
+"RTN","MXMLTMPT",447,0)
+ W KBANVAL,! ; Test2
+"RTN","MXMLTMPT",448,0)
+ QUIT
 "RTN","MXMLUTL")
 0^12^B1706569
 "RTN","MXMLUTL",1,0)
 MXMLUTL ;mjk/alb - MXML Build Utilities ;12/11/2002  15:30
 "RTN","MXMLUTL",2,0)
- ;;2.0T1;XML PROCESSING UTILITIES;;Jul 29, 2013;Build 4
+ ;;2.0T2;XML PROCESSING UTILITIES;;Aug 06, 2013;Build 6
 "RTN","MXMLUTL",3,0)
  QUIT
 "RTN","MXMLUTL",4,0)

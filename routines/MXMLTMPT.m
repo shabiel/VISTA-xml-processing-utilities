@@ -1,5 +1,5 @@
-MXMLTMPT	  ; VEN/GPL/SMH - XPATH TEST CASES ;2013-07-29  12:10 PM
-	;;2.0T1;XML PROCESSING UTILITIES;;Jul 29, 2013;Build 50
+MXMLTMPT	  ; VEN/GPL/SMH - XML Templater TEST CASES ;2013-08-01  4:01 PM
+	;;2.0T2;XML PROCESSING UTILITIES;;Aug 06, 2013;Build 50
 TEST	; M-Unit Entry point for Unit Testing
 	S IO=$PRINCIPAL
 	N DIQUIET S DIQUIET=1
@@ -307,4 +307,142 @@ H2ARY	; @TEST - Convert a Hash to a return array (return(n)="key^value")
 	D CHKEQ^XTMUNIT(GTMP2(0),3)
 	D CHKEQ^XTMUNIT(GTMP2(2),"^TEST2^4")
 	; ZEXCEPT: MXMLARR0,MXMLARR1,MXMLARR2
+	QUIT
+	;
+	;
+	;
+	;
+	;
+DEMO	; Demo program.
+	;
+CREATE	; Create Template
+	; N MXMLTEMPLATE
+	D PUSH^MXMLTMP1($NA(MXMLTEMPLATE),$$XMLHDR^MXMLUTL())
+	D PUSH^MXMLTMP1($NA(MXMLTEMPLATE),"<Books>")
+	D PUSH^MXMLTMP1($NA(MXMLTEMPLATE),"<LastUpdated date=""@@LASTUP@@"" />")
+	D PUSH^MXMLTMP1($NA(MXMLTEMPLATE),"<Book>")
+	D PUSH^MXMLTMP1($NA(MXMLTEMPLATE),"<Author>@@AUTHOR@@</Author>")
+	D PUSH^MXMLTMP1($NA(MXMLTEMPLATE),"<Title>@@TITLE@@</Title>")
+	D PUSH^MXMLTMP1($NA(MXMLTEMPLATE),"<Description>@@DES@@</Description>")
+	D PUSH^MXMLTMP1($NA(MXMLTEMPLATE),"</Book>")
+	D PUSH^MXMLTMP1($NA(MXMLTEMPLATE),"</Books>")
+	Q
+PARY1	; Print Array
+	W "Printing pushed template",!
+	D PARY^MXMLTMPL($NA(MXMLTEMPLATE))
+	;
+MISS1	; Print elements needing to be resolved
+	N MXMLMISS
+	D MISSING^MXMLTMPL($NA(MXMLTEMPLATE),$NA(MXMLMISS))
+	;
+PARY11	; Print Array
+	W "Printing unresolved placeholder elements",!
+	D PARY^MXMLTMPL($NA(MXMLMISS))
+	K MXMLMISS
+	;
+MAP1	; Map the Date
+	N DATE S DATE=$$FMTE^XLFDT($$NOW^XLFDT())
+	N MXMLHASH S MXMLHASH("LASTUP")=DATE
+	K DATE
+	;
+	N MXMLOUTPUT
+	D MAP^MXMLTMPL($NA(MXMLTEMPLATE),$NA(MXMLHASH),$NA(MXMLOUTPUT))
+	K MXMLHASH
+	;
+PARY2	; Print Array
+	W !
+	W "Printing template with mapped date",!
+	D PARY^MXMLTMPL($NA(MXMLOUTPUT))
+	W !
+	W "Original: ",!
+	D PARY^MXMLTMPL($NA(MXMLTEMPLATE))
+	;
+SWAP	; Swap the output into the original
+	K MXMLTEMPLATE
+	M MXMLTEMPLATE=MXMLOUTPUT
+	K MXMLOUTPUT
+	;
+QUERY1	; Grab the books parts to use as a repeating segment
+	N MXMLBOOKSXML
+	D QUERY^MXMLTMPL($NA(MXMLTEMPLATE),"//Books/Book",$NA(MXMLBOOKSXML))
+	;
+PARY3	; Print Array
+	W !,"Printing the Books XML segement",!
+	D PARY^MXMLTMPL($NA(MXMLBOOKSXML))
+	;
+MAP3	; Make second map
+	N MXMLHASH
+	S MXMLHASH("AUTHOR")="Lord Byron"
+	S MXMLHASH("TITLE")="Don Juan"
+	S MXMLHASH("DES")="A swipe at the traditional Don Juan story, the hero goes clueless into various adventures and many romantic conquests"
+	N MXMLOUTPUTLB
+	D MAP^MXMLTMPL($NA(MXMLBOOKSXML),$NA(MXMLHASH),$NA(MXMLOUTPUTLB))
+	K MXMLHASH
+	;
+PARY4	; Print Array
+	W !,"Printing Mapped Book segment",!
+	D PARY^MXMLTMPL($NA(MXMLOUTPUTLB))
+	;
+REPLACE1	; Replace the original Books segment with the new segment
+	D REPLACE^MXMLTMPL($NA(MXMLTEMPLATE),$NA(MXMLOUTPUTLB),"//Books/Book")
+	K MXMLOUTPUT
+	;
+PARY5	; Print Array
+	W !,"Printing original template after mapped segment is inserted",!
+	D PARY^MXMLTMPL($NA(MXMLTEMPLATE))
+	;
+MAP4	; Make another book map
+	N MXMLHASH
+	S MXMLHASH("AUTHOR")="Samuel Butler"
+	S MXMLHASH("TITLE")="The way of all Flesh"
+	S MXMLHASH("DES")="A semi-autobiographical novel which attacks Victorian-era hypocrisy."
+	N MXMLOUTPUTSB
+	D MAP^MXMLTMPL($NA(MXMLBOOKSXML),$NA(MXMLHASH),$NA(MXMLOUTPUTSB))
+	K MXMLHASH
+	;
+PARY6	; Print Array
+	W !,"Printing Mapped Book segment",!
+	D PARY^MXMLTMPL($NA(MXMLOUTPUTSB))
+	;
+INSINN1	; Insert inner portion of Books XML before the end of the Books section
+	D INSINNER^MXMLTMPL($NA(MXMLTEMPLATE),$NA(MXMLOUTPUTSB),"//Books/Book")
+	;
+PARY7	; Print Array
+	W !,"Printing original template after second mapped section is inserted",!
+	D PARY^MXMLTMPL($NA(MXMLTEMPLATE))
+	W !,"Incorrect XML produced",!
+	;
+DEL1	; Delete Books section
+	D REPLACE^MXMLTMPL($NA(MXMLTEMPLATE),"","//Books/Book")
+	;
+PARY8	; Print Array
+	W !,"Printing a template without the books section which just got deleted."
+	D PARY^MXMLTMPL($NA(MXMLTEMPLATE))
+	W !,"Printing both mapped arrays",!
+	D PARY^MXMLTMPL($NA(MXMLOUTPUTLB))
+	D PARY^MXMLTMPL($NA(MXMLOUTPUTSB))
+	;
+INSINN2	; Insert inner portion of Books XML again of Byron's Don Juan
+	D INSINNER^MXMLTMPL($NA(MXMLTEMPLATE),$NA(MXMLOUTPUTLB),"//Books/Book")
+	;
+PARY9	; Print Array
+	W !!,"Printing template with Don Juan"
+	D PARY^MXMLTMPL($NA(MXMLTEMPLATE))
+	;
+INSERT1	; Insert all of the Butler's Way of all Flesh into template under Books
+	D INSERT^MXMLTMPL($NA(MXMLTEMPLATE),$NA(MXMLOUTPUTSB),"//Books")
+	;
+PARY0	; Print Array
+	W !!,"Printing template with both books in it"
+	D PARY^MXMLTMPL($NA(MXMLTEMPLATE))
+	;
+QUIT	QUIT
+	;
+PUSHPOP2	; Push and Pop
+	N KBAN
+	D PUSH^MXMLTMP1($NA(KBAN),"Test1")
+	D PUSH^MXMLTMP1($NA(KBAN),"Test2")
+	N KBANVAL
+	D POP^MXMLTMP1($NA(KBAN),.KBANVAL)
+	W KBANVAL,! ; Test2
 	QUIT
