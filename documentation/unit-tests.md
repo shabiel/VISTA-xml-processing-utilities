@@ -8,6 +8,6 @@ This is forked from
 https://github.com/OSEHRA-Sandbox/M-Tools/blob/master/Utilities%20XT_7.3_81%20not%20yet%20released/XT73P81T13.kid
 
 The unit tests to run are the following:
-D TEST^MXMLBLD
-D TEST^MXMLPATT
-D TEST^MXMLTMPT
+ - D TEST^MXMLBLD
+ - D TEST^MXMLPATT
+ - D TEST^MXMLTMPT
