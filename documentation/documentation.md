@@ -1395,6 +1395,7 @@ if you are using local variables!*
  Advanced functionality
  - QUEUE^MXMLTMPL(BLST,ARRAY,FIRST,LAST)
  - BUILD^MXMLTMPL(BLIST,BDEST)
+ - TRIM^MXMLTMP1(THEXML)
 
 In explanations of how this works, the following XML will be used as reference:
 <pre>
@@ -1823,6 +1824,62 @@ MXMLOUTPUT(2)="&lt;Books&gt;"
 MXMLOUTPUT(3)="&lt;Book&gt;"
 MXMLOUTPUT(4)="&lt;/Book&gt;"
 MXMLOUTPUT(5)="&lt;/Books&gt;"
+</pre>
+
+#### \[$$\]TRIM^MXMLTMP1(THEXML)
+Trim is used to remove elements with no text inside of them. For example,
+&lt;Author&gt;&lt;/Author&gt; gets deleted.
+
+It has the following limitations:
+ * Elements that are self closing (/>) are not removed
+ * It only recursive once for the outer element of the deleted element.
+
+
+<table>
+<caption>Table 32: TRIM^MXMLTMP1 - Trim XML</caption>
+<tr>
+	<th>Parameter</th>
+	<th>Type</th>
+	<th>Required</th>
+	<th>Description</th>
+</tr>
+<tr>
+	<td>THEXML</td>
+	<td>Mumps Name</td>
+	<td>Yes</td>
+	<td>XML to be trimmed. Trimming is done in place, so you get
+    your XML back in the same location.</td>
+</tr>
+<tr>
+	<td>Return Value</td>
+	<td>Integer</td>
+	<td>No</td>
+	<td>0 for no trim happening, 1 for trim happening</td>
+</tr>
+</table>
+
+Example:
+<pre>
+TRIM2 ; - Trim an XML array
+ N MXMLARR0
+ D PUSH^MXMLTMP1($NA(MXMLARR0),"<Books>")
+ D PUSH^MXMLTMP1($NA(MXMLARR0),"<Book>")
+ D PUSH^MXMLTMP1($NA(MXMLARR0),"<Title>Pride and Prejudice</Title>")
+ D PUSH^MXMLTMP1($NA(MXMLARR0),"<Author></Author>")
+ D PUSH^MXMLTMP1($NA(MXMLARR0),"<Length>")
+ D PUSH^MXMLTMP1($NA(MXMLARR0),"</Length>")
+ D PUSH^MXMLTMP1($NA(MXMLARR0),"</Book>")
+ D PUSH^MXMLTMP1($NA(MXMLARR0),"</Books>")
+ D TRIM^MXMLTMP1($NA(MXMLARR0))
+ ZWRITE MXMLARR0
+ QUIT
+ ;
+ ; MXMLARR0(0)=5
+ ; MXMLARR0(1)="<Books>"
+ ; MXMLARR0(2)="<Book>"
+ ; MXMLARR0(3)="<Title>Pride and Prejudice</Title>"
+ ; MXMLARR0(4)="</Book>"
+ ; MXMLARR0(5)="</Books>
 </pre>
 
 ### Demo Program for Templating

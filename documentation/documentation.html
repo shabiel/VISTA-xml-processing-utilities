@@ -56,7 +56,7 @@
 	<td>Sam Habiel, Kathy Ice<br />
 	VISTA Expertise Network, Seattle, WA</td>
 </tr>
-</table><div class='maruku_toc'><ul style='list-style: none;'><li><a href='#revision_history'>Revision History</a></li><li><a href='#introduction'>Introduction</a></li><li><a href='#xml_parsing'>XML Parsing</a><ul style='list-style: none;'><li><a href='#term_definitions_and_xml_parser_concept'>Term Definitions and XML Parser Concept</a></li><li><a href='#known_issues'>Known Issues</a></li><li><a href='#eventdriven_api'>Event-Driven API</a><ul style='list-style: none;'><li><a href='#enmxmlprsedoccbkopt'>EN^MXMLPRSE(DOC,CBK,OPT)</a></li><li><a href='#event_types_recognized_by_vista_xml_parser'>Event Types Recognized by Vista XML Parser</a></li></ul></li><li><a href='#inmemory_document_api'>In-Memory Document API</a><ul style='list-style: none;'><li><a href='#enmxmldomdocopt'>$$EN^MXMLDOM(DOC,OPT)</a></li><li><a href='#deletemxmldomhandle'>DELETE^MXMLDOM(HANDLE)</a></li><li><a href='#namemxmldomhandlenode'>$$NAME^MXMLDOM(HANDLE,NODE)</a></li><li><a href='#childmxmldomhandleparentchild'>$$CHILD^MXMLDOM(HANDLE,PARENT,CHILD)</a></li><li><a href='#siblingmxmldomhandlenode'>$$SIBLING^MXMLDOM(HANDLE,NODE)</a></li><li><a href='#parentmxmldomhandlenode'>$$PARENT^MXMLDOM(HANDLE,NODE)</a></li><li><a href='#textmxmldomhandlenodetext_or_textmxmldomhandlenodetext'>TEXT^MXMLDOM(HANDLE,NODE,TEXT) or $$TEXT^MXMLDOM(HANDLE,NODE,TEXT)</a></li><li><a href='#cmntmxmldomhandlenodetext_or_cmntmxmldomhandlenodetext'>CMNT^MXMLDOM(HANDLE,NODE,TEXT) or $$CMNT^MXMLDOM(HANDLE,NODE,TEXT)</a></li><li><a href='#attribmxmldomhandlenodeattrib'>$$ATTRIB^MXMLDOM(HANDLE,NODE,ATTRIB)</a></li><li><a href='#valuemxmldomhandlenodeattrib'>$$VALUE^MXMLDOM(HANDLE,NODE,ATTRIB)</a></li></ul></li><li><a href='#vista_xml_parser_usage_example'>VistA XML Parser Usage Example</a><ul style='list-style: none;'><li><a href='#create_an_xml_file'>Create an XML File</a></li></ul></li></ul></li><li><a href='#xml_querying_using_xpath'>XML Querying using XPATH</a><ul style='list-style: none;'><li><a href='#api'>API</a><ul style='list-style: none;'><li><a href='#xpathmxmlpathreturndochandxpath'>[$$]XPATH^MXMLPATH(RETURN,DOCHAND,XPATH)</a></li></ul></li><li><a href='#examples'>Examples</a></li></ul></li><li><a href='#xml_document_creation_utility_apis'>XML Document Creation Utility APIs</a><ul style='list-style: none;'><li><a href='#simplesinglet_xml_building_apis'>Simple/Singlet XML Building APIs</a><ul style='list-style: none;'><li><a href='#xmlhdrmxmlutl'>$$XMLHDR^MXMLUTL()</a></li><li><a href='#symencmxmlutlstr'>$$SYMENC^MXMLUTL(STR)</a></li><li><a href='#mktagmxmlbldnameattrstextclose'>$$MKTAG^MXMLBLD(NAME,ATTRS,TEXT,CLOSE)</a></li><li><a href='#putmxmlbldreturnstring'>[$$]PUT^MXMLBLD(RETURN,STRING)</a></li></ul></li><li><a href='#build_apis'>Build APIs</a><ul style='list-style: none;'><li><a href='#startmxmlblddocdoctypeflagno1statt'>START^MXMLBLD(DOC,DOCTYPE,FLAG,NO1ST,ATT)</a></li><li><a href='#endmxmlbld'>END^MXMLBLD</a></li><li><a href='#itemmxmlbldindenttagattvalue'>ITEM^MXMLBLD(INDENT,TAG,ATT,VALUE)</a></li><li><a href='#multimxmlbldindenttagattdoitem'>MULTI^MXMLBLD(INDENT,TAG,ATT,DOITEM)</a></li><li><a href='#example'>Example</a></li></ul></li></ul></li><li><a href='#xml_templating_functions'>XML Templating functions</a><ul style='list-style: none;'><li><a href='#array_creation_apis'>Array Creation APIs</a><ul style='list-style: none;'><li><a href='#pushmxmltmp1stkval'>PUSH^MXMLTMP1(STK,VAL)</a></li><li><a href='#popmxmltmp1stkval'>POP^MXMLTMP1(STK,VAL)</a></li><li><a href='#querymxmltmpliaryxpathoary'>QUERY^MXMLTMPL(IARY,XPATH,OARY)</a></li><li><a href='#cpmxmltmplcpsrccpdest'>CP^MXMLTMPL(CPSRC,CPDEST)</a></li></ul></li><li><a href='#array_manipulation_apis'>Array Manipulation APIs</a><ul style='list-style: none;'><li><a href='#replacemxmltmplrexmlrenewrexpath'>REPLACE^MXMLTMPL(REXML,RENEW,REXPATH)</a></li><li><a href='#insertmxmltmplinsxmlinsnewinsxpath'>INSERT^MXMLTMPL(INSXML,INSNEW,INSXPATH)</a></li><li><a href='#insinnermxmltmplinnxmlinnnewinnxpath'>INSINNER^MXMLTMPL(INNXML,INNNEW,INNXPATH)</a></li></ul></li><li><a href='#mapping_placeholders'>Mapping Placeholders</a><ul style='list-style: none;'><li><a href='#missingmxmltmplixmloary'>MISSING^MXMLTMPL(IXML,OARY)</a></li><li><a href='#mapmxmltmplixmlinaryoxml'>MAP^MXMLTMPL(IXML,INARY,OXML)</a></li></ul></li><li><a href='#printing_for_debugging_purposes'>Printing for debugging purposes</a><ul style='list-style: none;'><li><a href='#parymxmltmplglozn'>PARY^MXMLTMPL(GLO,ZN)</a></li></ul></li><li><a href='#advanced_functionality_for_templating'>Advanced functionality for templating</a><ul style='list-style: none;'><li><a href='#queuemxmltmplblstarrayfirstlast_and_buildmxmltmplblistbdest'>QUEUE^MXMLTMPL(BLST,ARRAY,FIRST,LAST) and BUILD^MXMLTMPL(BLIST,BDEST)</a></li></ul></li><li><a href='#demo_program_for_templating'>Demo Program for Templating</a></li></ul></li><li><a href='#entity_catalog'>Entity Catalog</a></li><li><a href='#unit_tests'>Unit Tests</a></li></ul></div>
+</table><div class='maruku_toc'><ul style='list-style: none;'><li><a href='#revision_history'>Revision History</a></li><li><a href='#introduction'>Introduction</a></li><li><a href='#xml_parsing'>XML Parsing</a><ul style='list-style: none;'><li><a href='#term_definitions_and_xml_parser_concept'>Term Definitions and XML Parser Concept</a></li><li><a href='#known_issues'>Known Issues</a></li><li><a href='#eventdriven_api'>Event-Driven API</a><ul style='list-style: none;'><li><a href='#enmxmlprsedoccbkopt'>EN^MXMLPRSE(DOC,CBK,OPT)</a></li><li><a href='#event_types_recognized_by_vista_xml_parser'>Event Types Recognized by Vista XML Parser</a></li></ul></li><li><a href='#inmemory_document_api'>In-Memory Document API</a><ul style='list-style: none;'><li><a href='#enmxmldomdocopt'>$$EN^MXMLDOM(DOC,OPT)</a></li><li><a href='#deletemxmldomhandle'>DELETE^MXMLDOM(HANDLE)</a></li><li><a href='#namemxmldomhandlenode'>$$NAME^MXMLDOM(HANDLE,NODE)</a></li><li><a href='#childmxmldomhandleparentchild'>$$CHILD^MXMLDOM(HANDLE,PARENT,CHILD)</a></li><li><a href='#siblingmxmldomhandlenode'>$$SIBLING^MXMLDOM(HANDLE,NODE)</a></li><li><a href='#parentmxmldomhandlenode'>$$PARENT^MXMLDOM(HANDLE,NODE)</a></li><li><a href='#textmxmldomhandlenodetext_or_textmxmldomhandlenodetext'>TEXT^MXMLDOM(HANDLE,NODE,TEXT) or $$TEXT^MXMLDOM(HANDLE,NODE,TEXT)</a></li><li><a href='#cmntmxmldomhandlenodetext_or_cmntmxmldomhandlenodetext'>CMNT^MXMLDOM(HANDLE,NODE,TEXT) or $$CMNT^MXMLDOM(HANDLE,NODE,TEXT)</a></li><li><a href='#attribmxmldomhandlenodeattrib'>$$ATTRIB^MXMLDOM(HANDLE,NODE,ATTRIB)</a></li><li><a href='#valuemxmldomhandlenodeattrib'>$$VALUE^MXMLDOM(HANDLE,NODE,ATTRIB)</a></li></ul></li><li><a href='#vista_xml_parser_usage_example'>VistA XML Parser Usage Example</a><ul style='list-style: none;'><li><a href='#create_an_xml_file'>Create an XML File</a></li></ul></li></ul></li><li><a href='#xml_querying_using_xpath'>XML Querying using XPATH</a><ul style='list-style: none;'><li><a href='#api'>API</a><ul style='list-style: none;'><li><a href='#xpathmxmlpathreturndochandxpath'>[$$]XPATH^MXMLPATH(RETURN,DOCHAND,XPATH)</a></li></ul></li><li><a href='#examples'>Examples</a></li></ul></li><li><a href='#xml_document_creation_utility_apis'>XML Document Creation Utility APIs</a><ul style='list-style: none;'><li><a href='#simplesinglet_xml_building_apis'>Simple/Singlet XML Building APIs</a><ul style='list-style: none;'><li><a href='#xmlhdrmxmlutl'>$$XMLHDR^MXMLUTL()</a></li><li><a href='#symencmxmlutlstr'>$$SYMENC^MXMLUTL(STR)</a></li><li><a href='#mktagmxmlbldnameattrstextclose'>$$MKTAG^MXMLBLD(NAME,ATTRS,TEXT,CLOSE)</a></li><li><a href='#putmxmlbldreturnstring'>[$$]PUT^MXMLBLD(RETURN,STRING)</a></li></ul></li><li><a href='#build_apis'>Build APIs</a><ul style='list-style: none;'><li><a href='#startmxmlblddocdoctypeflagno1statt'>START^MXMLBLD(DOC,DOCTYPE,FLAG,NO1ST,ATT)</a></li><li><a href='#endmxmlbld'>END^MXMLBLD</a></li><li><a href='#itemmxmlbldindenttagattvalue'>ITEM^MXMLBLD(INDENT,TAG,ATT,VALUE)</a></li><li><a href='#multimxmlbldindenttagattdoitem'>MULTI^MXMLBLD(INDENT,TAG,ATT,DOITEM)</a></li><li><a href='#example'>Example</a></li></ul></li></ul></li><li><a href='#xml_templating_functions'>XML Templating functions</a><ul style='list-style: none;'><li><a href='#array_creation_apis'>Array Creation APIs</a><ul style='list-style: none;'><li><a href='#pushmxmltmp1stkval'>PUSH^MXMLTMP1(STK,VAL)</a></li><li><a href='#popmxmltmp1stkval'>POP^MXMLTMP1(STK,VAL)</a></li><li><a href='#querymxmltmpliaryxpathoary'>QUERY^MXMLTMPL(IARY,XPATH,OARY)</a></li><li><a href='#cpmxmltmplcpsrccpdest'>CP^MXMLTMPL(CPSRC,CPDEST)</a></li></ul></li><li><a href='#array_manipulation_apis'>Array Manipulation APIs</a><ul style='list-style: none;'><li><a href='#replacemxmltmplrexmlrenewrexpath'>REPLACE^MXMLTMPL(REXML,RENEW,REXPATH)</a></li><li><a href='#insertmxmltmplinsxmlinsnewinsxpath'>INSERT^MXMLTMPL(INSXML,INSNEW,INSXPATH)</a></li><li><a href='#insinnermxmltmplinnxmlinnnewinnxpath'>INSINNER^MXMLTMPL(INNXML,INNNEW,INNXPATH)</a></li></ul></li><li><a href='#mapping_placeholders'>Mapping Placeholders</a><ul style='list-style: none;'><li><a href='#missingmxmltmplixmloary'>MISSING^MXMLTMPL(IXML,OARY)</a></li><li><a href='#mapmxmltmplixmlinaryoxml'>MAP^MXMLTMPL(IXML,INARY,OXML)</a></li></ul></li><li><a href='#printing_for_debugging_purposes'>Printing for debugging purposes</a><ul style='list-style: none;'><li><a href='#parymxmltmplglozn'>PARY^MXMLTMPL(GLO,ZN)</a></li></ul></li><li><a href='#advanced_functionality_for_templating'>Advanced functionality for templating</a><ul style='list-style: none;'><li><a href='#queuemxmltmplblstarrayfirstlast_and_buildmxmltmplblistbdest'>QUEUE^MXMLTMPL(BLST,ARRAY,FIRST,LAST) and BUILD^MXMLTMPL(BLIST,BDEST)</a></li><li><a href='#trimmxmltmp1thexml'>[$$]TRIM^MXMLTMP1(THEXML)</a></li></ul></li><li><a href='#demo_program_for_templating'>Demo Program for Templating</a></li></ul></li><li><a href='#entity_catalog'>Entity Catalog</a></li><li><a href='#unit_tests'>Unit Tests</a></li></ul></div>
 <h2 id='introduction'>Introduction</h2>
 
 <p>VISTA XML Processing Utilities cover 4 different domains:</p>
@@ -1318,6 +1318,8 @@ BOOKEAC2	; Book 2
 <li>QUEUE^MXMLTMPL(BLST,ARRAY,FIRST,LAST)</li>
 
 <li>BUILD^MXMLTMPL(BLIST,BDEST)</li>
+
+<li>TRIM^MXMLTMP1(THEXML)</li>
 </ul>
 
 <p>In explanations of how this works, the following XML will be used as reference: <pre>
@@ -1708,6 +1710,62 @@ MXMLOUTPUT(3)="&lt;Book&gt;"
 MXMLOUTPUT(4)="&lt;/Book&gt;"
 MXMLOUTPUT(5)="&lt;/Books&gt;"
 </pre>
+<h4 id='trimmxmltmp1thexml'>[$$]TRIM^MXMLTMP1(THEXML)</h4>
+
+<p>Trim is used to remove elements with no text inside of them. For example, &#60;Author&#62;&#60;/Author&#62; gets deleted.</p>
+
+<p>It has the following limitations:</p>
+
+<ul>
+<li>Elements that are self closing (/&gt;) are not removed</li>
+
+<li>It only recursive once for the outer element of the deleted element.</li>
+</ul>
+<table>
+<caption>Table 32: TRIM^MXMLTMP1 - Trim XML</caption>
+<tr>
+	<th>Parameter</th>
+	<th>Type</th>
+	<th>Required</th>
+	<th>Description</th>
+</tr>
+<tr>
+	<td>THEXML</td>
+	<td>Mumps Name</td>
+	<td>Yes</td>
+	<td>XML to be trimmed. Trimming is done in place, so you get
+    your XML back in the same location.</td>
+</tr>
+<tr>
+	<td>Return Value</td>
+	<td>Integer</td>
+	<td>No</td>
+	<td>0 for no trim happening, 1 for trim happening</td>
+</tr>
+</table>
+<p>Example: <pre>
+TRIM2 ; - Trim an XML array
+ N MXMLARR0
+ D PUSH^MXMLTMP1($NA(MXMLARR0),"<Books>")
+ D PUSH^MXMLTMP1($NA(MXMLARR0),"<Book>")
+ D PUSH^MXMLTMP1($NA(MXMLARR0),"<Title>Pride and Prejudice</Title>")
+ D PUSH^MXMLTMP1($NA(MXMLARR0),"<Author />")
+ D PUSH^MXMLTMP1($NA(MXMLARR0),"<Length>")
+ D PUSH^MXMLTMP1($NA(MXMLARR0),"</Length>")
+ D PUSH^MXMLTMP1($NA(MXMLARR0),"</Book>")
+ D PUSH^MXMLTMP1($NA(MXMLARR0),"</Books>")
+ D TRIM^MXMLTMP1($NA(MXMLARR0))
+ ZWRITE MXMLARR0
+ QUIT
+ ;
+ ; MXMLARR0(0)=5
+ ; MXMLARR0(1)="<Books>"
+ ; MXMLARR0(2)="<Book>"
+ ; MXMLARR0(3)="<Title>Pride and Prejudice</Title>"
+ ; MXMLARR0(4)="</Book>"
+ ; MXMLARR0(5)="</Books>
+</pre></p>
+
 <h3 id='demo_program_for_templating'>Demo Program for Templating</h3>
 <pre>
 DEMO	; Demo program.
