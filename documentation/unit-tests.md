@@ -11,3 +11,4 @@ The unit tests to run are the following:
  - D TEST^MXMLBLD
  - D TEST^MXMLPATT
  - D TEST^MXMLTMPT
+ - D ^MXMLDOMT
