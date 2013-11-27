@@ -1,396 +1,400 @@
-KIDS Distribution saved on Aug 13, 2013@13:25:40
-VISTA XML PROCESSING UTILITIES T3
-**KIDS**:XML PROCESSING UTILITIES 2.0T3^
+KIDS Distribution saved on Nov 27, 2013@14:33:51
+XML Processing Utilities 2.1
+**KIDS**:XML PROCESSING UTILITIES 2.1^
 
 **INSTALL NAME**
-XML PROCESSING UTILITIES 2.0T3
-"BLD",9265,0)
-XML PROCESSING UTILITIES 2.0T3^XML PROCESSING UTILITIES^0^3130813^y
-"BLD",9265,1,0)
+XML PROCESSING UTILITIES 2.1
+"BLD",9275,0)
+XML PROCESSING UTILITIES 2.1^XML PROCESSING UTILITIES^0^3131127^y
+"BLD",9275,1,0)
 ^^13^13^3130813^^^
-"BLD",9265,1,1,0)
+"BLD",9275,1,1,0)
 Created by Sam Habiel of the VISTA Expertise Network.
-"BLD",9265,1,2,0)
+"BLD",9275,1,2,0)
  
-"BLD",9265,1,3,0)
+"BLD",9275,1,3,0)
 This package updates the VISTA XML Parser. It includes all the 
-"BLD",9265,1,4,0)
+"BLD",9275,1,4,0)
 functionality of the old version.
-"BLD",9265,1,5,0)
+"BLD",9275,1,5,0)
  
-"BLD",9265,1,6,0)
+"BLD",9275,1,6,0)
 NB: Moved into it's own package file entry.
-"BLD",9265,1,7,0)
+"BLD",9275,1,7,0)
  
-"BLD",9265,1,8,0)
+"BLD",9275,1,8,0)
 See accompanying documentation.
-"BLD",9265,1,9,0)
+"BLD",9275,1,9,0)
  
-"BLD",9265,1,10,0)
+"BLD",9275,1,10,0)
 Previous release notes:
-"BLD",9265,1,11,0)
+"BLD",9275,1,11,0)
 This package releases a XML parser that was commissioned by the VA
-"BLD",9265,1,12,0)
+"BLD",9275,1,12,0)
 architects. Developer documentation can be found on the VistA
-"BLD",9265,1,13,0)
+"BLD",9275,1,13,0)
 Documentation Library under Infrastructure in the Kernel ToolKit session.
-"BLD",9265,4,0)
+"BLD",9275,4,0)
 ^9.64PA^950^1
-"BLD",9265,4,950,0)
+"BLD",9275,4,950,0)
 950
-"BLD",9265,4,950,222)
+"BLD",9275,4,950,222)
 y^y^f^^^^n
-"BLD",9265,4,"B",950,950)
+"BLD",9275,4,"B",950,950)
 
-"BLD",9265,6.3)
-7
-"BLD",9265,"ABPKG")
+"BLD",9275,6.3)
+9
+"BLD",9275,"ABPKG")
 n
-"BLD",9265,"KRN",0)
+"BLD",9275,"KRN",0)
 ^9.67PA^779.2^22
-"BLD",9265,"KRN",.4,0)
+"BLD",9275,"KRN",.4,0)
 .4
-"BLD",9265,"KRN",.4,"NM",0)
+"BLD",9275,"KRN",.4,"NM",0)
 ^9.68A^^
-"BLD",9265,"KRN",.401,0)
+"BLD",9275,"KRN",.401,0)
 .401
-"BLD",9265,"KRN",.402,0)
+"BLD",9275,"KRN",.402,0)
 .402
-"BLD",9265,"KRN",.403,0)
+"BLD",9275,"KRN",.403,0)
 .403
-"BLD",9265,"KRN",.5,0)
+"BLD",9275,"KRN",.5,0)
 .5
-"BLD",9265,"KRN",.84,0)
+"BLD",9275,"KRN",.84,0)
 .84
-"BLD",9265,"KRN",.84,"NM",0)
+"BLD",9275,"KRN",.84,"NM",0)
 ^9.68A^49^49
-"BLD",9265,"KRN",.84,"NM",1,0)
+"BLD",9275,"KRN",.84,"NM",1,0)
 9500001^^0
-"BLD",9265,"KRN",.84,"NM",2,0)
+"BLD",9275,"KRN",.84,"NM",2,0)
 9500002^^0
-"BLD",9265,"KRN",.84,"NM",3,0)
+"BLD",9275,"KRN",.84,"NM",3,0)
 9500003^^0
-"BLD",9265,"KRN",.84,"NM",4,0)
+"BLD",9275,"KRN",.84,"NM",4,0)
 9500004^^0
-"BLD",9265,"KRN",.84,"NM",5,0)
+"BLD",9275,"KRN",.84,"NM",5,0)
 9500005^^0
-"BLD",9265,"KRN",.84,"NM",6,0)
+"BLD",9275,"KRN",.84,"NM",6,0)
 9500006^^0
-"BLD",9265,"KRN",.84,"NM",7,0)
+"BLD",9275,"KRN",.84,"NM",7,0)
 9500007^^0
-"BLD",9265,"KRN",.84,"NM",8,0)
+"BLD",9275,"KRN",.84,"NM",8,0)
 9500008^^0
-"BLD",9265,"KRN",.84,"NM",9,0)
+"BLD",9275,"KRN",.84,"NM",9,0)
 9500009^^0
-"BLD",9265,"KRN",.84,"NM",10,0)
+"BLD",9275,"KRN",.84,"NM",10,0)
 9500010^^0
-"BLD",9265,"KRN",.84,"NM",11,0)
+"BLD",9275,"KRN",.84,"NM",11,0)
 9500011^^0
-"BLD",9265,"KRN",.84,"NM",12,0)
+"BLD",9275,"KRN",.84,"NM",12,0)
 9500012^^0
-"BLD",9265,"KRN",.84,"NM",13,0)
+"BLD",9275,"KRN",.84,"NM",13,0)
 9500013^^0
-"BLD",9265,"KRN",.84,"NM",14,0)
+"BLD",9275,"KRN",.84,"NM",14,0)
 9500014^^0
-"BLD",9265,"KRN",.84,"NM",15,0)
+"BLD",9275,"KRN",.84,"NM",15,0)
 9500015^^0
-"BLD",9265,"KRN",.84,"NM",16,0)
+"BLD",9275,"KRN",.84,"NM",16,0)
 9500016^^0
-"BLD",9265,"KRN",.84,"NM",17,0)
+"BLD",9275,"KRN",.84,"NM",17,0)
 9500017^^0
-"BLD",9265,"KRN",.84,"NM",18,0)
+"BLD",9275,"KRN",.84,"NM",18,0)
 9500018^^0
-"BLD",9265,"KRN",.84,"NM",19,0)
+"BLD",9275,"KRN",.84,"NM",19,0)
 9500019^^0
-"BLD",9265,"KRN",.84,"NM",20,0)
+"BLD",9275,"KRN",.84,"NM",20,0)
 9500020^^0
-"BLD",9265,"KRN",.84,"NM",21,0)
+"BLD",9275,"KRN",.84,"NM",21,0)
 9500021^^0
-"BLD",9265,"KRN",.84,"NM",22,0)
+"BLD",9275,"KRN",.84,"NM",22,0)
 9500022^^0
-"BLD",9265,"KRN",.84,"NM",23,0)
+"BLD",9275,"KRN",.84,"NM",23,0)
 9500023^^0
-"BLD",9265,"KRN",.84,"NM",24,0)
+"BLD",9275,"KRN",.84,"NM",24,0)
 9500024^^0
-"BLD",9265,"KRN",.84,"NM",25,0)
+"BLD",9275,"KRN",.84,"NM",25,0)
 9500025^^0
-"BLD",9265,"KRN",.84,"NM",26,0)
+"BLD",9275,"KRN",.84,"NM",26,0)
 9500026^^0
-"BLD",9265,"KRN",.84,"NM",27,0)
+"BLD",9275,"KRN",.84,"NM",27,0)
 9500027^^0
-"BLD",9265,"KRN",.84,"NM",28,0)
+"BLD",9275,"KRN",.84,"NM",28,0)
 9500028^^0
-"BLD",9265,"KRN",.84,"NM",29,0)
+"BLD",9275,"KRN",.84,"NM",29,0)
 9500029^^0
-"BLD",9265,"KRN",.84,"NM",30,0)
+"BLD",9275,"KRN",.84,"NM",30,0)
 9500030^^0
-"BLD",9265,"KRN",.84,"NM",31,0)
+"BLD",9275,"KRN",.84,"NM",31,0)
 9500031^^0
-"BLD",9265,"KRN",.84,"NM",32,0)
+"BLD",9275,"KRN",.84,"NM",32,0)
 9500032^^0
-"BLD",9265,"KRN",.84,"NM",33,0)
+"BLD",9275,"KRN",.84,"NM",33,0)
 9500033^^0
-"BLD",9265,"KRN",.84,"NM",34,0)
+"BLD",9275,"KRN",.84,"NM",34,0)
 9500034^^0
-"BLD",9265,"KRN",.84,"NM",35,0)
+"BLD",9275,"KRN",.84,"NM",35,0)
 9500035^^0
-"BLD",9265,"KRN",.84,"NM",36,0)
+"BLD",9275,"KRN",.84,"NM",36,0)
 9500036^^0
-"BLD",9265,"KRN",.84,"NM",37,0)
+"BLD",9275,"KRN",.84,"NM",37,0)
 9500037^^0
-"BLD",9265,"KRN",.84,"NM",38,0)
+"BLD",9275,"KRN",.84,"NM",38,0)
 9500038^^0
-"BLD",9265,"KRN",.84,"NM",39,0)
+"BLD",9275,"KRN",.84,"NM",39,0)
 9500039^^0
-"BLD",9265,"KRN",.84,"NM",40,0)
+"BLD",9275,"KRN",.84,"NM",40,0)
 9500040^^0
-"BLD",9265,"KRN",.84,"NM",41,0)
+"BLD",9275,"KRN",.84,"NM",41,0)
 9500041^^0
-"BLD",9265,"KRN",.84,"NM",42,0)
+"BLD",9275,"KRN",.84,"NM",42,0)
 9500042^^0
-"BLD",9265,"KRN",.84,"NM",43,0)
+"BLD",9275,"KRN",.84,"NM",43,0)
 9500043^^0
-"BLD",9265,"KRN",.84,"NM",44,0)
+"BLD",9275,"KRN",.84,"NM",44,0)
 9500044^^0
-"BLD",9265,"KRN",.84,"NM",45,0)
+"BLD",9275,"KRN",.84,"NM",45,0)
 9500045^^0
-"BLD",9265,"KRN",.84,"NM",46,0)
+"BLD",9275,"KRN",.84,"NM",46,0)
 9500046^^0
-"BLD",9265,"KRN",.84,"NM",47,0)
+"BLD",9275,"KRN",.84,"NM",47,0)
 9500047^^0
-"BLD",9265,"KRN",.84,"NM",48,0)
+"BLD",9275,"KRN",.84,"NM",48,0)
 9500048^^0
-"BLD",9265,"KRN",.84,"NM",49,0)
+"BLD",9275,"KRN",.84,"NM",49,0)
 9500049^^0
-"BLD",9265,"KRN",.84,"NM","B",9500001,1)
+"BLD",9275,"KRN",.84,"NM","B",9500001,1)
 
-"BLD",9265,"KRN",.84,"NM","B",9500002,2)
+"BLD",9275,"KRN",.84,"NM","B",9500002,2)
 
-"BLD",9265,"KRN",.84,"NM","B",9500003,3)
+"BLD",9275,"KRN",.84,"NM","B",9500003,3)
 
-"BLD",9265,"KRN",.84,"NM","B",9500004,4)
+"BLD",9275,"KRN",.84,"NM","B",9500004,4)
 
-"BLD",9265,"KRN",.84,"NM","B",9500005,5)
+"BLD",9275,"KRN",.84,"NM","B",9500005,5)
 
-"BLD",9265,"KRN",.84,"NM","B",9500006,6)
+"BLD",9275,"KRN",.84,"NM","B",9500006,6)
 
-"BLD",9265,"KRN",.84,"NM","B",9500007,7)
+"BLD",9275,"KRN",.84,"NM","B",9500007,7)
 
-"BLD",9265,"KRN",.84,"NM","B",9500008,8)
+"BLD",9275,"KRN",.84,"NM","B",9500008,8)
 
-"BLD",9265,"KRN",.84,"NM","B",9500009,9)
+"BLD",9275,"KRN",.84,"NM","B",9500009,9)
 
-"BLD",9265,"KRN",.84,"NM","B",9500010,10)
+"BLD",9275,"KRN",.84,"NM","B",9500010,10)
 
-"BLD",9265,"KRN",.84,"NM","B",9500011,11)
+"BLD",9275,"KRN",.84,"NM","B",9500011,11)
 
-"BLD",9265,"KRN",.84,"NM","B",9500012,12)
+"BLD",9275,"KRN",.84,"NM","B",9500012,12)
 
-"BLD",9265,"KRN",.84,"NM","B",9500013,13)
+"BLD",9275,"KRN",.84,"NM","B",9500013,13)
 
-"BLD",9265,"KRN",.84,"NM","B",9500014,14)
+"BLD",9275,"KRN",.84,"NM","B",9500014,14)
 
-"BLD",9265,"KRN",.84,"NM","B",9500015,15)
+"BLD",9275,"KRN",.84,"NM","B",9500015,15)
 
-"BLD",9265,"KRN",.84,"NM","B",9500016,16)
+"BLD",9275,"KRN",.84,"NM","B",9500016,16)
 
-"BLD",9265,"KRN",.84,"NM","B",9500017,17)
+"BLD",9275,"KRN",.84,"NM","B",9500017,17)
 
-"BLD",9265,"KRN",.84,"NM","B",9500018,18)
+"BLD",9275,"KRN",.84,"NM","B",9500018,18)
 
-"BLD",9265,"KRN",.84,"NM","B",9500019,19)
+"BLD",9275,"KRN",.84,"NM","B",9500019,19)
 
-"BLD",9265,"KRN",.84,"NM","B",9500020,20)
+"BLD",9275,"KRN",.84,"NM","B",9500020,20)
 
-"BLD",9265,"KRN",.84,"NM","B",9500021,21)
+"BLD",9275,"KRN",.84,"NM","B",9500021,21)
 
-"BLD",9265,"KRN",.84,"NM","B",9500022,22)
+"BLD",9275,"KRN",.84,"NM","B",9500022,22)
 
-"BLD",9265,"KRN",.84,"NM","B",9500023,23)
+"BLD",9275,"KRN",.84,"NM","B",9500023,23)
 
-"BLD",9265,"KRN",.84,"NM","B",9500024,24)
+"BLD",9275,"KRN",.84,"NM","B",9500024,24)
 
-"BLD",9265,"KRN",.84,"NM","B",9500025,25)
+"BLD",9275,"KRN",.84,"NM","B",9500025,25)
 
-"BLD",9265,"KRN",.84,"NM","B",9500026,26)
+"BLD",9275,"KRN",.84,"NM","B",9500026,26)
 
-"BLD",9265,"KRN",.84,"NM","B",9500027,27)
+"BLD",9275,"KRN",.84,"NM","B",9500027,27)
 
-"BLD",9265,"KRN",.84,"NM","B",9500028,28)
+"BLD",9275,"KRN",.84,"NM","B",9500028,28)
 
-"BLD",9265,"KRN",.84,"NM","B",9500029,29)
+"BLD",9275,"KRN",.84,"NM","B",9500029,29)
 
-"BLD",9265,"KRN",.84,"NM","B",9500030,30)
+"BLD",9275,"KRN",.84,"NM","B",9500030,30)
 
-"BLD",9265,"KRN",.84,"NM","B",9500031,31)
+"BLD",9275,"KRN",.84,"NM","B",9500031,31)
 
-"BLD",9265,"KRN",.84,"NM","B",9500032,32)
+"BLD",9275,"KRN",.84,"NM","B",9500032,32)
 
-"BLD",9265,"KRN",.84,"NM","B",9500033,33)
+"BLD",9275,"KRN",.84,"NM","B",9500033,33)
 
-"BLD",9265,"KRN",.84,"NM","B",9500034,34)
+"BLD",9275,"KRN",.84,"NM","B",9500034,34)
 
-"BLD",9265,"KRN",.84,"NM","B",9500035,35)
+"BLD",9275,"KRN",.84,"NM","B",9500035,35)
 
-"BLD",9265,"KRN",.84,"NM","B",9500036,36)
+"BLD",9275,"KRN",.84,"NM","B",9500036,36)
 
-"BLD",9265,"KRN",.84,"NM","B",9500037,37)
+"BLD",9275,"KRN",.84,"NM","B",9500037,37)
 
-"BLD",9265,"KRN",.84,"NM","B",9500038,38)
+"BLD",9275,"KRN",.84,"NM","B",9500038,38)
 
-"BLD",9265,"KRN",.84,"NM","B",9500039,39)
+"BLD",9275,"KRN",.84,"NM","B",9500039,39)
 
-"BLD",9265,"KRN",.84,"NM","B",9500040,40)
+"BLD",9275,"KRN",.84,"NM","B",9500040,40)
 
-"BLD",9265,"KRN",.84,"NM","B",9500041,41)
+"BLD",9275,"KRN",.84,"NM","B",9500041,41)
 
-"BLD",9265,"KRN",.84,"NM","B",9500042,42)
+"BLD",9275,"KRN",.84,"NM","B",9500042,42)
 
-"BLD",9265,"KRN",.84,"NM","B",9500043,43)
+"BLD",9275,"KRN",.84,"NM","B",9500043,43)
 
-"BLD",9265,"KRN",.84,"NM","B",9500044,44)
+"BLD",9275,"KRN",.84,"NM","B",9500044,44)
 
-"BLD",9265,"KRN",.84,"NM","B",9500045,45)
+"BLD",9275,"KRN",.84,"NM","B",9500045,45)
 
-"BLD",9265,"KRN",.84,"NM","B",9500046,46)
+"BLD",9275,"KRN",.84,"NM","B",9500046,46)
 
-"BLD",9265,"KRN",.84,"NM","B",9500047,47)
+"BLD",9275,"KRN",.84,"NM","B",9500047,47)
 
-"BLD",9265,"KRN",.84,"NM","B",9500048,48)
+"BLD",9275,"KRN",.84,"NM","B",9500048,48)
 
-"BLD",9265,"KRN",.84,"NM","B",9500049,49)
+"BLD",9275,"KRN",.84,"NM","B",9500049,49)
 
-"BLD",9265,"KRN",3.6,0)
+"BLD",9275,"KRN",3.6,0)
 3.6
-"BLD",9265,"KRN",3.8,0)
+"BLD",9275,"KRN",3.8,0)
 3.8
-"BLD",9265,"KRN",9.2,0)
+"BLD",9275,"KRN",9.2,0)
 9.2
-"BLD",9265,"KRN",9.8,0)
+"BLD",9275,"KRN",9.8,0)
 9.8
-"BLD",9265,"KRN",9.8,"NM",0)
-^9.68A^12^12
-"BLD",9265,"KRN",9.8,"NM",1,0)
+"BLD",9275,"KRN",9.8,"NM",0)
+^9.68A^13^13
+"BLD",9275,"KRN",9.8,"NM",1,0)
 MXMLPRS0^^0^B72264453
-"BLD",9265,"KRN",9.8,"NM",2,0)
+"BLD",9275,"KRN",9.8,"NM",2,0)
 MXMLPRS1^^0^B16288937
-"BLD",9265,"KRN",9.8,"NM",3,0)
-MXMLPRSE^^0^B64969959
-"BLD",9265,"KRN",9.8,"NM",4,0)
+"BLD",9275,"KRN",9.8,"NM",3,0)
+MXMLPRSE^^0^B69724072
+"BLD",9275,"KRN",9.8,"NM",4,0)
 MXMLTEST^^0^B8594598
-"BLD",9265,"KRN",9.8,"NM",5,0)
+"BLD",9275,"KRN",9.8,"NM",5,0)
 MXMLDOM^^0^B8352721
-"BLD",9265,"KRN",9.8,"NM",6,0)
+"BLD",9275,"KRN",9.8,"NM",6,0)
 MXMLBLD^^0^B69820515
-"BLD",9265,"KRN",9.8,"NM",7,0)
+"BLD",9275,"KRN",9.8,"NM",7,0)
 MXMLPATH^^0^B97531332
-"BLD",9265,"KRN",9.8,"NM",8,0)
+"BLD",9275,"KRN",9.8,"NM",8,0)
 MXMLPATT^^0^B212307526
-"BLD",9265,"KRN",9.8,"NM",9,0)
+"BLD",9275,"KRN",9.8,"NM",9,0)
 MXMLTMP1^^0^B66308015
-"BLD",9265,"KRN",9.8,"NM",10,0)
+"BLD",9275,"KRN",9.8,"NM",10,0)
 MXMLTMPL^^0^B113793891
-"BLD",9265,"KRN",9.8,"NM",11,0)
+"BLD",9275,"KRN",9.8,"NM",11,0)
 MXMLTMPT^^0^B205394209
-"BLD",9265,"KRN",9.8,"NM",12,0)
+"BLD",9275,"KRN",9.8,"NM",12,0)
 MXMLUTL^^0^B1706569
-"BLD",9265,"KRN",9.8,"NM","B","MXMLBLD",6)
+"BLD",9275,"KRN",9.8,"NM",13,0)
+MXMLDOMT^^0^B26822164
+"BLD",9275,"KRN",9.8,"NM","B","MXMLBLD",6)
 
-"BLD",9265,"KRN",9.8,"NM","B","MXMLDOM",5)
+"BLD",9275,"KRN",9.8,"NM","B","MXMLDOM",5)
 
-"BLD",9265,"KRN",9.8,"NM","B","MXMLPATH",7)
+"BLD",9275,"KRN",9.8,"NM","B","MXMLDOMT",13)
 
-"BLD",9265,"KRN",9.8,"NM","B","MXMLPATT",8)
+"BLD",9275,"KRN",9.8,"NM","B","MXMLPATH",7)
 
-"BLD",9265,"KRN",9.8,"NM","B","MXMLPRS0",1)
+"BLD",9275,"KRN",9.8,"NM","B","MXMLPATT",8)
 
-"BLD",9265,"KRN",9.8,"NM","B","MXMLPRS1",2)
+"BLD",9275,"KRN",9.8,"NM","B","MXMLPRS0",1)
 
-"BLD",9265,"KRN",9.8,"NM","B","MXMLPRSE",3)
+"BLD",9275,"KRN",9.8,"NM","B","MXMLPRS1",2)
 
-"BLD",9265,"KRN",9.8,"NM","B","MXMLTEST",4)
+"BLD",9275,"KRN",9.8,"NM","B","MXMLPRSE",3)
 
-"BLD",9265,"KRN",9.8,"NM","B","MXMLTMP1",9)
+"BLD",9275,"KRN",9.8,"NM","B","MXMLTEST",4)
 
-"BLD",9265,"KRN",9.8,"NM","B","MXMLTMPL",10)
+"BLD",9275,"KRN",9.8,"NM","B","MXMLTMP1",9)
 
-"BLD",9265,"KRN",9.8,"NM","B","MXMLTMPT",11)
+"BLD",9275,"KRN",9.8,"NM","B","MXMLTMPL",10)
 
-"BLD",9265,"KRN",9.8,"NM","B","MXMLUTL",12)
+"BLD",9275,"KRN",9.8,"NM","B","MXMLTMPT",11)
 
-"BLD",9265,"KRN",19,0)
+"BLD",9275,"KRN",9.8,"NM","B","MXMLUTL",12)
+
+"BLD",9275,"KRN",19,0)
 19
-"BLD",9265,"KRN",19.1,0)
+"BLD",9275,"KRN",19.1,0)
 19.1
-"BLD",9265,"KRN",101,0)
+"BLD",9275,"KRN",101,0)
 101
-"BLD",9265,"KRN",409.61,0)
+"BLD",9275,"KRN",409.61,0)
 409.61
-"BLD",9265,"KRN",771,0)
+"BLD",9275,"KRN",771,0)
 771
-"BLD",9265,"KRN",779.2,0)
+"BLD",9275,"KRN",779.2,0)
 779.2
-"BLD",9265,"KRN",869.2,0)
+"BLD",9275,"KRN",869.2,0)
 869.2
-"BLD",9265,"KRN",870,0)
+"BLD",9275,"KRN",870,0)
 870
-"BLD",9265,"KRN",8989.51,0)
+"BLD",9275,"KRN",8989.51,0)
 8989.51
-"BLD",9265,"KRN",8989.52,0)
+"BLD",9275,"KRN",8989.52,0)
 8989.52
-"BLD",9265,"KRN",8994,0)
+"BLD",9275,"KRN",8994,0)
 8994
-"BLD",9265,"KRN",8994.2,0)
+"BLD",9275,"KRN",8994.2,0)
 8994.2
-"BLD",9265,"KRN",8994.2,"NM",0)
+"BLD",9275,"KRN",8994.2,"NM",0)
 ^9.68A^^
-"BLD",9265,"KRN","B",.4,.4)
+"BLD",9275,"KRN","B",.4,.4)
 
-"BLD",9265,"KRN","B",.401,.401)
+"BLD",9275,"KRN","B",.401,.401)
 
-"BLD",9265,"KRN","B",.402,.402)
+"BLD",9275,"KRN","B",.402,.402)
 
-"BLD",9265,"KRN","B",.403,.403)
+"BLD",9275,"KRN","B",.403,.403)
 
-"BLD",9265,"KRN","B",.5,.5)
+"BLD",9275,"KRN","B",.5,.5)
 
-"BLD",9265,"KRN","B",.84,.84)
+"BLD",9275,"KRN","B",.84,.84)
 
-"BLD",9265,"KRN","B",3.6,3.6)
+"BLD",9275,"KRN","B",3.6,3.6)
 
-"BLD",9265,"KRN","B",3.8,3.8)
+"BLD",9275,"KRN","B",3.8,3.8)
 
-"BLD",9265,"KRN","B",9.2,9.2)
+"BLD",9275,"KRN","B",9.2,9.2)
 
-"BLD",9265,"KRN","B",9.8,9.8)
+"BLD",9275,"KRN","B",9.8,9.8)
 
-"BLD",9265,"KRN","B",19,19)
+"BLD",9275,"KRN","B",19,19)
 
-"BLD",9265,"KRN","B",19.1,19.1)
+"BLD",9275,"KRN","B",19.1,19.1)
 
-"BLD",9265,"KRN","B",101,101)
+"BLD",9275,"KRN","B",101,101)
 
-"BLD",9265,"KRN","B",409.61,409.61)
+"BLD",9275,"KRN","B",409.61,409.61)
 
-"BLD",9265,"KRN","B",771,771)
+"BLD",9275,"KRN","B",771,771)
 
-"BLD",9265,"KRN","B",779.2,779.2)
+"BLD",9275,"KRN","B",779.2,779.2)
 
-"BLD",9265,"KRN","B",869.2,869.2)
+"BLD",9275,"KRN","B",869.2,869.2)
 
-"BLD",9265,"KRN","B",870,870)
+"BLD",9275,"KRN","B",870,870)
 
-"BLD",9265,"KRN","B",8989.51,8989.51)
+"BLD",9275,"KRN","B",8989.51,8989.51)
 
-"BLD",9265,"KRN","B",8989.52,8989.52)
+"BLD",9275,"KRN","B",8989.52,8989.52)
 
-"BLD",9265,"KRN","B",8994,8994)
+"BLD",9275,"KRN","B",8994,8994)
 
-"BLD",9265,"KRN","B",8994.2,8994.2)
+"BLD",9275,"KRN","B",8994.2,8994.2)
 
-"BLD",9265,"QUES",0)
+"BLD",9275,"QUES",0)
 ^9.62^^
-"BLD",9265,"REQB",0)
+"BLD",9275,"REQB",0)
 ^9.611^^
 "FIA",950)
 XML ENTITY CATALOG
@@ -407,7 +411,7 @@ y^y^f^^^^n
 "FIA",950,0,"RLRO")
 
 "FIA",950,0,"VR")
-2.0T3^XML PROCESSING UTILITIES
+2.1^XML PROCESSING UTILITIES
 "FIA",950,950)
 0
 "FIA",950,950.01)
@@ -819,9 +823,9 @@ XML PROCESSING UTILITIES^MXML^Utilities to handle XML processing in VISTA.
 "PKG",221,22,0)
 ^9.49I^1^1
 "PKG",221,22,1,0)
-2.0T3^3130813
+2.1^3131127
 "PKG",221,22,1,1,0)
-^^13^13^3130813
+^^13^13^3131127
 "PKG",221,22,1,1,1,0)
 Created by Sam Habiel of the VISTA Expertise Network.
 "PKG",221,22,1,1,2,0)
@@ -849,7 +853,7 @@ architects. Developer documentation can be found on the VistA
 "PKG",221,22,1,1,13,0)
 Documentation Library under Infrastructure in the Kernel ToolKit session.
 "PKG",221,"VERSION")
-2.0T3
+2.1
 "QUES","XPF1",0)
 Y
 "QUES","XPF1","??")
@@ -921,13 +925,13 @@ NO
 "QUES","XPZ2","M")
 D XPZ2^XPDIQ
 "RTN")
-12
+13
 "RTN","MXMLBLD")
 0^6^B69820515
 "RTN","MXMLBLD",1,0)
 MXMLBLD ; RWF/RWF - Recursive XML Writer ;2013-07-30  3:37 PM
 "RTN","MXMLBLD",2,0)
- ;;2.0T3;XML PROCESSING UTILITIES;;Aug 13, 2013;Build 7
+ ;;2.1;XML PROCESSING UTILITIES;;Nov 27, 2013;Build 9
 "RTN","MXMLBLD",3,0)
  QUIT
 "RTN","MXMLBLD",4,0)
@@ -1443,7 +1447,7 @@ BOOKEAC2 ; Book 2
 "RTN","MXMLDOM",1,0)
 MXMLDOM ;SAIC/DKM - XML Parser - DOM model ;02/27/2002  13:24
 "RTN","MXMLDOM",2,0)
- ;;2.0T3;XML PROCESSING UTILITIES;;Aug 13, 2013;Build 7
+ ;;2.1;XML PROCESSING UTILITIES;;Nov 27, 2013;Build 9
 "RTN","MXMLDOM",3,0)
  ;=================================================================
 "RTN","MXMLDOM",4,0)
@@ -1650,12 +1654,292 @@ ATTRIB(HANDLE,NODE,ATTR) ;
 VALUE(HANDLE,NODE,ATTR) ;
 "RTN","MXMLDOM",105,0)
  Q $G(^TMP("MXMLDOM",$J,HANDLE,NODE,"A",ATTR))
+"RTN","MXMLDOMT")
+0^13^B26822164
+"RTN","MXMLDOMT",1,0)
+MXMLDOMT ; VEN/SMH - Unit Tests for DOM Parser;2013-11-27  2:15 PM
+"RTN","MXMLDOMT",2,0)
+ ;;2.1;XML PROCESSING UTILITIES;;Nov 27, 2013;Build 9
+"RTN","MXMLDOMT",3,0)
+ ;;
+"RTN","MXMLDOMT",4,0)
+ ;
+"RTN","MXMLDOMT",5,0)
+ S IO=$P
+"RTN","MXMLDOMT",6,0)
+ N DIQUIET S DIQUIET=1
+"RTN","MXMLDOMT",7,0)
+ D EN^XTMUNIT($T(+0),1)
+"RTN","MXMLDOMT",8,0)
+ QUIT
+"RTN","MXMLDOMT",9,0)
+ ;
+"RTN","MXMLDOMT",10,0)
+XML1 ; @TEST - Parse a regular XML Document--sanity test
+"RTN","MXMLDOMT",11,0)
+ D READ("XML1D")
+"RTN","MXMLDOMT",12,0)
+ N D S D=$$EN^MXMLDOM($NA(^TMP($J)),"WD")
+"RTN","MXMLDOMT",13,0)
+ D CHKTF^XTMUNIT(D,"XML not parsed")
+"RTN","MXMLDOMT",14,0)
+ D DELETE^MXMLDOM(D)
+"RTN","MXMLDOMT",15,0)
+ QUIT
+"RTN","MXMLDOMT",16,0)
+XML2 ; @TEST - Parse an XML doc on one line
+"RTN","MXMLDOMT",17,0)
+ D READ("XML2D")
+"RTN","MXMLDOMT",18,0)
+ N D S D=$$EN^MXMLDOM($NA(^TMP($J)),"WD")
+"RTN","MXMLDOMT",19,0)
+ D CHKTF^XTMUNIT(D,"XML not parsed")
+"RTN","MXMLDOMT",20,0)
+ D DELETE^MXMLDOM(D)
+"RTN","MXMLDOMT",21,0)
+ QUIT
+"RTN","MXMLDOMT",22,0)
+XML3 ; @TEST - Parse an XML doc broken on several lines
+"RTN","MXMLDOMT",23,0)
+ D READ("XML3D")
+"RTN","MXMLDOMT",24,0)
+ N D S D=$$EN^MXMLDOM($NA(^TMP($J)),"WD")
+"RTN","MXMLDOMT",25,0)
+ D CHKTF^XTMUNIT(D,"XML not parsed")
+"RTN","MXMLDOMT",26,0)
+ D DELETE^MXMLDOM(D)
+"RTN","MXMLDOMT",27,0)
+ QUIT
+"RTN","MXMLDOMT",28,0)
+XML4 ; @TEST - Parse an XML doc with Character ref attr
+"RTN","MXMLDOMT",29,0)
+ D READ("XML4D")
+"RTN","MXMLDOMT",30,0)
+ N D S D=$$EN^MXMLDOM($NA(^TMP($J)),"WD")
+"RTN","MXMLDOMT",31,0)
+ D CHKTF^XTMUNIT(D,"XML not parsed")
+"RTN","MXMLDOMT",32,0)
+ D DELETE^MXMLDOM(D)
+"RTN","MXMLDOMT",33,0)
+ QUIT
+"RTN","MXMLDOMT",34,0)
+XML5 ; @TEST - Parse an XML doc with Chracter ref attr broken over 2 lines (Sergey's bug)
+"RTN","MXMLDOMT",35,0)
+ D READ("XML5D")
+"RTN","MXMLDOMT",36,0)
+ N D S D=$$EN^MXMLDOM($NA(^TMP($J)),"WD")
+"RTN","MXMLDOMT",37,0)
+ D CHKTF^XTMUNIT(D,"XML not parsed")
+"RTN","MXMLDOMT",38,0)
+ D DELETE^MXMLDOM(D)
+"RTN","MXMLDOMT",39,0)
+ QUIT
+"RTN","MXMLDOMT",40,0)
+XML6 ; @TEST - Parse an XML doc with Chracter ref text broken over 2 lines (George's bug)
+"RTN","MXMLDOMT",41,0)
+ D READ("XML6D")
+"RTN","MXMLDOMT",42,0)
+ N D S D=$$EN^MXMLDOM($NA(^TMP($J)),"WD")
+"RTN","MXMLDOMT",43,0)
+ D CHKTF^XTMUNIT(D,"XML not parsed")
+"RTN","MXMLDOMT",44,0)
+ D DELETE^MXMLDOM(D)
+"RTN","MXMLDOMT",45,0)
+ QUIT
+"RTN","MXMLDOMT",46,0)
+XMLFILE ; @TEST - Parse an XML document loacated on the File system (Sam's bug)
+"RTN","MXMLDOMT",47,0)
+ D READ("XML1D")
+"RTN","MXMLDOMT",48,0)
+ ;
+"RTN","MXMLDOMT",49,0)
+ ; Write file
+"RTN","MXMLDOMT",50,0)
+ N % S %=$$GTF^%ZISH($NA(^TMP($J,1)),2,$$DEFDIR^%ZISH(),"mxmldomt.xml")
+"RTN","MXMLDOMT",51,0)
+ I '% S $EC=",U-FILE-WRITE-FAIL,"
+"RTN","MXMLDOMT",52,0)
+ ;
+"RTN","MXMLDOMT",53,0)
+ ; Check 1: No path supplied. System supposed to use default directory
+"RTN","MXMLDOMT",54,0)
+ N D S D=$$EN^MXMLDOM("mxmldomt.xml","WD")
+"RTN","MXMLDOMT",55,0)
+ D CHKTF^XTMUNIT(D,"XML not parsed")
+"RTN","MXMLDOMT",56,0)
+ D DELETE^MXMLDOM(D)
+"RTN","MXMLDOMT",57,0)
+ ;
+"RTN","MXMLDOMT",58,0)
+ ; Check 2; Supply path explicitly
+"RTN","MXMLDOMT",59,0)
+ N D S D=$$EN^MXMLDOM($$DEFDIR^%ZISH()_"mxmldomt.xml","WD")
+"RTN","MXMLDOMT",60,0)
+ D CHKTF^XTMUNIT(D,"XML not parsed")
+"RTN","MXMLDOMT",61,0)
+ D DELETE^MXMLDOM(D)
+"RTN","MXMLDOMT",62,0)
+ ;
+"RTN","MXMLDOMT",63,0)
+ ; Delete file
+"RTN","MXMLDOMT",64,0)
+ N %1 S %1("mxmldomt.xml")=""
+"RTN","MXMLDOMT",65,0)
+ S %=$$DEL^%ZISH($$DEFDIR^%ZISH(),$NA(%1))
+"RTN","MXMLDOMT",66,0)
+ QUIT
+"RTN","MXMLDOMT",67,0)
+READ(TAGNAME) ; Read XML from tag
+"RTN","MXMLDOMT",68,0)
+ K ^TMP($J)
+"RTN","MXMLDOMT",69,0)
+ N LN
+"RTN","MXMLDOMT",70,0)
+ N I F I=1:1 S LN=$P($T(@TAGNAME+I),";;",2) Q:'$L(LN)  S ^TMP($J,I)=LN
+"RTN","MXMLDOMT",71,0)
+ QUIT
+"RTN","MXMLDOMT",72,0)
+ ;
+"RTN","MXMLDOMT",73,0)
+XML1D ;; @DATA for Test 1
+"RTN","MXMLDOMT",74,0)
+ ;;<?xml version="1.0" encoding="utf-8"?>
+"RTN","MXMLDOMT",75,0)
+ ;;<!-- Edited by XMLSpy -->
+"RTN","MXMLDOMT",76,0)
+ ;;<note>
+"RTN","MXMLDOMT",77,0)
+ ;;<to>Tove</to>
+"RTN","MXMLDOMT",78,0)
+ ;;<from>Jani</from>
+"RTN","MXMLDOMT",79,0)
+ ;;<heading>Reminder</heading>
+"RTN","MXMLDOMT",80,0)
+ ;;<body>Don't forget me this weekend!</body>
+"RTN","MXMLDOMT",81,0)
+ ;;</note>
+"RTN","MXMLDOMT",82,0)
+ ;;
+"RTN","MXMLDOMT",83,0)
+XML2D ;; @DATA for Test 2
+"RTN","MXMLDOMT",84,0)
+ ;;<?xml version="1.0" encoding="utf-8"?><!-- Edited by XMLSpy --><note><to>Tove</to><from>Jani</from><heading>Reminder</heading><body>Don't forget me this weekend!</body></note>
+"RTN","MXMLDOMT",85,0)
+ ;;
+"RTN","MXMLDOMT",86,0)
+XML3D ;; @DATA for Test 3
+"RTN","MXMLDOMT",87,0)
+ ;;<?xml version="1.0" 
+"RTN","MXMLDOMT",88,0)
+ ;;encoding="utf-8"?>
+"RTN","MXMLDOMT",89,0)
+ ;;<!-- Edited b
+"RTN","MXMLDOMT",90,0)
+ ;;y XMLSpy -->
+"RTN","MXMLDOMT",91,0)
+ ;;<not
+"RTN","MXMLDOMT",92,0)
+ ;;e>
+"RTN","MXMLDOMT",93,0)
+ ;;<to>Tove<
+"RTN","MXMLDOMT",94,0)
+ ;;/to>
+"RTN","MXMLDOMT",95,0)
+ ;;<from>Jani</from>
+"RTN","MXMLDOMT",96,0)
+ ;;<heading>Reminder</heading>
+"RTN","MXMLDOMT",97,0)
+ ;;<body>Don't forget me this weekend!</
+"RTN","MXMLDOMT",98,0)
+ ;;body>
+"RTN","MXMLDOMT",99,0)
+ ;;</note>
+"RTN","MXMLDOMT",100,0)
+ ;;
+"RTN","MXMLDOMT",101,0)
+XML4D ;; @DATA for Test 4
+"RTN","MXMLDOMT",102,0)
+ ;;<?xml version="1.0" encoding="utf-8"?>
+"RTN","MXMLDOMT",103,0)
+ ;;<!-- Edited by XMLSpy -->
+"RTN","MXMLDOMT",104,0)
+ ;;<note>
+"RTN","MXMLDOMT",105,0)
+ ;;<to lastname="M&#xfc;ller">Tove</to>
+"RTN","MXMLDOMT",106,0)
+ ;;<from>Jani</from>
+"RTN","MXMLDOMT",107,0)
+ ;;<heading>Reminder</heading>
+"RTN","MXMLDOMT",108,0)
+ ;;<body>Don't forget me this weekend!</body>
+"RTN","MXMLDOMT",109,0)
+ ;;</note>
+"RTN","MXMLDOMT",110,0)
+ ;;
+"RTN","MXMLDOMT",111,0)
+XML5D ;; @DATA for Test 5 (Sergey's bug!)
+"RTN","MXMLDOMT",112,0)
+ ;;<?xml version="1.0" encoding="utf-8"?>
+"RTN","MXMLDOMT",113,0)
+ ;;<!-- Edited by XMLSpy -->
+"RTN","MXMLDOMT",114,0)
+ ;;<note>
+"RTN","MXMLDOMT",115,0)
+ ;;<!-- Overflow the main buffer -->
+"RTN","MXMLDOMT",116,0)
+ ;;<subject>AAAAAAAAAAAAAAAAAAAAAAAAAAAA</subject><to lastnameAAAAAAAAAAAAAAAAA="M&#
+"RTN","MXMLDOMT",117,0)
+ ;;xfc;&#xfc;&#xfc;&#xfc;&#xfc;&#xfc;&#xfc;&#xfc;&#x
+"RTN","MXMLDOMT",118,0)
+ ;;fc;&#xfc;&#xfc;&#xfc;&#xfc;&#xfc;&#xfc;&#xfc;&#xfc;&#xfc;&#xfc;&#xfc;&#xfc;&#xfc;&#xfc;&#
+"RTN","MXMLDOMT",119,0)
+ ;;xfc;ller">Tove</to>
+"RTN","MXMLDOMT",120,0)
+ ;;<from>Jani</from>
+"RTN","MXMLDOMT",121,0)
+ ;;<heading>Reminder</heading>
+"RTN","MXMLDOMT",122,0)
+ ;;<body>Don't forget me this weekend!</body>
+"RTN","MXMLDOMT",123,0)
+ ;;</note>
+"RTN","MXMLDOMT",124,0)
+ ;;
+"RTN","MXMLDOMT",125,0)
+XML6D ;; @DATA for Test 6 (George's bug!)
+"RTN","MXMLDOMT",126,0)
+ ;;<?xml version="1.0" encoding="utf-8"?>
+"RTN","MXMLDOMT",127,0)
+ ;;<!-- Edited by XMLSpy -->
+"RTN","MXMLDOMT",128,0)
+ ;;<note>
+"RTN","MXMLDOMT",129,0)
+ ;;<!-- Overflow the main buffer -->
+"RTN","MXMLDOMT",130,0)
+ ;;<subject>AAAAAAAAAAAAAAAAAAAAAAAAAAAA</subject>
+"RTN","MXMLDOMT",131,0)
+ ;;<to>Tove&#xfc;&#xfc;&#xfc;&#xfc;&#xfc;&#xfc;&#xfc;&#xfc;&#xfc;&#xfc;&#xfc;&#xfc;&#xfc;&#
+"RTN","MXMLDOMT",132,0)
+ ;;xfc;&#xfc;&#xfc;&#xfc;&#xfc;&#xfc;&#xfc;&#xfc;&#xfc;&
+"RTN","MXMLDOMT",133,0)
+ ;;#xfc;&#xfc;&#xfc;&#xfc;&#xfc;&#xfc;&#xfc;&#xfc;&#xfc;&#xf
+"RTN","MXMLDOMT",134,0)
+ ;;c;&#xfc;&#xfc;&#xfc;&#xfc;&#xfc;&#xfc;&#xfc;</to>
+"RTN","MXMLDOMT",135,0)
+ ;;<from>Jani</from>
+"RTN","MXMLDOMT",136,0)
+ ;;<heading>Reminder</heading>
+"RTN","MXMLDOMT",137,0)
+ ;;<body>Don't forget me this weekend!</body>
+"RTN","MXMLDOMT",138,0)
+ ;;</note>
+"RTN","MXMLDOMT",139,0)
+ ;;
 "RTN","MXMLPATH")
 0^7^B97531332
 "RTN","MXMLPATH",1,0)
 MXMLPATH ; VEN/SMH - XPATH Extensions to MXML Package ;2013-07-26  8:22 PM
 "RTN","MXMLPATH",2,0)
- ;;2.0T3;XML PROCESSING UTILITIES;;Aug 13, 2013;Build 7
+ ;;2.1;XML PROCESSING UTILITIES;;Nov 27, 2013;Build 9
 "RTN","MXMLPATH",3,0)
  ;
 "RTN","MXMLPATH",4,0)
@@ -2203,7 +2487,7 @@ DEBUG(NODES,DOCHAND) ; Debug print; Just used internally for debugging.
 "RTN","MXMLPATT",1,0)
 MXMLPATT ; VEN/SMH - MXML XPath Processor Unit Tests;2013-08-06  10:35 AM
 "RTN","MXMLPATT",2,0)
- ;;2.0T3;XML PROCESSING UTILITIES;;Aug 13, 2013;Build 7
+ ;;2.1;XML PROCESSING UTILITIES;;Nov 27, 2013;Build 9
 "RTN","MXMLPATT",3,0)
 TEST ; M-Unit Entry point for Unit Testing
 "RTN","MXMLPATT",4,0)
@@ -2823,7 +3107,7 @@ TESTDATA ; from https://github.com/OSEHRA-Sandbox/MOCHA/tree/master/etc/xml/test
 "RTN","MXMLPRS0",1,0)
 MXMLPRS0 ;SAIC/DKM - XML Parser ;03/09/2005  12:57
 "RTN","MXMLPRS0",2,0)
- ;;2.0T3;XML PROCESSING UTILITIES;;Aug 13, 2013;Build 7
+ ;;2.1;XML PROCESSING UTILITIES;;Nov 27, 2013;Build 9
 "RTN","MXMLPRS0",3,0)
  ;=================================================================
 "RTN","MXMLPRS0",4,0)
@@ -3439,7 +3723,7 @@ VALUE(X,Y) Q $$VALUE^MXMLPRSE(.X,.Y)
 "RTN","MXMLPRS1",1,0)
 MXMLPRS1 ;SAIC/DKM - XML Parser ;12/04/2002  15:55
 "RTN","MXMLPRS1",2,0)
- ;;2.0T3;XML PROCESSING UTILITIES;;Aug 13, 2013;Build 7
+ ;;2.1;XML PROCESSING UTILITIES;;Nov 27, 2013;Build 9
 "RTN","MXMLPRS1",3,0)
  ;=================================================================
 "RTN","MXMLPRS1",4,0)
@@ -3761,11 +4045,11 @@ REF ;;49;UNP
 "RTN","MXMLPRS1",162,0)
  ;;
 "RTN","MXMLPRSE")
-0^3^B64969959
+0^3^B69724072
 "RTN","MXMLPRSE",1,0)
-MXMLPRSE ;SAIC/DKM - XML Parser ;09/08/08  11:50
+MXMLPRSE ;SAIC/DKM - XML Parser ;2013-11-27  2:25 PM
 "RTN","MXMLPRSE",2,0)
- ;;2.0T3;XML PROCESSING UTILITIES;;Aug 13, 2013;Build 7
+ ;;2.1;XML PROCESSING UTILITIES;;Nov 27, 2013;Build 9
 "RTN","MXMLPRSE",3,0)
  ;=================================================================
 "RTN","MXMLPRSE",4,0)
@@ -3981,7 +4265,7 @@ VALUE(ERF,FLG) ;
 "RTN","MXMLPRSE",109,0)
  .E  S RTN=RTN_CHR,CPOS=CPOS+1
 "RTN","MXMLPRSE",110,0)
- .D:CPOS>LLEN READ
+ .D:((CPOS+10)>LLEN) READ ; VEN/SMH 2.1 - Read ahead for entities!
 "RTN","MXMLPRSE",111,0)
  I DLM=CHR S CPOS=CPOS+1
 "RTN","MXMLPRSE",112,0)
@@ -4047,315 +4331,323 @@ ENTITY(PARAM) ;
 "RTN","MXMLPRSE",142,0)
  S PARAM=+$G(PARAM)
 "RTN","MXMLPRSE",143,0)
- I 'PARAM,$$NEXT("#") Q $$CHENTITY
+ I CPOS+10>LLEN D READ  ; VEN/SMH v2.1 - Read ahead for Entity if not enough in XML buffer.
 "RTN","MXMLPRSE",144,0)
- S NAME=$S(PARAM:"%",1:"")_$$NAME(2)
+ I 'PARAM,$$NEXT("#") Q $$CHENTITY
 "RTN","MXMLPRSE",145,0)
- Q:'$$NEXT(";",3) ""
+ S NAME=$S(PARAM:"%",1:"")_$$NAME(2)
 "RTN","MXMLPRSE",146,0)
- ;Handle the common ones inline
+ Q:'$$NEXT(";",3) ""
 "RTN","MXMLPRSE",147,0)
- S APND=$S(NAME="amp":"&",NAME="lt":"<",NAME="gt":">",NAME="quot":$C(34),NAME="apos":"'",1:"")
+ ;Handle the common ones inline
 "RTN","MXMLPRSE",148,0)
- Q:$L(APND) APND
+ S APND=$S(NAME="amp":"&",NAME="lt":"<",NAME="gt":">",NAME="quot":$C(34),NAME="apos":"'",1:"")
 "RTN","MXMLPRSE",149,0)
- I $D(^TMP(ID,$J,"UNP",NAME)) D ERROR(40,NAME) Q ""
+ Q:$L(APND) APND
 "RTN","MXMLPRSE",150,0)
- I '$D(^TMP(ID,$J,"ENT",NAME)) D ERROR(14,NAME) Q ""
+ I $D(^TMP(ID,$J,"UNP",NAME)) D ERROR(40,NAME) Q ""
 "RTN","MXMLPRSE",151,0)
- S APND=$S(PARAM:" ",1:"")
+ I '$D(^TMP(ID,$J,"ENT",NAME)) D ERROR(14,NAME) Q ""
 "RTN","MXMLPRSE",152,0)
- D OPNDOC(^TMP(ID,$J,"ENT",NAME),APND,APND)
+ S APND=$S(PARAM:" ",1:"")
 "RTN","MXMLPRSE",153,0)
- Q ""
+ D OPNDOC(^TMP(ID,$J,"ENT",NAME),APND,APND)
 "RTN","MXMLPRSE",154,0)
- ; Parse character entity reference
+ Q ""
 "RTN","MXMLPRSE",155,0)
- ; Returns character equivalent
+ ; Parse character entity reference
 "RTN","MXMLPRSE",156,0)
-CHENTITY() ;
+ ; Returns character equivalent
 "RTN","MXMLPRSE",157,0)
- N DIGIT,BASE,DIGITS,VAL
+CHENTITY() ;
 "RTN","MXMLPRSE",158,0)
- S BASE=$S($$NEXT("x"):16,1:10),DIGITS="0123456789"_$S(BASE=16:"ABCDEF",1:""),VAL=0
+ N DIGIT,BASE,DIGITS,VAL
 "RTN","MXMLPRSE",159,0)
- F CPOS=CPOS:1:LLEN+1 Q:$$NEXT(";")!EOD  D
+ S BASE=$S($$NEXT("x"):16,1:10),DIGITS="0123456789"_$S(BASE=16:"ABCDEF",1:""),VAL=0
 "RTN","MXMLPRSE",160,0)
- .S DIGIT=$F(DIGITS,$$UP^XLFSTR($E(XML,CPOS)))-2,VAL=VAL*BASE+DIGIT
+ F CPOS=CPOS:1:LLEN+1 Q:$$NEXT(";")!EOD  D
 "RTN","MXMLPRSE",161,0)
- .D:DIGIT<0 ERROR(19)
+ .S DIGIT=$F(DIGITS,$$UP^XLFSTR($E(XML,CPOS)))-2,VAL=VAL*BASE+DIGIT
 "RTN","MXMLPRSE",162,0)
- I VAL<32,WS'[$C(VAL) D ERROR(19)
+ .D:DIGIT<0 ERROR(19)
 "RTN","MXMLPRSE",163,0)
- Q $C(VAL)
+ I VAL<32,WS'[$C(VAL) D ERROR(19)
 "RTN","MXMLPRSE",164,0)
- ; Set an entity value
+ Q $C(VAL)
 "RTN","MXMLPRSE",165,0)
-SETENT(NAME,VAL) ;
+ ; Set an entity value
 "RTN","MXMLPRSE",166,0)
- K ^TMP(ID,$J,"ENT",NAME)
+SETENT(NAME,VAL) ;
 "RTN","MXMLPRSE",167,0)
- S ^(NAME)=$NA(^(NAME)),^(NAME,1)=VAL
+ K ^TMP(ID,$J,"ENT",NAME)
 "RTN","MXMLPRSE",168,0)
- Q
+ S ^(NAME)=$NA(^(NAME)),^(NAME,1)=VAL
 "RTN","MXMLPRSE",169,0)
- ; Process all attributes
+ Q
 "RTN","MXMLPRSE",170,0)
-ATTRIBS(ENAME,ATTR) ;
+ ; Process all attributes
 "RTN","MXMLPRSE",171,0)
- N TYP,MOD,DEF,ANAME
+ATTRIBS(ENAME,ATTR) ;
 "RTN","MXMLPRSE",172,0)
- K ATTR
+ N TYP,MOD,DEF,ANAME
 "RTN","MXMLPRSE",173,0)
- F  Q:'$$ATTRIB(ENAME,.ATTR)
+ K ATTR
 "RTN","MXMLPRSE",174,0)
- I OPTION["V" D
+ F  Q:'$$ATTRIB(ENAME,.ATTR)
 "RTN","MXMLPRSE",175,0)
- .S ANAME="$"
+ I OPTION["V" D
 "RTN","MXMLPRSE",176,0)
- .F  S ANAME=$O(^TMP(ID,$J,"ATT",ENAME,ANAME)) Q:'$L(ANAME)  D
+ .S ANAME="$"
 "RTN","MXMLPRSE",177,0)
- ..S TYP=^(ANAME),MOD=$P(TYP,"^",2),DEF=$P(TYP,"^",3,9999),TYP=+TYP
+ .F  S ANAME=$O(^TMP(ID,$J,"ATT",ENAME,ANAME)) Q:'$L(ANAME)  D
 "RTN","MXMLPRSE",178,0)
- ..I MOD=1!(MOD=3),'$D(ATTR(ANAME)) D ERROR(36,ANAME) Q
+ ..S TYP=^(ANAME),MOD=$P(TYP,"^",2),DEF=$P(TYP,"^",3,9999),TYP=+TYP
 "RTN","MXMLPRSE",179,0)
- ..I MOD=3,ATTR(ANAME)'=DEF D ERROR(37,ATTR(ANAME)) Q
+ ..I MOD=1!(MOD=3),'$D(ATTR(ANAME)) D ERROR(36,ANAME) Q
 "RTN","MXMLPRSE",180,0)
- ..I MOD=2,'$D(ATTR(ANAME)) Q
+ ..I MOD=3,ATTR(ANAME)'=DEF D ERROR(37,ATTR(ANAME)) Q
 "RTN","MXMLPRSE",181,0)
- ..S:'$D(ATTR(ANAME)) ATTR(ANAME)=DEF
+ ..I MOD=2,'$D(ATTR(ANAME)) Q
 "RTN","MXMLPRSE",182,0)
- Q
+ ..S:'$D(ATTR(ANAME)) ATTR(ANAME)=DEF
 "RTN","MXMLPRSE",183,0)
- ; Parse attribute=value sequence
-"RTN","MXMLPRSE",184,0)
- ; ENAME=Element name to which attribute belongs
-"RTN","MXMLPRSE",185,0)
- ; ATTR=Local array (by reference) to receive attribute value.
-"RTN","MXMLPRSE",186,0)
- ;      Format is ATTR("<attribute name>")="<attribute value>"
-"RTN","MXMLPRSE",187,0)
- ; Returns 1 if successful, 0 if not.
-"RTN","MXMLPRSE",188,0)
-ATTRIB(ENAME,ATTR) ;
-"RTN","MXMLPRSE",189,0)
- N ANAME
-"RTN","MXMLPRSE",190,0)
- D READ,WS() ;p116
-"RTN","MXMLPRSE",191,0)
- S ANAME=$$NAME
-"RTN","MXMLPRSE",192,0)
- Q:ANAME="" 0
-"RTN","MXMLPRSE",193,0)
- I $D(ATTR(ANAME)) D ERROR(4,ANAME) Q 0
-"RTN","MXMLPRSE",194,0)
- D:'$D(^TMP(ID,$J,"ATT",ENAME,ANAME)) ERROR(29,ANAME)
-"RTN","MXMLPRSE",195,0)
- D READ,WS() ;p116
-"RTN","MXMLPRSE",196,0)
- Q:'$$NEXT("=",3) 0
-"RTN","MXMLPRSE",197,0)
- D WS()
-"RTN","MXMLPRSE",198,0)
- S ATTR(ANAME)=$$VALUE(1)
-"RTN","MXMLPRSE",199,0)
- D CHKVAL^MXMLPRS1(ENAME,ANAME,ATTR(ANAME))
-"RTN","MXMLPRSE",200,0)
- Q 1
-"RTN","MXMLPRSE",201,0)
- ; Parse a processing instruction
-"RTN","MXMLPRSE",202,0)
- ; Returns 1 if PI found, 0 if not.
-"RTN","MXMLPRSE",203,0)
-PI() N PNAME,ARGS,DONE
-"RTN","MXMLPRSE",204,0)
- Q:'$$NEXT("<?") 0
-"RTN","MXMLPRSE",205,0)
- S PNAME=$$NAME(2),ARGS=0
-"RTN","MXMLPRSE",206,0)
- I $$UP^XLFSTR(PNAME)="XML" D ERROR(9) Q 0
-"RTN","MXMLPRSE",207,0)
- D WS(1)
-"RTN","MXMLPRSE",208,0)
- F  S DONE=$F(XML,"?>",CPOS) D  Q:DONE!EOD
-"RTN","MXMLPRSE",209,0)
- .S ARGS=ARGS+1,ARGS(ARGS)=$E(XML,CPOS,$S(DONE:DONE-3,1:LLEN))
-"RTN","MXMLPRSE",210,0)
- .S CPOS=$S(DONE:DONE,1:LLEN+1)
-"RTN","MXMLPRSE",211,0)
- .D READ
-"RTN","MXMLPRSE",212,0)
- I EOD D ERROR(7) Q 0
-"RTN","MXMLPRSE",213,0)
- D CBK("PI",PNAME,.ARGS)
-"RTN","MXMLPRSE",214,0)
- Q 1
-"RTN","MXMLPRSE",215,0)
- ; Parse a comment
-"RTN","MXMLPRSE",216,0)
- ; Returns 1 if comment found, 0 if not.
-"RTN","MXMLPRSE",217,0)
-COMMENT() Q $$PARSCT("<!--","--",">","COMMENT")
-"RTN","MXMLPRSE",218,0)
- ; Parse a CDATA section
-"RTN","MXMLPRSE",219,0)
- ; Returns 1 if found, 0 if not.
-"RTN","MXMLPRSE",220,0)
-CDATA() Q $$PARSCT("<![CDATA[","]]>","","CHARACTERS")
-"RTN","MXMLPRSE",221,0)
- ; Parse a section (for CDATA and COMMENT)
-"RTN","MXMLPRSE",222,0)
- ; BGN=Beginning delimiter
-"RTN","MXMLPRSE",223,0)
- ; END=Ending delimiter
-"RTN","MXMLPRSE",224,0)
- ; TRL=Trailing delimiter
-"RTN","MXMLPRSE",225,0)
- ; TYP=Event type
-"RTN","MXMLPRSE",226,0)
-PARSCT(BGN,END,TRL,TYP) ;
-"RTN","MXMLPRSE",227,0)
- N X
-"RTN","MXMLPRSE",228,0)
- Q:'$$NEXT(BGN) 0
-"RTN","MXMLPRSE",229,0)
- D EPOS
-"RTN","MXMLPRSE",230,0)
- I 'LVL,TYP'="COMMENT" D ERROR(6) Q 0
-"RTN","MXMLPRSE",231,0)
- F  S X=$F(XML,END,CPOS) D  Q:X!EOD
-"RTN","MXMLPRSE",232,0)
- .D CBK(TYP,$E(XML,CPOS,$S(X:X-$L(END)-1,1:LLEN)))
-"RTN","MXMLPRSE",233,0)
- .S CPOS=$S(X:X,1:LLEN+1)
-"RTN","MXMLPRSE",234,0)
- .D READ,EPOS
-"RTN","MXMLPRSE",235,0)
- I EOD D ERROR(7) Q 0
-"RTN","MXMLPRSE",236,0)
- I $L(TRL),$$NEXT(TRL,3)
-"RTN","MXMLPRSE",237,0)
- Q 1
-"RTN","MXMLPRSE",238,0)
- ; Fetch an external entity from file or entity catalog
-"RTN","MXMLPRSE",239,0)
- ; SYS=System identifier (i.e., a URL)
-"RTN","MXMLPRSE",240,0)
- ; PUB=Public identifier (i.e., Entity Catalog ID) - optional
-"RTN","MXMLPRSE",241,0)
- ; GBL=Optional global root to receive entity content
-"RTN","MXMLPRSE",242,0)
- ; Returns global reference or null if error
-"RTN","MXMLPRSE",243,0)
-EXTRNL(SYS,PUB,GBL) ;
-"RTN","MXMLPRSE",244,0)
- N X,Y
-"RTN","MXMLPRSE",245,0)
- S PUB=$$NMLWS($G(PUB)),GBL=$G(GBL)
-"RTN","MXMLPRSE",246,0)
- I '$L(GBL) D CBK("EXTERNAL",.SYS,.PUB,.GBL) Q:$L(GBL) GBL
-"RTN","MXMLPRSE",247,0)
- I $L(PUB) D  Q:X $NA(^MXML(950,X,1))
-"RTN","MXMLPRSE",248,0)
- .S Y=$E(PUB,1,30),X=0
-"RTN","MXMLPRSE",249,0)
- .F  S X=$O(^MXML(950,"B",Y,X)) Q:'X  Q:$G(^MXML(950,X,0))=PUB
-"RTN","MXMLPRSE",250,0)
- S:'$L(GBL) GBL=$$TMPGBL
-"RTN","MXMLPRSE",251,0)
- S:$$PATH(SYS)="" SYS=PATH_SYS
-"RTN","MXMLPRSE",252,0)
- S X=$S($$FTG^%ZISH(SYS,"",$NA(@GBL@(1)),$QL(GBL)+1):GBL,1:"")
-"RTN","MXMLPRSE",253,0)
- D:'$L(X) ERROR(30,$S($L(SYS):SYS,1:PUB))
-"RTN","MXMLPRSE",254,0)
- Q X
-"RTN","MXMLPRSE",255,0)
- ; Return a unique scratch global reference
-"RTN","MXMLPRSE",256,0)
-TMPGBL() N SUB
-"RTN","MXMLPRSE",257,0)
- S SUB=$O(^TMP(ID,$J,$C(1)),-1)+1,^(SUB)=""
-"RTN","MXMLPRSE",258,0)
- Q $NA(^(SUB))
-"RTN","MXMLPRSE",259,0)
- ; Returns a SYSTEM and/or PUBLIC id
-"RTN","MXMLPRSE",260,0)
- ; SYS=Returned SYSTEM id
-"RTN","MXMLPRSE",261,0)
- ; PUB=Returned PUBLIC id
-"RTN","MXMLPRSE",262,0)
- ; FLG=If set, SYSTEM id is optional after PUBLIC id
-"RTN","MXMLPRSE",263,0)
- ; Optional return value: 0=neither, 1=PUBLIC, 2=SYSTEM
-"RTN","MXMLPRSE",264,0)
-SYSPUB(SYS,PUB,FLG) ;
-"RTN","MXMLPRSE",265,0)
- N RTN
-"RTN","MXMLPRSE",266,0)
- I $$NEXT("PUBLIC") D
-"RTN","MXMLPRSE",267,0)
- .D WS(1)
-"RTN","MXMLPRSE",268,0)
- .S PUB=$$VALUE(1),SYS=$$VALUE('$G(FLG)),RTN=1
-"RTN","MXMLPRSE",269,0)
- E  I $$NEXT("SYSTEM") D
-"RTN","MXMLPRSE",270,0)
- .D WS(1)
-"RTN","MXMLPRSE",271,0)
- .S PUB="",SYS=$$VALUE(1),RTN=2
-"RTN","MXMLPRSE",272,0)
- E  S (SYS,PUB)="",RTN=0
-"RTN","MXMLPRSE",273,0)
- Q:$Q RTN
-"RTN","MXMLPRSE",274,0)
  Q
+"RTN","MXMLPRSE",184,0)
+ ; Parse attribute=value sequence
+"RTN","MXMLPRSE",185,0)
+ ; ENAME=Element name to which attribute belongs
+"RTN","MXMLPRSE",186,0)
+ ; ATTR=Local array (by reference) to receive attribute value.
+"RTN","MXMLPRSE",187,0)
+ ;      Format is ATTR("<attribute name>")="<attribute value>"
+"RTN","MXMLPRSE",188,0)
+ ; Returns 1 if successful, 0 if not.
+"RTN","MXMLPRSE",189,0)
+ATTRIB(ENAME,ATTR) ;
+"RTN","MXMLPRSE",190,0)
+ N ANAME
+"RTN","MXMLPRSE",191,0)
+ D READ,WS() ;p116
+"RTN","MXMLPRSE",192,0)
+ S ANAME=$$NAME
+"RTN","MXMLPRSE",193,0)
+ Q:ANAME="" 0
+"RTN","MXMLPRSE",194,0)
+ I $D(ATTR(ANAME)) D ERROR(4,ANAME) Q 0
+"RTN","MXMLPRSE",195,0)
+ D:'$D(^TMP(ID,$J,"ATT",ENAME,ANAME)) ERROR(29,ANAME)
+"RTN","MXMLPRSE",196,0)
+ D READ,WS() ;p116
+"RTN","MXMLPRSE",197,0)
+ Q:'$$NEXT("=",3) 0
+"RTN","MXMLPRSE",198,0)
+ D WS()
+"RTN","MXMLPRSE",199,0)
+ S ATTR(ANAME)=$$VALUE(1)
+"RTN","MXMLPRSE",200,0)
+ D CHKVAL^MXMLPRS1(ENAME,ANAME,ATTR(ANAME))
+"RTN","MXMLPRSE",201,0)
+ Q 1
+"RTN","MXMLPRSE",202,0)
+ ; Parse a processing instruction
+"RTN","MXMLPRSE",203,0)
+ ; Returns 1 if PI found, 0 if not.
+"RTN","MXMLPRSE",204,0)
+PI() N PNAME,ARGS,DONE
+"RTN","MXMLPRSE",205,0)
+ Q:'$$NEXT("<?") 0
+"RTN","MXMLPRSE",206,0)
+ S PNAME=$$NAME(2),ARGS=0
+"RTN","MXMLPRSE",207,0)
+ I $$UP^XLFSTR(PNAME)="XML" D ERROR(9) Q 0
+"RTN","MXMLPRSE",208,0)
+ D WS(1)
+"RTN","MXMLPRSE",209,0)
+ F  S DONE=$F(XML,"?>",CPOS) D  Q:DONE!EOD
+"RTN","MXMLPRSE",210,0)
+ .S ARGS=ARGS+1,ARGS(ARGS)=$E(XML,CPOS,$S(DONE:DONE-3,1:LLEN))
+"RTN","MXMLPRSE",211,0)
+ .S CPOS=$S(DONE:DONE,1:LLEN+1)
+"RTN","MXMLPRSE",212,0)
+ .D READ
+"RTN","MXMLPRSE",213,0)
+ I EOD D ERROR(7) Q 0
+"RTN","MXMLPRSE",214,0)
+ D CBK("PI",PNAME,.ARGS)
+"RTN","MXMLPRSE",215,0)
+ Q 1
+"RTN","MXMLPRSE",216,0)
+ ; Parse a comment
+"RTN","MXMLPRSE",217,0)
+ ; Returns 1 if comment found, 0 if not.
+"RTN","MXMLPRSE",218,0)
+COMMENT() Q $$PARSCT("<!--","--",">","COMMENT")
+"RTN","MXMLPRSE",219,0)
+ ; Parse a CDATA section
+"RTN","MXMLPRSE",220,0)
+ ; Returns 1 if found, 0 if not.
+"RTN","MXMLPRSE",221,0)
+CDATA() Q $$PARSCT("<![CDATA[","]]>","","CHARACTERS")
+"RTN","MXMLPRSE",222,0)
+ ; Parse a section (for CDATA and COMMENT)
+"RTN","MXMLPRSE",223,0)
+ ; BGN=Beginning delimiter
+"RTN","MXMLPRSE",224,0)
+ ; END=Ending delimiter
+"RTN","MXMLPRSE",225,0)
+ ; TRL=Trailing delimiter
+"RTN","MXMLPRSE",226,0)
+ ; TYP=Event type
+"RTN","MXMLPRSE",227,0)
+PARSCT(BGN,END,TRL,TYP) ;
+"RTN","MXMLPRSE",228,0)
+ N X
+"RTN","MXMLPRSE",229,0)
+ Q:'$$NEXT(BGN) 0
+"RTN","MXMLPRSE",230,0)
+ D EPOS
+"RTN","MXMLPRSE",231,0)
+ I 'LVL,TYP'="COMMENT" D ERROR(6) Q 0
+"RTN","MXMLPRSE",232,0)
+ F  S X=$F(XML,END,CPOS) D  Q:X!EOD
+"RTN","MXMLPRSE",233,0)
+ .D CBK(TYP,$E(XML,CPOS,$S(X:X-$L(END)-1,1:LLEN)))
+"RTN","MXMLPRSE",234,0)
+ .S CPOS=$S(X:X,1:LLEN+1)
+"RTN","MXMLPRSE",235,0)
+ .D READ,EPOS
+"RTN","MXMLPRSE",236,0)
+ I EOD D ERROR(7) Q 0
+"RTN","MXMLPRSE",237,0)
+ I $L(TRL),$$NEXT(TRL,3)
+"RTN","MXMLPRSE",238,0)
+ Q 1
+"RTN","MXMLPRSE",239,0)
+ ; Fetch an external entity from file or entity catalog
+"RTN","MXMLPRSE",240,0)
+ ; SYS=System identifier (i.e., a URL)
+"RTN","MXMLPRSE",241,0)
+ ; PUB=Public identifier (i.e., Entity Catalog ID) - optional
+"RTN","MXMLPRSE",242,0)
+ ; GBL=Optional global root to receive entity content
+"RTN","MXMLPRSE",243,0)
+ ; Returns global reference or null if error
+"RTN","MXMLPRSE",244,0)
+EXTRNL(SYS,PUB,GBL) ;
+"RTN","MXMLPRSE",245,0)
+ N X,Y
+"RTN","MXMLPRSE",246,0)
+ S PUB=$$NMLWS($G(PUB)),GBL=$G(GBL)
+"RTN","MXMLPRSE",247,0)
+ I '$L(GBL) D CBK("EXTERNAL",.SYS,.PUB,.GBL) Q:$L(GBL) GBL
+"RTN","MXMLPRSE",248,0)
+ I $L(PUB) D  Q:X $NA(^MXML(950,X,1))
+"RTN","MXMLPRSE",249,0)
+ .S Y=$E(PUB,1,30),X=0
+"RTN","MXMLPRSE",250,0)
+ .F  S X=$O(^MXML(950,"B",Y,X)) Q:'X  Q:$G(^MXML(950,X,0))=PUB
+"RTN","MXMLPRSE",251,0)
+ S:'$L(GBL) GBL=$$TMPGBL
+"RTN","MXMLPRSE",252,0)
+ ; S:$$PATH(SYS)="" SYS=PATH_SYS /VEN/SMH 2.1 commented out
+"RTN","MXMLPRSE",253,0)
+ N FILENAME
+"RTN","MXMLPRSE",254,0)
+ I $L(PATH) S FILENAME=$P(SYS,PATH,2,99) ; VEN/SMH 2.1 (path supplied)
+"RTN","MXMLPRSE",255,0)
+ E  S FILENAME=SYS ; VEN/SMH 2.1 (no path supplied)
+"RTN","MXMLPRSE",256,0)
+ S X=$S($$FTG^%ZISH(PATH,FILENAME,$NA(@GBL@(1)),$QL(GBL)+1):GBL,1:"") ; VEN/SMH 2.1
+"RTN","MXMLPRSE",257,0)
+ D:'$L(X) ERROR(30,$S($L(SYS):SYS,1:PUB))
+"RTN","MXMLPRSE",258,0)
+ Q X
+"RTN","MXMLPRSE",259,0)
+ ; Return a unique scratch global reference
+"RTN","MXMLPRSE",260,0)
+TMPGBL() N SUB
+"RTN","MXMLPRSE",261,0)
+ S SUB=$O(^TMP(ID,$J,$C(1)),-1)+1,^(SUB)=""
+"RTN","MXMLPRSE",262,0)
+ Q $NA(^(SUB))
+"RTN","MXMLPRSE",263,0)
+ ; Returns a SYSTEM and/or PUBLIC id
+"RTN","MXMLPRSE",264,0)
+ ; SYS=Returned SYSTEM id
+"RTN","MXMLPRSE",265,0)
+ ; PUB=Returned PUBLIC id
+"RTN","MXMLPRSE",266,0)
+ ; FLG=If set, SYSTEM id is optional after PUBLIC id
+"RTN","MXMLPRSE",267,0)
+ ; Optional return value: 0=neither, 1=PUBLIC, 2=SYSTEM
+"RTN","MXMLPRSE",268,0)
+SYSPUB(SYS,PUB,FLG) ;
+"RTN","MXMLPRSE",269,0)
+ N RTN
+"RTN","MXMLPRSE",270,0)
+ I $$NEXT("PUBLIC") D
+"RTN","MXMLPRSE",271,0)
+ .D WS(1)
+"RTN","MXMLPRSE",272,0)
+ .S PUB=$$VALUE(1),SYS=$$VALUE('$G(FLG)),RTN=1
+"RTN","MXMLPRSE",273,0)
+ E  I $$NEXT("SYSTEM") D
+"RTN","MXMLPRSE",274,0)
+ .D WS(1)
 "RTN","MXMLPRSE",275,0)
- ; Save current document location for error reporting
+ .S PUB="",SYS=$$VALUE(1),RTN=2
 "RTN","MXMLPRSE",276,0)
- ; See EPOS^MXMLPRS0
+ E  S (SYS,PUB)="",RTN=0
 "RTN","MXMLPRSE",277,0)
-EPOS S ERR("XML")=XML,ERR("POS")=CPOS,ERR("LIN")=LPOS
+ Q:$Q RTN
 "RTN","MXMLPRSE",278,0)
  Q
 "RTN","MXMLPRSE",279,0)
- ; Setup error information
+ ; Save current document location for error reporting
 "RTN","MXMLPRSE",280,0)
-ERROR(ERN,ARG) ;
+ ; See EPOS^MXMLPRS0
 "RTN","MXMLPRSE",281,0)
- N DIHELP,DIMSG,DIERR,MSG
+EPOS S ERR("XML")=XML,ERR("POS")=CPOS,ERR("LIN")=LPOS
 "RTN","MXMLPRSE",282,0)
- D BLD^DIALOG(9500000+ERN,"","","MSG","")
-"RTN","MXMLPRSE",283,0)
- S ERR("NUM")=ERN
-"RTN","MXMLPRSE",284,0)
- S ERR("SEV")=$S($G(DIHELP):0,$G(DIMSG):1,1:2)
-"RTN","MXMLPRSE",285,0)
- S ERR("MSG")=$G(MSG(1))
-"RTN","MXMLPRSE",286,0)
- S ERR("ARG")=$G(ARG)
-"RTN","MXMLPRSE",287,0)
- I OPTION'["W"!ERR("SEV"),OPTION["V"!(ERR("SEV")'=1) D CBK("ERROR",.ERR)
-"RTN","MXMLPRSE",288,0)
- S:ERR("SEV")=2!(OPTION[ERR("SEV")) EOD=-1                             ; Stop parsing on severe error
-"RTN","MXMLPRSE",289,0)
  Q
+"RTN","MXMLPRSE",283,0)
+ ; Setup error information
+"RTN","MXMLPRSE",284,0)
+ERROR(ERN,ARG) ;
+"RTN","MXMLPRSE",285,0)
+ N DIHELP,DIMSG,DIERR,MSG
+"RTN","MXMLPRSE",286,0)
+ D BLD^DIALOG(9500000+ERN,"","","MSG","")
+"RTN","MXMLPRSE",287,0)
+ S ERR("NUM")=ERN
+"RTN","MXMLPRSE",288,0)
+ S ERR("SEV")=$S($G(DIHELP):0,$G(DIMSG):1,1:2)
+"RTN","MXMLPRSE",289,0)
+ S ERR("MSG")=$G(MSG(1))
 "RTN","MXMLPRSE",290,0)
- ; Shortcuts to functions/procedures defined elsewhere
+ S ERR("ARG")=$G(ARG)
 "RTN","MXMLPRSE",291,0)
-WS(X) Q:$Q $$WS^MXMLPRS0(.X)
+ I OPTION'["W"!ERR("SEV"),OPTION["V"!(ERR("SEV")'=1) D CBK("ERROR",.ERR)
 "RTN","MXMLPRSE",292,0)
- D WS^MXMLPRS0(.X) Q
+ S:ERR("SEV")=2!(OPTION[ERR("SEV")) EOD=-1                             ; Stop parsing on severe error
 "RTN","MXMLPRSE",293,0)
-CBK(X,Y1,Y2,Y3,Y4) D CBK^MXMLPRS0(.X,.Y1,.Y2,.Y3,.Y4) Q
+ Q
 "RTN","MXMLPRSE",294,0)
+ ; Shortcuts to functions/procedures defined elsewhere
+"RTN","MXMLPRSE",295,0)
+WS(X) Q:$Q $$WS^MXMLPRS0(.X)
+"RTN","MXMLPRSE",296,0)
+ D WS^MXMLPRS0(.X) Q
+"RTN","MXMLPRSE",297,0)
+CBK(X,Y1,Y2,Y3,Y4) D CBK^MXMLPRS0(.X,.Y1,.Y2,.Y3,.Y4) Q
+"RTN","MXMLPRSE",298,0)
 NEXT(X,Y) Q $$NEXT^MXMLPRS0(.X,.Y)
 "RTN","MXMLTEST")
 0^4^B8594598
 "RTN","MXMLTEST",1,0)
 MXMLTEST ;SAIC/DKM - Test XML SAX interface ;01/31/2002  17:11
 "RTN","MXMLTEST",2,0)
- ;;2.0T3;XML PROCESSING UTILITIES;;Aug 13, 2013;Build 7
+ ;;2.1;XML PROCESSING UTILITIES;;Nov 27, 2013;Build 9
 "RTN","MXMLTEST",3,0)
  ;=================================================================
 "RTN","MXMLTEST",4,0)
@@ -4563,7 +4855,7 @@ ERROR(ERR) ;
 "RTN","MXMLTMP1",1,0)
 MXMLTMP1 ; VEN/GPL - MXMLTMPL spill over;2013-08-13  1:22 PM
 "RTN","MXMLTMP1",2,0)
- ;;2.0T3;XML PROCESSING UTILITIES;;Aug 13, 2013;Build 7
+ ;;2.1;XML PROCESSING UTILITIES;;Nov 27, 2013;Build 9
 "RTN","MXMLTMP1",3,0)
  ;
 "RTN","MXMLTMP1",4,0)
@@ -5029,7 +5321,7 @@ TRIM(THEXML) ; TAKES OUT ALL NULL ELEMENTS
 "RTN","MXMLTMPL",1,0)
 MXMLTMPL   ; VEN/GPL - XML templating utilities;2013-07-26  6:22 PM
 "RTN","MXMLTMPL",2,0)
- ;;2.0T3;XML PROCESSING UTILITIES;;Aug 13, 2013;Build 7
+ ;;2.1;XML PROCESSING UTILITIES;;Nov 27, 2013;Build 9
 "RTN","MXMLTMPL",3,0)
  ;
 "RTN","MXMLTMPL",4,0)
@@ -5675,7 +5967,7 @@ TEST ; Run all the test cases
 "RTN","MXMLTMPT",1,0)
 MXMLTMPT   ; VEN/GPL/SMH - XML Templater TEST CASES ;2013-08-13  12:00 PM
 "RTN","MXMLTMPT",2,0)
- ;;2.0T3;XML PROCESSING UTILITIES;;Aug 13, 2013;Build 7
+ ;;2.1;XML PROCESSING UTILITIES;;Nov 27, 2013;Build 9
 "RTN","MXMLTMPT",3,0)
 TEST ; M-Unit Entry point for Unit Testing
 "RTN","MXMLTMPT",4,0)
@@ -6627,7 +6919,7 @@ TRIM2 ; - Trim an XML array
 "RTN","MXMLUTL",1,0)
 MXMLUTL ;mjk/alb - MXML Build Utilities ;12/11/2002  15:30
 "RTN","MXMLUTL",2,0)
- ;;2.0T3;XML PROCESSING UTILITIES;;Aug 13, 2013;Build 7
+ ;;2.1;XML PROCESSING UTILITIES;;Nov 27, 2013;Build 9
 "RTN","MXMLUTL",3,0)
  QUIT
 "RTN","MXMLUTL",4,0)
