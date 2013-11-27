@@ -1,4 +1,4 @@
-MXMLPRSE	;SAIC/DKM - XML Parser ;09/08/08  11:50
+MXMLPRSE	;SAIC/DKM - XML Parser ;2013-11-27  2:25 PM
 	;;2.0T3;XML PROCESSING UTILITIES;;Aug 13, 2013;Build 1
 	;=================================================================
 	; Main entry point.
@@ -107,7 +107,7 @@ VALUE(ERF,FLG)	;
 	.I $$NEXT("&#") S RTN=RTN_$$CHENTITY
 	.E  I 'FLG,$$NEXT("&") S RTN=RTN_$$ENTITY
 	.E  S RTN=RTN_CHR,CPOS=CPOS+1
-	.D:CPOS>LLEN READ
+	.D:((CPOS+10)>LLEN) READ ; VEN/SMH 2.1 - Read ahead for entities!
 	I DLM=CHR S CPOS=CPOS+1
 	E  D EPOS,ERROR($S('$L(CHR):12,EXC[CHR:13,1:12)) Q ""
 	Q $$NMLWS(RTN)
@@ -140,6 +140,7 @@ DOPARAM	F  D WS() Q:EOD!'$$NEXT("%")  I $$ENTITY(1)
 ENTITY(PARAM)	;
 	N NAME,APND
 	S PARAM=+$G(PARAM)
+	I CPOS+10>LLEN D READ  ; VEN/SMH v2.1 - Read ahead for Entity if not enough in XML buffer.
 	I 'PARAM,$$NEXT("#") Q $$CHENTITY
 	S NAME=$S(PARAM:"%",1:"")_$$NAME(2)
 	Q:'$$NEXT(";",3) ""
@@ -248,8 +249,11 @@ EXTRNL(SYS,PUB,GBL)	;
 	.S Y=$E(PUB,1,30),X=0
 	.F  S X=$O(^MXML(950,"B",Y,X)) Q:'X  Q:$G(^MXML(950,X,0))=PUB
 	S:'$L(GBL) GBL=$$TMPGBL
-	S:$$PATH(SYS)="" SYS=PATH_SYS
-	S X=$S($$FTG^%ZISH(SYS,"",$NA(@GBL@(1)),$QL(GBL)+1):GBL,1:"")
+	; S:$$PATH(SYS)="" SYS=PATH_SYS /VEN/SMH 2.1 commented out
+	N FILENAME
+	I $L(PATH) S FILENAME=$P(SYS,PATH,2,99) ; VEN/SMH 2.1 (path supplied)
+	E  S FILENAME=SYS ; VEN/SMH 2.1 (no path supplied)
+	S X=$S($$FTG^%ZISH(PATH,FILENAME,$NA(@GBL@(1)),$QL(GBL)+1):GBL,1:"") ; VEN/SMH 2.1
 	D:'$L(X) ERROR(30,$S($L(SYS):SYS,1:PUB))
 	Q X
 	; Return a unique scratch global reference
