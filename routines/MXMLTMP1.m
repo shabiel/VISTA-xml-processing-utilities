@@ -1,5 +1,5 @@
 MXMLTMP1	; VEN/GPL - MXMLTMPL spill over;2013-08-13  1:22 PM
-	;;2.0T3;XML PROCESSING UTILITIES;;Aug 13, 2013;Build 50
+	;;2.2;XML PROCESSING UTILITIES;;May 18, 2014;Build 9
 	;
 INDEX(IZXML,VDX,NOINX,TEMPLATE,REDUX)	; parse XML in IZXML and produce 
 	; an XPATH index; REDUX is a string to be removed from each xpath

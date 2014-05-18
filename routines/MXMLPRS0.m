@@ -1,5 +1,5 @@
-MXMLPRS0	;SAIC/DKM - XML Parser ;03/09/2005  12:57
-	;;2.0T3;XML PROCESSING UTILITIES;;Aug 13, 2013
+MXMLPRS0	;SAIC/DKM - XML Parser ;2014-05-18  11:04 AM
+	;;2.2;XML PROCESSING UTILITIES;;May 18, 2014;Build 9
 	;=================================================================
 	; State 0: Prolog
 0	N ATTR
@@ -32,6 +32,7 @@ MXMLPRS0	;SAIC/DKM - XML Parser ;03/09/2005  12:57
 	F  S CHR=$E(XML,CPOS) Q:"<"[CHR!EOD  D
 	.I $$NEXT("&") S TXT=TXT_$$ENTITY
 	.E  S TXT=TXT_CHR,CPOS=CPOS+1
+	.D:(LLEN-CPOS)<50 READ ;P136
 	S:CHR="<" ST=3
 	I $L(TXT) D
 	.I 'LVL D ERROR(6) Q

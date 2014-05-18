@@ -1,5 +1,5 @@
-MXMLPRSE	;SAIC/DKM - XML Parser ;2013-11-27  2:25 PM
-	;;2.0T3;XML PROCESSING UTILITIES;;Aug 13, 2013;Build 1
+MXMLPRSE	;SAIC/DKM - XML Parser ;2014-05-18  11:04 AM
+	;;2.2;XML PROCESSING UTILITIES;;May 18, 2014;Build 9
 	;=================================================================
 	; Main entry point.
 	; DOC = Closed reference to global array containing document
@@ -107,7 +107,8 @@ VALUE(ERF,FLG)	;
 	.I $$NEXT("&#") S RTN=RTN_$$CHENTITY
 	.E  I 'FLG,$$NEXT("&") S RTN=RTN_$$ENTITY
 	.E  S RTN=RTN_CHR,CPOS=CPOS+1
-	.D:((CPOS+10)>LLEN) READ ; VEN/SMH 2.1 - Read ahead for entities!
+	.;D:CPOS>LLEN READ
+	.D:(LLEN-CPOS)<50 READ ;P136
 	I DLM=CHR S CPOS=CPOS+1
 	E  D EPOS,ERROR($S('$L(CHR):12,EXC[CHR:13,1:12)) Q ""
 	Q $$NMLWS(RTN)
