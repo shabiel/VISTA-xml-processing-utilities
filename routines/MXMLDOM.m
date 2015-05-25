@@ -1,6 +1,8 @@
-MXMLDOM	;SAIC/DKM - XML Parser - DOM model ;02/27/2002  13:24
-	;;2.2;XML PROCESSING UTILITIES;;May 18, 2014;Build 9
+MXMLDOM	;SAIC/DKM - XML Parser - DOM model ;2015-05-25  11:45 AM
+	;;2.2;XML PROCESSING UTILITIES;;May 18, 2014;Build 11
 	;=================================================================
+	; Author Dr. Douglas Martin for SAIC.
+	;
 	; This acts as an intermediate client between the event-based XML
 	; parser and a client requiring an in-memory document model.
 EN(DOC,OPTION)	;

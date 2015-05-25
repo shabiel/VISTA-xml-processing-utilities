@@ -1,6 +1,10 @@
-MXMLBLD	; RWF/RWF - Recursive XML Writer ;2013-07-30  3:37 PM
-	;;2.2;XML PROCESSING UTILITIES;;May 18, 2014;Build 9
+MXMLBLD	; RWF/RWF - Recursive XML Writer ;2015-05-25  11:34 AM
+	;;2.2;XML PROCESSING UTILITIES;;May 18, 2014;Build 11
 	QUIT
+	;
+	; Original routine authored by U.S. Department of Veterans Affairs
+	; Author Wally Fort
+	; ATRIBUTEff written by Sam Habiel in 2014. No copyright claimed.
 	;
 	; Sam sez: Wally Fort wrote this!
 	; How to use:
@@ -197,41 +201,41 @@ PUT(RETURN,STRING)	; PEP Proc/$$ - Put an XML Line into the RETURN Array
 	S RETURN(CNT)=STRING
 	QUIT:$QUIT CNT QUIT
 	;
-TEST	D:$L($T(EN^XTMUNIT)) EN^XTMUNIT($T(+0),1) QUIT
+TEST	D:$L($T(EN^%ut)) EN^%ut($T(+0),1) QUIT
 	;
 TESTPUT	; @TEST - Test PUT
 	N RTN
 	D PUT(.RTN,$$XMLHDR())
 	D PUT(.RTN,$$MKTAG("Book",,"Pride and Prejudice"))
-	D CHKEQ^XTMUNIT(RTN(1),"<?xml version=""1.0"" encoding=""utf-8"" ?>")
-	D CHKEQ^XTMUNIT(RTN(2),"<Book>Pride and Prejudice</Book>")
+	D CHKEQ^%ut(RTN(1),"<?xml version=""1.0"" encoding=""utf-8"" ?>")
+	D CHKEQ^%ut(RTN(2),"<Book>Pride and Prejudice</Book>")
 	QUIT
 	;
 TESTMK	; @TEST - Test MKTAG
 	N %1
 	S %1("type")="japaense"
 	S %1("origin")="japan"
-	D CHKEQ^XTMUNIT($$MKTAG("name",.%1,"Toyoda",1),"<name origin=""japan"" type=""japaense"">Toyoda</name>")
-	D CHKEQ^XTMUNIT($$MKTAG("name",.%1,"Toyoda"),"<name origin=""japan"" type=""japaense"">Toyoda</name>")
-	D CHKEQ^XTMUNIT($$MKTAG("name",,"Toyoda"),"<name>Toyoda</name>")
-	D CHKEQ^XTMUNIT($$MKTAG("name",.%1),"<name origin=""japan"" type=""japaense"" />")
-	D CHKEQ^XTMUNIT($$MKTAG("name",.%1,,0),"<name origin=""japan"" type=""japaense"">")
-	D CHKEQ^XTMUNIT($$MKTAG("/name"),"</name>")
+	D CHKEQ^%ut($$MKTAG("name",.%1,"Toyoda",1),"<name origin=""japan"" type=""japaense"">Toyoda</name>")
+	D CHKEQ^%ut($$MKTAG("name",.%1,"Toyoda"),"<name origin=""japan"" type=""japaense"">Toyoda</name>")
+	D CHKEQ^%ut($$MKTAG("name",,"Toyoda"),"<name>Toyoda</name>")
+	D CHKEQ^%ut($$MKTAG("name",.%1),"<name origin=""japan"" type=""japaense"" />")
+	D CHKEQ^%ut($$MKTAG("name",.%1,,0),"<name origin=""japan"" type=""japaense"">")
+	D CHKEQ^%ut($$MKTAG("/name"),"</name>")
 	QUIT
 	;
 TESTBLD	; @TEST - Test Wally's XML Builder
 	N %1 S %1("version")="2.5"
 	D START("Books",,"G",,.%1)
-	D CHKEQ^XTMUNIT(^TMP("MXMLBLD",$J,1),"<?xml version=""1.0"" encoding=""utf-8"" ?>")
-	D CHKEQ^XTMUNIT(^TMP("MXMLBLD",$J,2),"<Books version=""2.5"">")
+	D CHKEQ^%ut(^TMP("MXMLBLD",$J,1),"<?xml version=""1.0"" encoding=""utf-8"" ?>")
+	D CHKEQ^%ut(^TMP("MXMLBLD",$J,2),"<Books version=""2.5"">")
 	N %1 S %1("type")="date"
 	D ITEM(,"LastUpdated",.%1,"3-15-99")
-	D CHKEQ^XTMUNIT(^TMP("MXMLBLD",$J,3),"<LastUpdated type=""date"">3-15-99</LastUpdated>")
+	D CHKEQ^%ut(^TMP("MXMLBLD",$J,3),"<LastUpdated type=""date"">3-15-99</LastUpdated>")
 	D MULTI(,"Book",,"BOOKEAC1")
 	D MULTI(,"Book",,"BOOKEAC2")
-	D CHKEQ^XTMUNIT(^TMP("MXMLBLD",$J,11),"<Title>Sorrows of Young Werther</Title>")
+	D CHKEQ^%ut(^TMP("MXMLBLD",$J,11),"<Title>Sorrows of Young Werther</Title>")
 	D END
-	D CHKEQ^XTMUNIT(^TMP("MXMLBLD",$J,14),"</Books>")
+	D CHKEQ^%ut(^TMP("MXMLBLD",$J,14),"</Books>")
 	; ZWRITE ^TMP("MXMLBLD",$J,*)
 	QUIT
 	;
@@ -243,7 +247,7 @@ TESTBLD1	; Test Wally's XML Builder
 	D MULTI^MXMLBLD(,"Book",,"BOOKEAC1")
 	D MULTI^MXMLBLD(,"Book",,"BOOKEAC2")
 	D END^MXMLBLD
-	ZWRITE ^TMP("MXMLBLD",$J,*)
+	; ZWRITE ^TMP("MXMLBLD",$J,*)
 	QUIT
 BOOKEAC1	; Book 1
 	D ITEM^MXMLBLD(,"Author",,"AUSTEN,JANE")

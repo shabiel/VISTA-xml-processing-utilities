@@ -1,5 +1,6 @@
-MXMLTEST	;SAIC/DKM - Test XML SAX interface ;01/31/2002  17:11
-	;;2.2;XML PROCESSING UTILITIES;;May 18, 2014;Build 9
+MXMLTEST	;SAIC/DKM - Test XML SAX interface ;2015-05-25  11:41 AM
+	;;2.2;XML PROCESSING UTILITIES;;May 18, 2014;Build 11
+	; @Author Dr. Douglas Martin, SAIC.
 	;=================================================================
 	; This application acts as a client to the XML parser.  It displays
 	; parsing events as they occur and generates a summary at the end.

@@ -1,46 +1,47 @@
-MXMLDOMT	; VEN/SMH - Unit Tests for DOM Parser;2014-05-18  10:37 AM
-	;;2.2;XML PROCESSING UTILITIES;;May 18, 2014;Build 9
+MXMLDOMT	; VEN/SMH - Unit Tests for DOM Parser;2015-05-25  11:36 AM
+	;;2.2;XML PROCESSING UTILITIES;;May 18, 2014;Build 11
 	;;
+	; (c) Sam Habiel 2014
 	;
 	S IO=$P
 	N DIQUIET S DIQUIET=1
-	D EN^XTMUNIT($T(+0),1)
+	D EN^%ut($T(+0),1)
 	QUIT
 	;
 XML1	; @TEST - Parse a regular XML Document--sanity test
 	D READ("XML1D")
 	N D S D=$$EN^MXMLDOM($NA(^TMP($J)),"WD")
-	D CHKTF^XTMUNIT(D,"XML not parsed")
+	D CHKTF^%ut(D,"XML not parsed")
 	D DELETE^MXMLDOM(D)
 	QUIT
 XML2	; @TEST - Parse an XML doc on one line
 	D READ("XML2D")
 	N D S D=$$EN^MXMLDOM($NA(^TMP($J)),"WD")
-	D CHKTF^XTMUNIT(D,"XML not parsed")
+	D CHKTF^%ut(D,"XML not parsed")
 	D DELETE^MXMLDOM(D)
 	QUIT
 XML3	; @TEST - Parse an XML doc broken on several lines
 	D READ("XML3D")
 	N D S D=$$EN^MXMLDOM($NA(^TMP($J)),"WD")
-	D CHKTF^XTMUNIT(D,"XML not parsed")
+	D CHKTF^%ut(D,"XML not parsed")
 	D DELETE^MXMLDOM(D)
 	QUIT
 XML4	; @TEST - Parse an XML doc with Character ref attr
 	D READ("XML4D")
 	N D S D=$$EN^MXMLDOM($NA(^TMP($J)),"WD")
-	D CHKTF^XTMUNIT(D,"XML not parsed")
+	D CHKTF^%ut(D,"XML not parsed")
 	D DELETE^MXMLDOM(D)
 	QUIT
 XML5	; @TEST - Parse an XML doc with Chracter ref attr broken over 2 lines (Sergey's bug)
 	D READ("XML5D")
 	N D S D=$$EN^MXMLDOM($NA(^TMP($J)),"WD")
-	D CHKTF^XTMUNIT(D,"XML not parsed")
+	D CHKTF^%ut(D,"XML not parsed")
 	D DELETE^MXMLDOM(D)
 	QUIT
 XML6	; @TEST - Parse an XML doc with Chracter ref text broken over 2 lines (George's bug)
 	D READ("XML6D")
 	N D S D=$$EN^MXMLDOM($NA(^TMP($J)),"WD")
-	D CHKTF^XTMUNIT(D,"XML not parsed")
+	D CHKTF^%ut(D,"XML not parsed")
 	D DELETE^MXMLDOM(D)
 	QUIT
 XMLFILE	; @TEST - Parse an XML document loacated on the File system (Sam's bug)
@@ -52,12 +53,12 @@ XMLFILE	; @TEST - Parse an XML document loacated on the File system (Sam's bug)
 	;
 	; Check 1: No path supplied. System supposed to use default directory
 	N D S D=$$EN^MXMLDOM("mxmldomt.xml","WD")
-	D CHKTF^XTMUNIT(D,"XML not parsed")
+	D CHKTF^%ut(D,"XML not parsed")
 	D DELETE^MXMLDOM(D)
 	;
 	; Check 2; Supply path explicitly
 	N D S D=$$EN^MXMLDOM($$DEFDIR^%ZISH()_"mxmldomt.xml","WD")
-	D CHKTF^XTMUNIT(D,"XML not parsed")
+	D CHKTF^%ut(D,"XML not parsed")
 	D DELETE^MXMLDOM(D)
 	;
 	; Delete file
@@ -74,10 +75,11 @@ XML136	; @TEST - VA Patch 136 - Long comments are not read properly
 	.Q
 	S CB("ENDDOCUMENT")="ENDD^MXMLDOMT",Y="^TMP($J,""P136 TEST"")"
 	D EN^MXMLPRSE(Y,.CB,"")
-	D CHKEQ^XTMUNIT(TEST,"PASSED","Long comments are not parsed properly")
+	D CHKEQ^%ut(TEST,"PASSED","Long comments are not parsed properly")
 	K ^TMP($J,"P136 TEST")
 	Q
 ENDD	;end of document call back
+	;ZEXCEPT: TEST
 	S TEST="PASSED"
 	Q
 READ(TAGNAME)	; Read XML from tag

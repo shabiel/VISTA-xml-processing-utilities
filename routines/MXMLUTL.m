@@ -1,5 +1,6 @@
-MXMLUTL	;mjk/alb - MXML Build Utilities ;12/11/2002  15:30
-	;;2.2;XML PROCESSING UTILITIES;;May 18, 2014;Build 9
+MXMLUTL	;mjk/alb - MXML Build Utilities ;2015-05-25  11:44 AM
+	;;2.2;XML PROCESSING UTILITIES;;May 18, 2014;Build 11
+	; Original routine authored by Department of Veterans Affairs 2002
 	QUIT
 	;
 XMLHDR()	; -- provides current XML standard header 

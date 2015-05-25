@@ -1,5 +1,7 @@
-MXMLPRSE	;SAIC/DKM - XML Parser ;2014-05-18  11:04 AM
-	;;2.2;XML PROCESSING UTILITIES;;May 18, 2014;Build 9
+MXMLPRSE	;SAIC/DKM - XML Parser ;2015-05-25  11:41 AM
+	;;2.2;XML PROCESSING UTILITIES;;May 18, 2014;Build 11
+	; @Author Dr. Douglas Martin, SAIC.
+	; Sam Habiel made various fixes in 2014. Copyright disclaimed.
 	;=================================================================
 	; Main entry point.
 	; DOC = Closed reference to global array containing document

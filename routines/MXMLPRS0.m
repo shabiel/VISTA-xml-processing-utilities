@@ -1,6 +1,8 @@
-MXMLPRS0	;SAIC/DKM - XML Parser ;2014-05-18  11:04 AM
-	;;2.2;XML PROCESSING UTILITIES;;May 18, 2014;Build 9
+MXMLPRS0	;SAIC/DKM - XML Parser ;2015-05-25  11:39 AM
+	;;2.2;XML PROCESSING UTILITIES;;May 18, 2014;Build 11
 	;=================================================================
+	; @Author Dr. Douglas Martin, SAIC.
+	;
 	; State 0: Prolog
 0	N ATTR
 	S ST=1

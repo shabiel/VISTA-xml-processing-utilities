@@ -1,5 +1,7 @@
-MXMLPATH	; VEN/SMH - XPATH Extensions to MXML Package ;2013-07-26  8:22 PM
-	;;2.2;XML PROCESSING UTILITIES;;May 18, 2014;Build 9
+MXMLPATH	; VEN/SMH - XPATH Extensions to MXML Package ;2015-05-25  11:37 AM
+	;;2.2;XML PROCESSING UTILITIES;;May 18, 2014;Build 11
+	;
+	; (c) Sam Habiel 2014
 	;
 	; Public Entry Point: [$$]XPATH. The rest is private.
 	;

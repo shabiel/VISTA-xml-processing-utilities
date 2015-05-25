@@ -1,10 +1,11 @@
-MXMLPATT	; VEN/SMH - MXML XPath Processor Unit Tests;2013-08-06  10:35 AM
-	;;2.2;XML PROCESSING UTILITIES;;May 18, 2014;Build 9
+MXMLPATT	; VEN/SMH - MXML XPath Processor Unit Tests;2015-05-25  11:38 AM
+	;;2.2;XML PROCESSING UTILITIES;;May 18, 2014;Build 11
+	; (c) Sam Habiel 2014
 TEST	; M-Unit Entry point for Unit Testing
 	SET IO=$PRINCIPAL
 	NEW DIQUIET SET DIQUIET=1
 	DO DT^DICRW
-	DO:$LENGTH($TEXT(EN^XTMUNIT)) EN^XTMUNIT($TEXT(+0),1)
+	DO:$LENGTH($TEXT(EN^%ut)) EN^%ut($TEXT(+0),1)
 	QUIT
 	;
 STARTUP	; M-Unit start-up; Load XML Document
@@ -18,7 +19,7 @@ STARTUP	; M-Unit start-up; Load XML Document
 	; ZEXCEPT: DOCHAND
 	SET DOCHAND=$$EN^MXMLDOM($NAME(^TMP($JOB)),"W")
 	;
-	IF 'DOCHAND DO FAIL^XTMUNIT("Could not parse XML")
+	IF 'DOCHAND DO FAIL^%ut("Could not parse XML")
 	;
 	KILL ^TMP($JOB)
 	QUIT
@@ -36,7 +37,7 @@ TESTS1	; @TEST - Test /PEPSResponse/Body/drugCheck/drugDrugChecks/drugDrugCheck/
 	DO XPATH^MXMLPATH(.RTN,DOCHAND,XPATH)
 	NEW TEXT
 	DO TEXT^MXMLDOM(DOCHAND,$ORDER(RTN("")),$NAME(TEXT))
-	DO CHKEQ^XTMUNIT(TEXT(1),"FDB",XPATH_" expression failed")
+	DO CHKEQ^%ut(TEXT(1),"FDB",XPATH_" expression failed")
 	QUIT
 	;
 TESTS2	; @TEST - Test /PEPSResponse/drugCheck/drugDrugChecks/drugDrugCheck/source [n/a]
@@ -46,7 +47,7 @@ TESTS2	; @TEST - Test /PEPSResponse/drugCheck/drugDrugChecks/drugDrugCheck/sourc
 	NEW RTN
 	DO XPATH^MXMLPATH(.RTN,DOCHAND,XPATH)
 	NEW NODE SET NODE=$ORDER(RTN(""))
-	DO CHKEQ^XTMUNIT(NODE,"",XPATH_" shouldn't be found")
+	DO CHKEQ^%ut(NODE,"",XPATH_" shouldn't be found")
 	QUIT
 	;
 TESTS3	; @TEST - Test a multiple /PEPSResponse/.../reference [extant]
@@ -61,7 +62,7 @@ TESTS3	; @TEST - Test a multiple /PEPSResponse/.../reference [extant]
 	NEW C SET C=0
 	NEW N SET N=0 FOR  SET N=$ORDER(RTN(N)) QUIT:'N  SET C=C+1
 	;
-	DO CHKEQ^XTMUNIT(C,5,"5 reference tags should exist")
+	DO CHKEQ^%ut(C,5,"5 reference tags should exist")
 	QUIT
 	;
 TESTSS1	; @TEST - Test //reference [extant]
@@ -75,7 +76,7 @@ TESTSS1	; @TEST - Test //reference [extant]
 	NEW C SET C=0
 	NEW N SET N=0 FOR  SET N=$ORDER(RTN(N)) QUIT:'N  SET C=C+1
 	;
-	DO CHKEQ^XTMUNIT(C,5,"5 reference tags should exist")
+	DO CHKEQ^%ut(C,5,"5 reference tags should exist")
 	QUIT
 	;
 TESTSS2	; @TEST - Test //referenceblah [n/a]
@@ -89,7 +90,7 @@ TESTSS2	; @TEST - Test //referenceblah [n/a]
 	NEW C SET C=0
 	NEW N SET N=0 FOR  SET N=$ORDER(RTN(N)) QUIT:'N  SET C=C+1
 	;
-	DO CHKEQ^XTMUNIT(C,0,"0 referenceblah tags should exist")
+	DO CHKEQ^%ut(C,0,"0 referenceblah tags should exist")
 	QUIT
 	;
 TESTSS3	; @TEST - Test //interactedDrugList/drug [extant]
@@ -103,7 +104,7 @@ TESTSS3	; @TEST - Test //interactedDrugList/drug [extant]
 	NEW C SET C=0
 	NEW N SET N=0 FOR  SET N=$ORDER(RTN(N)) QUIT:'N  SET C=C+1
 	;
-	DO CHKEQ^XTMUNIT(C,2,"2 "_XPATH_" tags should exist")
+	DO CHKEQ^%ut(C,2,"2 "_XPATH_" tags should exist")
 	QUIT
 	;
 TESTSS4	; @TEST - Test //interactedDrugList/drum [n/a]
@@ -118,7 +119,7 @@ TESTSS4	; @TEST - Test //interactedDrugList/drum [n/a]
 	NEW C SET C=0
 	NEW N SET N=0 FOR  SET N=$ORDER(RTN(N)) QUIT:'N  SET C=C+1
 	;
-	DO CHKEQ^XTMUNIT(C,0,"0 "_XPATH_" tags should exist")
+	DO CHKEQ^%ut(C,0,"0 "_XPATH_" tags should exist")
 	QUIT
 	;
 TESTREL1	; @TEST - Test Relative paths (//Header, then MUser) [extant]
@@ -126,7 +127,7 @@ TESTREL1	; @TEST - Test Relative paths (//Header, then MUser) [extant]
 	NEW RTN
 	DO XPATH^MXMLPATH(.RTN,DOCHAND,"//Header")
 	NEW % SET %=$$XPATH^MXMLPATH(.RTN,DOCHAND,"MUser")
-	DO CHKEQ^XTMUNIT($$VALUE^MXMLDOM(DOCHAND,%,"duz"),88660079,"Wrong tag retrieved")
+	DO CHKEQ^%ut($$VALUE^MXMLDOM(DOCHAND,%,"duz"),88660079,"Wrong tag retrieved")
 	QUIT
 	;
 TESTREL2	; @TEST - Test Relative paths (//Header, then interactedDrugList/drug) [n/a]
@@ -134,7 +135,7 @@ TESTREL2	; @TEST - Test Relative paths (//Header, then interactedDrugList/drug) 
 	NEW RTN
 	DO XPATH^MXMLPATH(.RTN,DOCHAND,"//Header")
 	NEW % SET %=$$XPATH^MXMLPATH(.RTN,DOCHAND,"interactedDrugList/drug")
-	DO CHKEQ^XTMUNIT($ORDER(RTN("")),"","No results should be found.")
+	DO CHKEQ^%ut($ORDER(RTN("")),"","No results should be found.")
 	QUIT
 	;
 TESTATT1	; @TEST - Test Attribute //@orderNumber [extant]
@@ -142,17 +143,17 @@ TESTATT1	; @TEST - Test Attribute //@orderNumber [extant]
 	NEW RTN
 	DO XPATH^MXMLPATH(.RTN,DOCHAND,"//@orderNumber")
 	NEW X,Y,Z SET X=$ORDER(RTN("")),Y=$ORDER(RTN(X,"")),Z=RTN(X,Y)
-	DO CHKEQ^XTMUNIT(Z,"Z;2;Prospect","Attribute not retrieved properly")
+	DO CHKEQ^%ut(Z,"Z;2;Prospect","Attribute not retrieved properly")
 	QUIT
 	;
 TESTATT2	; @TEST - Test Attribute //drug/@vuid [extant]
 	; ZEXCEPT: DOCHAND
-	DO CHKEQ^XTMUNIT($$XPATH^MXMLPATH(,DOCHAND,"//drug/@vuid"),778899,"Attribute not retrieved properly")
+	DO CHKEQ^%ut($$XPATH^MXMLPATH(,DOCHAND,"//drug/@vuid"),778899,"Attribute not retrieved properly")
 	QUIT
 	;
 TESTATT3	; @TEST - Test Attribute //drug/dada [n/a]
 	; ZEXCEPT: DOCHAND
-	DO CHKEQ^XTMUNIT($$XPATH^MXMLPATH(,DOCHAND,"//drug/@dada"),"","non-existent Attribute")
+	DO CHKEQ^%ut($$XPATH^MXMLPATH(,DOCHAND,"//drug/@dada"),"","non-existent Attribute")
 	QUIT
 	;
 TESTATT4	; @TEST - Test relative attribute //Header, MServer, @stationNumber [extant]
@@ -160,7 +161,7 @@ TESTATT4	; @TEST - Test relative attribute //Header, MServer, @stationNumber [ex
 	NEW %1 SET %1=$$XPATH^MXMLPATH(,DOCHAND,"//Header")
 	NEW %2 SET %2=$$XPATH^MXMLPATH(,DOCHAND,"MServer")
 	NEW %3 SET %3=$$XPATH^MXMLPATH(,DOCHAND,"@stationNumber")
-	DO CHKEQ^XTMUNIT(%3,45,"Attribute not retrieved properly")
+	DO CHKEQ^%ut(%3,45,"Attribute not retrieved properly")
 	QUIT
 	;
 TESTFIL1	; @TEST - Test ordinal filter expressions //references/reference[3] [extant]
@@ -168,14 +169,14 @@ TESTFIL1	; @TEST - Test ordinal filter expressions //references/reference[3] [ex
 	NEW XPATH SET XPATH="//references/reference[3]"
 	NEW RTN DO XPATH^MXMLPATH(.RTN,DOCHAND,XPATH)
 	NEW TXT SET TXT=^TMP("MXMLDOM",$JOB,DOCHAND,$ORDER(RTN("")),"T",1)
-	DO CHKTF^XTMUNIT(TXT["nelfinavir","Incorrect node retrieved")
+	DO CHKTF^%ut(TXT["nelfinavir","Incorrect node retrieved")
 	QUIT
 	;
 TESTFIL2	; @TEST - Test ordinal filter expressions //references/reference[11] [n/a]
 	; ZEXCEPT: DOCHAND
 	NEW XPATH SET XPATH="//references/reference[11]"
 	NEW % SET %=$$XPATH^MXMLPATH(,DOCHAND,XPATH)
-	DO CHKEQ^XTMUNIT(%,"","reference[11] shouldn't exist")
+	DO CHKEQ^%ut(%,"","reference[11] shouldn't exist")
 	QUIT
 	;
 TESTFIL3	; @TEST - Test ordinal filter expression //reference[position(3)] [extant]
@@ -183,7 +184,7 @@ TESTFIL3	; @TEST - Test ordinal filter expression //reference[position(3)] [exta
 	NEW XPATH SET XPATH="//references/reference[position(3)]"
 	NEW RTN DO XPATH^MXMLPATH(.RTN,DOCHAND,XPATH)
 	NEW TXT SET TXT=^TMP("MXMLDOM",$JOB,DOCHAND,$ORDER(RTN("")),"T",1)
-	DO CHKTF^XTMUNIT(TXT["nelfinavir","Incorrect node retrieved")
+	DO CHKTF^%ut(TXT["nelfinavir","Incorrect node retrieved")
 	QUIT
 	;
 TESTFIL4	; @TEST - Test last() filter expression //reference[last()] [extant]
@@ -191,63 +192,63 @@ TESTFIL4	; @TEST - Test last() filter expression //reference[last()] [extant]
 	NEW XPATH SET XPATH="//reference[last()]"
 	NEW % SET %=$$XPATH^MXMLPATH(,DOCHAND,XPATH)
 	NEW TXT SET TXT=^TMP("MXMLDOM",$JOB,DOCHAND,%,"T",1)
-	DO CHKTF^XTMUNIT(TXT["tipranavir","Incorrect node retrieved")
+	DO CHKTF^%ut(TXT["tipranavir","Incorrect node retrieved")
 	QUIT
 	;
 TESTFIL5	; @TEST - Test @attribute as //drug[@vuid] [extant]
 	; ZEXCEPT: DOCHAND
 	NEW XPATH SET XPATH="//drug[@vuid]"
 	NEW % SET %=$$XPATH^MXMLPATH(,DOCHAND,XPATH)
-	DO CHKEQ^XTMUNIT($$VALUE^MXMLDOM(DOCHAND,%,"ien"),113,"Incorrect node retrieved")
+	DO CHKEQ^%ut($$VALUE^MXMLDOM(DOCHAND,%,"ien"),113,"Incorrect node retrieved")
 	QUIT
 	;
 TESTFIL6	; @TEST - Test @attribute as //drug[@vuib] [n/a]
 	; ZEXCEPT: DOCHAND
 	NEW XPATH SET XPATH="//drug[@vuib]"
 	NEW % SET %=$$XPATH^MXMLPATH(,DOCHAND,XPATH)
-	DO CHKEQ^XTMUNIT(%,"","Incorrect node retrieved")
+	DO CHKEQ^%ut(%,"","Incorrect node retrieved")
 	QUIT
 	;
 TESTFIL7	; @TEST - Test node as //professionalMonograph[monographTitle] [extant]
 	; ZEXCEPT: DOCHAND
 	NEW XPATH SET XPATH="//professionalMonograph[monographTitle]"
 	NEW % SET %=$$XPATH^MXMLPATH(,DOCHAND,XPATH)
-	DO CHKEQ^XTMUNIT(^TMP("MXMLDOM",$JOB,DOCHAND,%),"professionalMonograph","Incorrect node retrieved")
+	DO CHKEQ^%ut(^TMP("MXMLDOM",$JOB,DOCHAND,%),"professionalMonograph","Incorrect node retrieved")
 	QUIT
 	;
 TESTFIL8	; @TEST - Test node as //professionalMonograph[monographTible] [n/a]
 	; ZEXCEPT: DOCHAND
 	NEW XPATH SET XPATH="//professionalMonograph[monographTible]"
 	NEW % SET %=$$XPATH^MXMLPATH(,DOCHAND,XPATH)
-	DO CHKEQ^XTMUNIT(%,"","monographTible does not exist")
+	DO CHKEQ^%ut(%,"","monographTible does not exist")
 	QUIT
 	;
 TESTFIL9	; @TEST - Test attribute="value" as //drug[@ien="113"] [extant]
 	; ZEXCEPT: DOCHAND
 	NEW XPATH SET XPATH="//drug[@ien=""113""]"
 	NEW % SET %=$$XPATH^MXMLPATH(,DOCHAND,XPATH)
-	DO CHKEQ^XTMUNIT($$VALUE^MXMLDOM(DOCHAND,%,"gcnSeqNo"),266,"Incorrect node retrieved")
+	DO CHKEQ^%ut($$VALUE^MXMLDOM(DOCHAND,%,"gcnSeqNo"),266,"Incorrect node retrieved")
 	QUIT
 	;
 TESTFI10	; @TEST - Test attribute="value" as //drug[@ien="999"] [n/a]
 	; ZEXCEPT: DOCHAND
 	NEW XPATH SET XPATH="//drug[@ien=""999""]"
 	NEW % SET %=$$XPATH^MXMLPATH(,DOCHAND,XPATH)
-	DO CHKEQ^XTMUNIT(%,"","drug of IEN 999 doesn't exist")
+	DO CHKEQ^%ut(%,"","drug of IEN 999 doesn't exist")
 	QUIT
 	;
 TESTFI11	; @TEST - Test node="value" as //drugDrugCheck[id="283"] [extant]
 	; ZEXCEPT: DOCHAND
 	NEW XPATH SET XPATH="//drugDrugCheck[id=""283""]"
 	NEW % SET %=$$XPATH^MXMLPATH(,DOCHAND,XPATH)
-	DO CHKEQ^XTMUNIT(^TMP("MXMLDOM",$JOB,DOCHAND,%),"drugDrugCheck","Incorrect node retrieved")
+	DO CHKEQ^%ut(^TMP("MXMLDOM",$JOB,DOCHAND,%),"drugDrugCheck","Incorrect node retrieved")
 	QUIT
 	;
 TESTFI12	; @TEST - Test node="value" as //drugDrugCheck[id="999"] [n/a]
 	; ZEXCEPT: DOCHAND
 	NEW XPATH SET XPATH="//drugDrugCheck[id=""999""]"
 	NEW % SET %=$$XPATH^MXMLPATH(,DOCHAND,XPATH)
-	DO CHKEQ^XTMUNIT(%,"","drugDrugCheck of id 999 doesn't exist")
+	DO CHKEQ^%ut(%,"","drugDrugCheck of id 999 doesn't exist")
 	QUIT
 	;
 TESTDATA	; from https://github.com/OSEHRA-Sandbox/MOCHA/tree/master/etc/xml/test/messages
