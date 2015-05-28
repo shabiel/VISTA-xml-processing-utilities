@@ -1,15 +1,3 @@
-<style>
-  table { border-collapse: collapse; }
-  td { border: 1px solid black;
-       padding: 10px;
-	 }
-  caption { padding 20px; }
-  pre { border: 1px solid black;
-		padding: 10px;
-		background-color: rgba(200, 200, 200, 0.4);
-      }
-</style>
-
 # XML PROCESSING UTILITIES 2.0
 
 ## Revision History
@@ -60,9 +48,6 @@
 </tr>
 </table>
 
-* Table of Conents
-{:toc}
-
 ## Introduction
 VISTA XML Processing Utilities cover 4 different domains:
  - XML Parsing
@@ -71,7 +56,7 @@ VISTA XML Processing Utilities cover 4 different domains:
  - XML Templating
 
 ## Installation
-See <install.md>.
+See install.md.
 
 ## XML Parsing
 The VistA Extensible Markup Language (XML) Parser is a full-featured, validating XML parser written
