@@ -51,6 +51,13 @@
 	<td>Sam Habiel, Kathy Ice<br />
 	VISTA Expertise Network, Seattle, WA</td>
 </tr>
+<tr>
+	<td>28 May 2014</td>
+	<td>XML PROCESSING UTILITIES 2.3</td>
+	<td>Add install file; change to use %ut version of M-Unit</td>
+	<td>Sam Habiel<br />
+	VISTA Expertise Network, Seattle, WA</td>
+</tr>
 </table>
 
 * Table of Conents
@@ -62,6 +69,9 @@ VISTA XML Processing Utilities cover 4 different domains:
  - XML Querying using XPATH
  - XML Creation tools
  - XML Templating
+
+## Installation
+See <install.md>.
 
 ## XML Parsing
 The VistA Extensible Markup Language (XML) Parser is a full-featured, validating XML parser written
