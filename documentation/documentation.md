@@ -119,9 +119,6 @@ operation:
 > Files are opened with a time-out parameter. If an attempt is made to access a non-existent file,
 > there is a delay of a few seconds before the error is signaled.
 
-FTG^%ZISH doesn't work on GT.M because of the %ZISH call is non-supported. Instead, the programmer must
-load the file into a global first and send that global into the parser.
-
 Files are accessed in text mode. The result is that certain imbedded control characters are stripped from
 the input stream and never detected by the parser. Because these control characters are disallowed by
 XML, the parser will not report such documents as non-conforming.
