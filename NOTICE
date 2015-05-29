@@ -1,0 +1,27 @@
+  Submitted by Sam Habiel <sam.habiel@vistaexpertise.net>
+  Copyright 2013 Sam Habiel
+  Copyright 2009-2010 George Lilly and R. Wally Fort.
+
+  This product includes software developed at the US Department of
+  Veterans Affairs and released into the public domain via the Freedom
+  of Information Act (FOIA).  Portions of the software not modified from
+  the FOIA release remain in the public domain.
+
+  The Apache 2.0 license covers the following source and test files:
+
+  Source:
+  MXMLDOM.m
+  MXMLPATH.m
+  MXMLPRS0.m
+  MXMLPRS1.m
+  MXMLPRSE.m
+  MXMLTEST.m
+  MXMLTMP1.m
+  MXMLTMPL.m
+  MXMLUTL.m
+
+  Test:
+  MXMLDOMT.m
+  MXMLBLD.m
+  MXMLTMPT.m
+  MXMLPATT.m
