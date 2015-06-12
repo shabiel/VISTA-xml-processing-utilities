@@ -1,4 +1,4 @@
-MXMLTMPT   ; VEN/GPL/SMH - XML Templater TEST CASES ;2015-05-25  11:44 AM
+MXMLTMPT   ; VEN/GPL/SMH-OSEHRA/JPS - XML Templater TEST CASES ;2015-06-11  04:00 PM
  ;;2.3;XML PROCESSING UTILITIES;;May 25, 2015;Build 11
  ; (c) George Lilly 2010-2013
  ; (c) Sam Habiel 2014
@@ -7,7 +7,7 @@ TEST ; M-Unit Entry point for Unit Testing
  S IO=$PRINCIPAL
  N DIQUIET S DIQUIET=1
  D DT^DICRW
- D:$L($T(EN^%ut)) EN^%ut($T(+0),1)
+ D:$L($T(EN^%ut))&$L($T(^MXMLTMP1)) EN^%ut($T(+0),1)
  QUIT
  ;
 STARTUP ; M-Unit Start-up
