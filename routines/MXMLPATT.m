@@ -1,11 +1,11 @@
-MXMLPATT ; VEN/SMH - MXML XPath Processor Unit Tests;2015-05-25  11:38 AM
+MXMLPATT ; VEN/SMH-OSEHRA/JPS - MXML XPath Processor Unit Tests;2015-06-11  04:00 PM
  ;;2.3;XML PROCESSING UTILITIES;;May 25, 2015;Build 11
  ; (c) Sam Habiel 2014
 TEST ; M-Unit Entry point for Unit Testing
  SET IO=$PRINCIPAL
  NEW DIQUIET SET DIQUIET=1
  DO DT^DICRW
- DO:$LENGTH($TEXT(EN^%ut)) EN^%ut($TEXT(+0),1)
+ DO:$LENGTH($TEXT(EN^%ut))&$L($T(^MXMLPATH)) EN^%ut($TEXT(+0),1)
  QUIT
  ;
 STARTUP ; M-Unit start-up; Load XML Document

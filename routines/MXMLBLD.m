@@ -1,4 +1,4 @@
-MXMLBLD ; RWF/RWF - Recursive XML Writer ;2015-05-25  11:34 AM
+MXMLBLD ; RWF/RWF-OSEHRA/JPS - Recursive XML Writer ;2015-06-11  04:00 PM
  ;;2.3;XML PROCESSING UTILITIES;;May 25, 2015;Build 11
  QUIT
  ;
@@ -201,7 +201,7 @@ PUT(RETURN,STRING) ; PEP Proc/$$ - Put an XML Line into the RETURN Array
  S RETURN(CNT)=STRING
  QUIT:$QUIT CNT QUIT
  ;
-TEST D:$L($T(EN^%ut)) EN^%ut($T(+0),1) QUIT
+TEST D:$L($T(EN^%ut))&$L($T(^MXMLTMP1)) EN^%ut($T(+0),1) QUIT
  ;
 TESTPUT ; @TEST - Test PUT
  N RTN
