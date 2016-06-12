@@ -1,14 +1,15 @@
 # Bug fixes to VA VISTA in the VISTA XML PROCESSING UTILITIES package.
 
-Both bug fixes are in routine MXMLPRSE.
+Both bug fixes are in routine MXMLPRSE. There are no other changes to the VISTA MXML* routines. The rest are additions.
 
  1. HTML entities (anything starting with #) don't have enough read ahead to decipher the whole thing.
- 2. $$FTG^%ZISH used a form where the PATH and the FILENAME were concatenated. This is not officially support; and thus didn't work on GT.M. The %ZISH call was changed so that it chopped the full path-filename if supplied into a path and a filename seperately.
+ 2. $$FTG^%ZISH used a form where the PATH and the FILENAME were concatenated. This is not officially supported by the Kernel; and thus didn't work on GT.M. The %ZISH call was changed so that it chopped the full path-filename if supplied into a path and a filename seperately.
 
 See entire diff below.
 
- < is my version.
- > is the VA version.
+ \< is my version.
+ 
+ \> is the VA version.
 
 ```
 146d144
