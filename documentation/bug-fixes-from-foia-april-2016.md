@@ -26,3 +26,18 @@ See entire diff below.
 >  S X=$S($$FTG^%ZISH(SYS,"",$NA(@GBL@(1)),$QL(GBL)+1):GBL,1:"")
 1,3c1,2
 ```
+
+# Enhancements to VA Code
+What is new:
+ 
+ 1. XML Creation Tools
+ > * Routine: MXMLBLD
+ 2. XML Querying using XPATH (XPATH section in the html documentation)
+ > * Routine: MXLPATH
+ 3. XML Templating functions (Templating section in the html documentation)
+ > * Routine: MXMLTMP1
+ > * Routine: MXMLTMPL
+ 4. Unit tests
+ > * Routine: MXLMDOMT (Unit test for DOM Parser)
+ > * Routine: MXLPATT (Unit test for XPATH processing)
+ > * Routine: MXMLTMPT (Unit test for XML templating)
