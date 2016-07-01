@@ -7,6 +7,6 @@ Enhancements of current VISTA MXML Package, including
  * XML Authoring tools
  * Bug fixes.
 
-MXML is now its own namespace. The package was moved away from XT.
+MXML is now its own package. The package was moved away from XT.
 
 See documentation folder for documentation. This includes specific bug fixes made to the VA code that do not affect the functionality of the package.
