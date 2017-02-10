@@ -1,5 +1,5 @@
-MXMLDOMT ; VEN/SMH - Unit Tests for DOM Parser;2015-05-25  11:36 AM
- ;;2.4;XML PROCESSING UTILITIES;;June 15, 2015;Build 14
+MXMLDOMT ; VEN/SMH - Unit Tests for DOM Parser;2017-02-10
+ ;;2.5;XML PROCESSING UTILITIES;;Feb 10, 2017;Build 14
  ;;
  ; (c) Sam Habiel 2014
  ;
@@ -118,7 +118,7 @@ XML2D ;; @DATA for Test 2
  ;;<?xml version="1.0" encoding="utf-8"?><!-- Edited by XMLSpy --><note><to>Tove</to><from>Jani</from><heading>Reminder</heading><body>Don't forget me this weekend!</body></note>
  ;;
 XML3D ;; @DATA for Test 3
- ;;<?xml version="1.0" 
+ ;;<?xml version="1.0"
  ;;encoding="utf-8"?>
  ;;<!-- Edited b
  ;;y XMLSpy -->

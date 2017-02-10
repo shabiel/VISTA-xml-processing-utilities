@@ -1,5 +1,5 @@
-MXMLPRSE ;SAIC/DKM - XML Parser ;2015-05-25  11:41 AM
- ;;2.4;XML PROCESSING UTILITIES;;June 15, 2015;Build 14
+MXMLPRSE ;SAIC/DKM - XML Parser ;2017-02-10
+ ;;2.5;XML PROCESSING UTILITIES;;Feb 10, 2017;Build 14
  ; @Author Dr. Douglas Martin, SAIC.
  ; Sam Habiel made various fixes in 2014. Copyright disclaimed.
  ;=================================================================
