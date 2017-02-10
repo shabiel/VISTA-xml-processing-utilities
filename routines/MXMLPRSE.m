@@ -233,8 +233,15 @@ PARSCT(BGN,END,TRL,TYP) ;
  D EPOS
  I 'LVL,TYP'="COMMENT" D ERROR(6) Q 0
  F  S X=$F(XML,END,CPOS) D  Q:X!EOD
- .D CBK(TYP,$E(XML,CPOS,$S(X:X-$L(END)-1,1:LLEN)))
- .S CPOS=$S(X:X,1:LLEN+1)
+ .;OSEHRA/SMH - Changes for v2.5 to fix CRH bug: Add concept of EARLY END
+ .N EARLYEND S EARLYEND=0 ; Early End b/c CDATA end ]]> split over two lines
+ .D
+ ..I X QUIT  ; No need to find early end; as end found
+ ..N I F I=$L(END)-1:-1:1 D  Q:EARLYEND
+ ...I $E(XML,LLEN+1-I,LLEN)=$E(END,1,I) S EARLYEND=LLEN-I
+ .D CBK(TYP,$E(XML,CPOS,$S(X:X-$L(END)-1,EARLYEND:EARLYEND,1:LLEN)))
+ .S CPOS=$S(X:X,EARLYEND:EARLYEND,1:LLEN+1)
+ .;OSEHRA/SMH - end changes.
  .D READ,EPOS
  I EOD D ERROR(7) Q 0
  I $L(TRL),$$NEXT(TRL,3)
