@@ -22,5 +22,6 @@ MXMLDOMT routine.  The relevant part of the test output has been copied below:
   XMLFILE^MXMLDOMT - - Parse an XML document loacated on the File system (Sam's bu
   g) - XML not parsed
   -----------------------------------------------------------------------  [FAIL]
+	XML9 - - XML Entity Encoder bug .-----------------------------  [FAIL]
 
 After the patch is installed, these failures should not be present.
