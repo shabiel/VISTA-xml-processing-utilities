@@ -1,11 +1,11 @@
-MXMLDOMT ; VEN/SMH - Unit Tests for DOM Parser;2017-02-10
- ;;2.5;XML PROCESSING UTILITIES;;Feb 10, 2017;Build 14
+MXMLDOMT ; VEN/SMH - Unit Tests for DOM Parser;2018-05-30  11:35 AM
+ ;;2.6;XML PROCESSING UTILITIES;;May 30, 2018;Build 16
  ;;
  ; (c) Sam Habiel 2014
  ;
  S IO=$P
  N DIQUIET S DIQUIET=1
- D EN^%ut($T(+0),1)
+ D EN^%ut($T(+0),3)
  QUIT
  ;
 XML1 ; @TEST - Parse a regular XML Document--sanity test
@@ -92,6 +92,11 @@ XML8 ; @TEST - CRH bug -- testing now
  . D CHKTF^%ut(D,"XML not parsed")
  . D DELETE^MXMLDOM(D)
  K ^UTILITY($J,"OUT XML")
+ QUIT
+ ;
+XML9 ; @TEST - XML Entity Encoder bug 
+ ; See (https://groups.google.com/d/msg/Hardhats/s2uKhnmVPcM/ep9FWNELBgAJ)
+ D CHKEQ^%ut($$SYMENC^MXMLUTL("X"_$C(13)_"X"),"XX")
  QUIT
  ;
 ENDD ;end of document call back
