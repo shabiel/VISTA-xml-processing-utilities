@@ -1,5 +1,5 @@
 MXMLPATH ; VEN/SMH - XPATH Extensions to MXML Package ;2015-05-25  11:37 AM
- ;;2.5;XML PROCESSING UTILITIES;;Feb 10, 2017;Build 14
+ ;;2.6;XML PROCESSING UTILITIES;;May 30, 2018;Build 16
  ;
  ; (c) Sam Habiel 2014
  ;
